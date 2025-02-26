@@ -88,6 +88,28 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="container-fluid bg-white mb-2 px-2 py-2 wow fadeIn" data-wow-delay="0.1s" style="border-radius: 50px; border: 1px solid rgb(241, 241, 241); visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                    <div class="container">
+                        <div class="row g-2">
+                            <div class="col-md-10">
+                                <div class="row g-2">
+                                    <div class="col-md-4">
+                                        <input type="text" id="searchKeyword" class="form-control border-0 py-2" placeholder="Search Keyword">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select id="searchArea" class="form-select border-0 py-2">
+                                            <option selected="">Select Area</option>
+                                            <option value="Face">Face</option>
+                                            <option value="Body">Body</option>
+                                            <option value="Custom Package">Custom Packages</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Tabs Start -->
                 <ul class="nav nav-tabs mb-4" id="serviceTabs">
                     <li class="nav-item">
@@ -158,6 +180,31 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <!-- Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Event listener for search input
+            $('#searchKeyword, #searchArea').on('input change', function() {
+                const keyword = $('#searchKeyword').val().toLowerCase();
+                const area = $('#searchArea').val();
+
+                // Filter function
+                $('.property-item').each(function() {
+                    const serviceName = $(this).find('.pricing-card-title').text().toLowerCase();
+                    const serviceArea = $(this).find('.badge').text();
+
+                    const matchesKeyword = serviceName.includes(keyword);
+                    const matchesArea = area === "Select Area" || serviceArea === area;
+
+                    if (matchesKeyword && matchesArea) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 
