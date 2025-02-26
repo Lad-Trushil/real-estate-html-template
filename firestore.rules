@@ -1,0 +1,13 @@
+rules_version = '2'; // Ensure this is the correct version for your Firestore setup
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{services=**} {
+      // Allow read access if the user is authenticated
+      allow read: if request.auth != null;
+      
+      // Allow write access if the user is authenticated and their email matches the specified email
+      allow write: if request.auth != null && 
+                    request.auth.token.email == "kajal@pristinelaserclinic.co.uk";
+    }
+  }
+}
