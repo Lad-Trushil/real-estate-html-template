@@ -1,0 +1,150 @@
+{
+  "products": [
+    {
+      "id": 4,
+      "name": "Aloe Vera Gel 100ml",
+      "price": 2.99,
+      "mrp": 3.99,
+      "description": "Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.<br><ul><li> Soothing: It is packed with cooling, soothing, and replenishing properties, this versatile gel is perfect for your post-laser care routine.</li><li> Promotes Healing: Helps your skin recover quickly after laser hair removal.</li><li> Minimises Discomfort: Reduces redness and soothes irritation, leaving your skin feeling calm and refreshed.</li><li> Multi-Purpose Use: Ideal for hydrating, soothing sunburn, or calming sensitive skin.</li></ul>",
+      "image": "./img/ProductsVouchers/Aloe vera gel.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Aloe Vera Gel 200ml",
+      "price": 4.99,
+      "mrp": 5.99,
+      "description": "Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.<br><ul><li> Soothing: It is packed with cooling, soothing, and replenishing properties, this versatile gel is perfect for your post-laser care routine.</li><li> Promotes Healing: Helps your skin recover quickly after laser hair removal.</li><li> Minimises Discomfort: Reduces redness and soothes irritation, leaving your skin feeling calm and refreshed.</li><li> Multi-Purpose Use: Ideal for hydrating, soothing sunburn, or calming sensitive skin.</li></ul>",
+      "image": "./img/ProductsVouchers/Aloe vera gel.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "P&P",
+      "price": 3.50,
+      "mrp": 3.50,
+      "description": "",
+      "image": "./img/ProductsVouchers/Aloe vera gel.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "Heliocare Gel Oil-Free SPF 50",
+      "price": 22.99,
+      "mrp": 31.00,
+      "description": "This ultra-light mattifying gel absorbs quickly into the skin, providing a dry-touch, matte finish. Ideal for oily, combination, or spot-prone skin, it offers full-spectrum protection without causing breakouts, making it perfect for daily use in managing shine and oil.",
+      "image": "./img/ProductsVouchers/Gel Oil free.jpeg"
+    },
+    {
+      "id": 8,
+      "name": "Heliocare Water Gel SPF 50",
+      "price": 22.99,
+      "mrp": 31.00,
+      "description": "This lightweight, water-based gel absorbs quickly, leaving a satin finish. Its advanced hydration system locks in moisture, and it creates a protective barrier against pollution. Suitable for all skin types, including sensitive skin, and ideal for layering under makeup or for makeup-free days.",
+      "image": "./img/ProductsVouchers/Water Gel.jpeg"
+    },
+    {
+      "id": 9,
+      "name": "Heliocare Pigment Solution SPF 50",
+      "price": 25.99,
+      "mrp": 32.99,
+      "description": "This light, silky fluid offers full spectrum protection while helping to prevent and reduce hyperpigmentation with a unique Depigmenting System. Combining Niacinamide and Ellagic Acid, it also includes a subtle tint to unify skin tone. Suited for skin types Fitzpatrick I-IV, it locks in moisture and protects against pollution.",
+      "image": "./img/ProductsVouchers/heliocare-360-pigment-solution.png"
+    },
+    {
+      "id": 10,
+      "name": "Exfoliating Mitt (Teal)",
+      "price": 5.00,
+      "mrp": 5.00,
+      "description": "The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.<br> Benefits:<ul><li> Prevents Ingrown Hairs</li><li>Removes Dead Skin Cells</li><li>Smooths Skin Texture</li><li>Improves Circulation</li><li>Enhances Product Absorption</li></ul>",
+      "image": "./img/ProductsVouchers/Exfoliating Mitt Teal.png"
+    },
+    {
+      "id": 11,
+      "name": "Exfoliating Mitt (Pink)",
+      "price": 5.00,
+      "mrp": 5.00,
+      "description": "The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.<br> Benefits:<ul><li> Prevents Ingrown Hairs</li><li>Removes Dead Skin Cells</li><li>Smooths Skin Texture</li><li>Improves Circulation</li><li>Enhances Product Absorption</li></ul>",
+      "image": "./img/ProductsVouchers/Exfoliating Mitt Pink.png"
+    },
+    {
+      "id": 12,
+      "name": "Exfoliating Mitt (White)",
+      "price": 5.00,
+      "mrp": 5.00,
+      "description": "The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.<br> Benefits:<ul><li> Prevents Ingrown Hairs</li><li>Removes Dead Skin Cells</li><li>Smooths Skin Texture</li><li>Improves Circulation</li><li>Enhances Product Absorption</li></ul>",
+      "image": "./img/ProductsVouchers/Exfoliating Mitt White.png"
+    },
+    {
+      "id": 13,
+      "name": "Exfoliating Mitt (Black)",
+      "price": 5.00,
+      "mrp": 5.00,
+      "description": "The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.<br> Benefits:<ul><li> Prevents Ingrown Hairs</li><li>Removes Dead Skin Cells</li><li>Smooths Skin Texture</li><li>Improves Circulation</li><li>Enhances Product Absorption</li></ul>",
+      "image": "./img/ProductsVouchers/Exfoliating Mitt Black.png"
+    },
+    {
+      "id": 14,
+      "name": "Exfoliating Mitt (Teal)x3",
+      "price": 12.00,
+      "mrp": 5.00,
+      "description": "The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.<br> Benefits:<ul><li> Prevents Ingrown Hairs</li><li>Removes Dead Skin Cells</li><li>Smooths Skin Texture</li><li>Improves Circulation</li><li>Enhances Product Absorption</li></ul>",
+      "image": "./img/ProductsVouchers/Exfoliating Mitt Teal.png"
+    },
+    {
+      "id": 15,
+      "name": "Exfoliating Mitt (Pink)x3",
+      "price": 12.00,
+      "mrp": 5.00,
+      "description": "The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.<br> Benefits:<ul><li> Prevents Ingrown Hairs</li><li>Removes Dead Skin Cells</li><li>Smooths Skin Texture</li><li>Improves Circulation</li><li>Enhances Product Absorption</li></ul>",
+      "image": "./img/ProductsVouchers/Exfoliating Mitt Pink.png"
+    },
+    {
+      "id": 16,
+      "name": "Exfoliating Mitt (White)x3",
+      "price": 12.00,
+      "mrp": 5.00,
+      "description": "The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.<br> Benefits:<ul><li> Prevents Ingrown Hairs</li><li>Removes Dead Skin Cells</li><li>Smooths Skin Texture</li><li>Improves Circulation</li><li>Enhances Product Absorption</li></ul>",
+      "image": "./img/ProductsVouchers/Exfoliating Mitt White.png"
+    },
+    {
+      "id": 17,
+      "name": "Exfoliating Mitt (Black)x3",
+      "price": 12.00,
+      "mrp": 5.00,
+      "description": "The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.<br> Benefits:<ul><li> Prevents Ingrown Hairs</li><li>Removes Dead Skin Cells</li><li>Smooths Skin Texture</li><li>Improves Circulation</li><li>Enhances Product Absorption</li></ul>",
+      "image": "./img/ProductsVouchers/Exfoliating Mitt Black.png"
+    }
+  ],
+  "vouchers": [
+    {
+      "id": 1,
+      "name": "Gift Voucher",
+      "price": 30.00,
+      "mrp": 30.00,
+      "description": "",
+      "image": "./img/ProductVouchers/Gift_Voucher_30.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Gift Voucher",
+      "price": 50.00,
+      "mrp": 50.00,
+      "description": "",
+      "image": "./img/ProductsVouchers/Gift_Voucher_50.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Gift Voucher",
+      "price": 100.00,
+      "mrp": 100.00,
+      "description": "",
+      "image": "./img/ProductsVouchers/Gift_Voucher_100.jpeg"
+    },
+    {
+      "id": 786,
+      "name": "Free Consultation",
+      "price": 30,
+      "mrp": 30,
+      "description": "This deposit is to secure your appointment and is reimbursed once attended or used towards a purchased course",
+      "image": ""
+    }
+  ]
+}

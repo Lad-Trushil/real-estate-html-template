@@ -43,76 +43,57 @@
 
 
         <!-- Navbar Start -->
-        <div class="container-fluid nav-bar bg-transparent">
-            <nav class="navbar navbar-expand-lg bg-primary navbar-light py-0 px-4">
-                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
-                    <div class="p-2 me-2">
-                        <img class="img-fluid" src="img/new_logo_white.png" alt="Icon"style="width: 240px; height: 60px;">
-                    </div>
+        <div class="container-fluid nav-bar fixed-top bg-transparent">
+            <nav class="navbar navbar-expand-lg bg-white rounded navbar py-0 px-4 m-10 navbar-mobile"
+                style="border-radius: 50px!important;">
+                <a href="index.html" class="navbar-brand logo">
+                    <img src="img/Logo_rectangle.png" alt="Logo">
                 </a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
+                <button type="button" class="navbar-toggler text-primary py-2 navbar-toggler-mobile"
+                    data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="border-radius: 30px;border:none;">
+                    <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
-                       <!-- <a href="index.html" class="nav-item nav-link active">Home</a>-->
+                <div class="collapse navbar-collapse navbar-collapse-mobile" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto" style="gap: 30px;">
+                        <!-- <a href="index.html" class="nav-item nav-link active">Home</a>-->
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Laser</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="laser-pricing.html" class="dropdown-item">Men</a>
-                                <a href="property-type.html" class="dropdown-item">Women</a>
-                                <!-- <a href="property-agent.html" class="dropdown-item">Property Agent</a> -->
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">Laser</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="laser-pricing.html" class="dropdown-item bg-white mb-1 shadow"
+                                    style="border-radius: 50px!important;">Men</a>
+                                <a href="property-type.html" class="dropdown-item bg-white shadow"
+                                    style="border-radius: 50px!important;">Women</a>
                             </div>
                         </div>
-                        <!-- <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Error</a>
-                            </div>
-                        </div> -->
                         <a href="shop.html" class="nav-item nav-link">Shop</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <a href="" class="btn btn-dark px-3 d-none d-lg-flex">Free Consultation</a>
+                    </div>                    
+                    <a href="" class="btn btn-primary py-2 px-4"><i class="fa fa-calendar-alt me-2"></i> Book Consultation <span
+                        class="badge bg-dark">Free</span></a>
                 </div>
             </nav>
         </div>
         <!-- Navbar End -->
-
-
-        <!-- Header Start -->
-        <!-- <div class="container-fluid header bg-white p-0">
-            <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-                <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mb-4">Shop for recommended products</h1> 
-                </div>
-                <div class="col-md-6 animated fadeIn">
-                    <img class="img-fluid" src="img/slide3.png" alt="">
-                </div>
-            </div>
-        </div> -->
-        <!-- Header End -->       
-
 
         <!-- Property List Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-0 gx-5 align-items-end">
                     <div class="col-lg-12">
-                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                            <h1 class="mb-3">Products & Vouchers</h1>
+                        <div class="text-center mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
+                            <h1 class="mb-3" style="font-weight: 200;">Products & Vouchers</h1>
                             <p>We recommend what's best for you</p>
                         </div>
                     </div>
                     <div class="col-lg-12 text-start text-lg-start wow slideInRight" data-wow-delay="0.1s">
                         <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
                             <li class="nav-item me-2">
-                                <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#tab-1">Products</a>
+                                <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#tab-1" style="border-radius: 50px;">Products</a>
                             </li>
                             <li class="nav-item me-2">
-                                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2">Vouchers</a>
+                                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2"  style="border-radius: 50px;">Vouchers</a>
                             </li>
                             <!-- <li class="nav-item me-0">
                                 <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-3">Custom</a>
@@ -124,126 +105,198 @@
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <div class="row g-4">
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="product-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/ProductsVouchers/Aloe vera gel.png" alt=""></a>
-                                        <div class="bg-dark rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">10% Off</div>
-                                        <!-- <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div> -->
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <a class="d-block h5 mb-2" href="">Aloe Vera Gel 100ml</a>
-                                        <h5 class="text-primary mb-3">£2.99 <small><s>£3.99</s></small></h5>
-                                        <p>Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.</p>
-                                        <small>Select Quantity</small>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2 bg-primary"><i class="fa fa-plus text-white me-2"></i></small>
-                                        <small class="flex-fill text-center border-end py-2">3</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-minus text-danger me-2"></i></small>
-                                        <small class="flex-fill text-center py-2 bg-dark text-white"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</small>
-                                    </div>
-                                </div>   
-                            </div>                         
-                            <div class="col-lg-4 col-md-6">
-                                <div class="product-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/ProductsVouchers/Aloe vera gel.png" alt=""></a>
-                                        <!-- <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div> -->
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <a class="d-block h5 mb-2" href="">Aloe Vera Gel 200ml</a>
-                                        <h5 class="text-primary mb-3">£4.99 <small><s>£5.99</s></small></h5>
-                                        <p>Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.</p>
-                                        <small>Select Quantity</small>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2 bg-primary"><i class="fa fa-plus text-white me-2"></i></small>
-                                        <small class="flex-fill text-center border-end py-2">1</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-minus text-danger me-2"></i></small>
-                                        <small class="flex-fill text-center py-2 bg-dark text-white"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</small>
-                                    </div>
-                                </div>  
-                            </div>                            
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="product-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/ProductsVouchers/Gel Oil free.png" alt=""></a>
-                                        <!-- <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div> -->
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <a class="d-block h5 mb-2" href="">Heliocare Gel Oil-Free SPF 50</a>
-                                        <h5 class="text-primary mb-3">£22.99 <small><s>£31.00</s></small></h5>
-                                        <p>This ultra-light mattifying gel absorbs quickly into the skin, providing a dry-touch, matte finish.</p>
-                                        <small>Select Quantity</small>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2 bg-primary"><i class="fa fa-plus text-white me-2"></i></small>
-                                        <small class="flex-fill text-center border-end py-2">0</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-minus text-danger me-2"></i></small>
-                                        <small class="flex-fill text-center py-2 bg-dark text-white"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</small>
-                                    </div>
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="pricing-card">
+                                        <img src="img/ProductsVouchers/Aloe vera gel.png" alt="Aloe Vera Gel" class="service-image">
+                                        <div class="add-to-cart-btn" style="position: absolute; top: 10px; right: 10px;">
+                                            <button class="btn btn-primary" style="border-radius: 50px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 250%);">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <div class="service-card-info" style="position: relative;">
+                                            <div class="p-0 pb-0">
+                                                <div class="d-flex">
+                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">Aloe Vera Gel</a></small>
+                                                    <small class="flex-fill text-center"><h5 class="mb-2" id="price1">£4.99</h5></small>
+                                                </div>                    
+                                                <p style="text-align: left; font-size: 12px; display: inline;"></p>
+                                                    Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.
+                                                    <span id="dots1">...</span>
+                                                    <span id="more1" style="display: none;">Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.</span>
+                                                    <button onclick="readMore(1)" id="readMoreBtn1" class="btn btn-link p-0" style="font-size: 12px;">Read more</button>
+                                                </p>
+                                                <script>
+                                                    function readMore(id) {
+                                                        var dots = document.getElementById("dots" + id);
+                                                        var moreText = document.getElementById("more" + id);
+                                                        var btnText = document.getElementById("readMoreBtn" + id);
+
+                                                        if (dots.style.display === "none") {
+                                                            dots.style.display = "inline";
+                                                            btnText.innerHTML = "Read more";
+                                                            moreText.style.display = "none";
+                                                        } else {
+                                                            dots.style.display = "none";
+                                                            btnText.innerHTML = "Read less";
+                                                            moreText.style.display = "inline";
+                                                        }
+                                                    }
+                                                </script>                                                
+                                            </div>
+                                            <small>Select Quantity</small>
+                                            <div class="d-flex border-top">
+                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="minus-btn1">
+                                                    <i class="fa fa-minus text-danger"></i>
+                                                </button>
+                                                <input type="number" id="quantity1" name="quantity" value="1" min="1" class="flex-fill text-center border-end" style="border: none; width: 50px;">
+                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="plus-btn1" onmouseover="this.querySelector('i').style.color='white';" onmouseout="this.querySelector('i').style.color='';">
+                                                    <i class="fa fa-plus text-primary"></i>
+                                                </button>
+                                            </div>
+                                            <script>
+                                                document.getElementById('plus-btn1').addEventListener('click', function() {
+                                                    var quantityInput = document.getElementById('quantity1');
+                                                    quantityInput.value = parseInt(quantityInput.value) + 1;
+                                                    document.getElementById('price1').innerText = '£' + (4.99 * quantityInput.value).toFixed(2);
+                                                });
+
+                                                document.getElementById('minus-btn1').addEventListener('click', function() {
+                                                    var quantityInput = document.getElementById('quantity1');
+                                                    if (quantityInput.value > 1) {
+                                                        quantityInput.value = parseInt(quantityInput.value) - 1;
+                                                        document.getElementById('price1').innerText = '£' + (4.99 * quantityInput.value).toFixed(2);
+                                                    }
+                                                });
+
+                                                document.getElementById('quantity1').addEventListener('change', function() {
+                                                    if (this.value < 1) {
+                                                        this.value = 1;
+                                                    }
+                                                    document.getElementById('price1').innerText = '£' + (4.99 * this.value).toFixed(2);
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>                                    
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="product-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/ProductsVouchers/Exfoliating Mitt Teal.png" alt=""></a>
-                                        <!-- <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div> -->
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <a class="d-block h5 mb-2" href="">Exfoliating Mitt (Teal)</a>
-                                        <h5 class="text-primary mb-3">£5.00</h5>
-                                        <p>The traditional Moroccan Kessa glove, used  to remove dead skin cells and impurities, promoting smoother and more radiant skin.</p>
-                                        <small>Select Quantity</small>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2 bg-primary"><i class="fa fa-plus text-white me-2"></i></small>
-                                        <small class="flex-fill text-center border-end py-2">1</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-minus text-danger me-2"></i></small>
-                                        <small class="flex-fill text-center py-2 bg-dark text-white"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="product-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/ProductsVouchers/Exfoliating Mitt Pink.png" alt=""></a>
-                                        <!-- <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div> -->
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <a class="d-block h5 mb-2" href="">Exfoliating Mitt (Pink)</a>
-                                        <h5 class="text-primary mb-3">£5.00</h5>
-                                        <p>The traditional Moroccan Kessa glove, used  to remove dead skin cells and impurities, promoting smoother and more radiant skin.</p>
-                                        <small>Select Quantity</small>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2 bg-primary"><i class="fa fa-plus text-white me-2"></i></small>
-                                        <small class="flex-fill text-center border-end py-2">1</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-minus text-danger me-2"></i></small>
-                                        <small class="flex-fill text-center py-2 bg-dark text-white"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</small>
-                                    </div>
-                                </div>
-                            </div>   
+                            </div>                       
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="product-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/ProductsVouchers/Exfoliating Mitt Black.png" alt=""></a>
-                                        <!-- <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div> -->
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <a class="d-block h5 mb-2" href="">Exfoliating Mitt (Black)</a>
-                                        <h5 class="text-primary mb-3">£5.00</h5>
-                                        <p>The traditional Moroccan Kessa glove, used  to remove dead skin cells and impurities, promoting smoother and more radiant skin.</p>
-                                        <small>Select Quantity</small>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2 bg-primary"><i class="fa fa-plus text-white me-2"></i></small>
-                                        <small class="flex-fill text-center border-end py-2">1</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-minus text-danger me-2"></i></small>
-                                        <small class="flex-fill text-center py-2 bg-dark text-white"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</small>
-                                    </div>
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="pricing-card">
+                                        <img src="img/ProductsVouchers/Gel Oil free.png" alt="Heliocare Gel" class="service-image">
+                                        <div class="add-to-cart-btn" style="position: absolute; top: 10px; right: 10px;">
+                                            <button class="btn btn-primary" style="border-radius: 50px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 250%);">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <div class="service-card-info" style="position: relative;">
+                                            <div class="p-0 pb-0">
+                                                <div class="d-flex">
+                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">Heliocare Gel</a></small>
+                                                    <small class="flex-fill text-center"><h5 class="mb-2" id="price2">£22.99</h5></small>
+                                                </div>                    
+                                                <p style="text-align: left; font-size: 12px; display: inline;"></p>
+                                                    This ultra-light mattifying gel absorbs quickly into the skin, providing a dry-touch, matte finish.
+                                                    <span id="dots2">...</span>
+                                                    <span id="more2" style="display: none;">This ultra-light mattifying gel absorbs quickly into the skin, providing a dry-touch, matte finish. This ultra-light mattifying gel absorbs quickly into the skin, providing a dry-touch, matte finish.</span>
+                                                    <button onclick="readMore(2)" id="readMoreBtn2" class="btn btn-link p-0" style="font-size: 12px;">Read more</button>
+                                                </p>
+                                                
+                                            </div>
+                                            <small>Select Quantity</small>
+                                            <div class="d-flex border-top">
+                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="minus-btn2">
+                                                    <i class="fa fa-minus text-danger"></i>
+                                                </button>
+                                                <input type="number" id="quantity2" name="quantity" value="1" min="1" class="flex-fill text-center border-end" style="border: none; width: 50px;">
+                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="plus-btn2" onmouseover="this.querySelector('i').style.color='white';" onmouseout="this.querySelector('i').style.color='';">
+                                                    <i class="fa fa-plus text-primary"></i>
+                                                </button>
+                                            </div>
+                                            <script>
+                                                document.getElementById('plus-btn2').addEventListener('click', function() {
+                                                    var quantityInput = document.getElementById('quantity2');
+                                                    quantityInput.value = parseInt(quantityInput.value) + 1;
+                                                    document.getElementById('price2').innerText = '£' + (22.99 * quantityInput.value).toFixed(2);
+                                                });
+
+                                                document.getElementById('minus-btn2').addEventListener('click', function() {
+                                                    var quantityInput = document.getElementById('quantity2');
+                                                    if (quantityInput.value > 1) {
+                                                        quantityInput.value = parseInt(quantityInput.value) - 1;
+                                                        document.getElementById('price2').innerText = '£' + (22.99 * quantityInput.value).toFixed(2);
+                                                    }
+                                                });
+
+                                                document.getElementById('quantity2').addEventListener('change', function() {
+                                                    if (this.value < 1) {
+                                                        this.value = 1;
+                                                    }
+                                                    document.getElementById('price2').innerText = '£' + (22.99 * this.value).toFixed(2);
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>                                    
                                 </div>
-                            </div>                        
+                            </div>                       
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="pricing-card">
+                                        <img src="img/ProductsVouchers/Exfoliating Mitt Teal.png" alt="Exfoliating Mitt" class="service-image">
+                                        <div class="add-to-cart-btn" style="position: absolute; top: 10px; right: 10px;">
+                                            <button class="btn btn-primary" style="border-radius: 50px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 250%);">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <div class="service-card-info" style="position: relative;">
+                                            <div class="p-0 pb-0">
+                                                <div class="d-flex">
+                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">Exfoliating Mitt</a></small>
+                                                    <small class="flex-fill text-center"><h5 class="mb-2" id="price3">£5.00</h5></small>
+                                                </div>                    
+                                                <p style="text-align: left; font-size: 12px; display: inline;"></p>
+                                                    The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.
+                                                    <span id="dots3">...</span>
+                                                    <span id="more3" style="display: none;">The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin. The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.</span>
+                                                    <button onclick="readMore(3)" id="readMoreBtn3" class="btn btn-link p-0" style="font-size: 12px;">Read more</button>
+                                                </p>
+                                                
+                                            </div>
+                                            <small>Select Quantity</small>
+                                            <div class="d-flex border-top">
+                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="minus-btn3">
+                                                    <i class="fa fa-minus text-danger"></i>
+                                                </button>
+                                                <input type="number" id="quantity3" name="quantity" value="1" min="1" class="flex-fill text-center border-end" style="border: none; width: 50px;">
+                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="plus-btn3" onmouseover="this.querySelector('i').style.color='white';" onmouseout="this.querySelector('i').style.color='';">
+                                                    <i class="fa fa-plus text-primary"></i>
+                                                </button>
+                                            </div>
+                                            <script>
+                                                document.getElementById('plus-btn3').addEventListener('click', function() {
+                                                    var quantityInput = document.getElementById('quantity3');
+                                                    quantityInput.value = parseInt(quantityInput.value) + 1;
+                                                    document.getElementById('price3').innerText = '£' + (5.00 * quantityInput.value).toFixed(2);
+                                                });
+
+                                                document.getElementById('minus-btn3').addEventListener('click', function() {
+                                                    var quantityInput = document.getElementById('quantity3');
+                                                    if (quantityInput.value > 1) {
+                                                        quantityInput.value = parseInt(quantityInput.value) - 1;
+                                                        document.getElementById('price3').innerText = '£' + (5.00 * quantityInput.value).toFixed(2);
+                                                    }
+                                                });
+
+                                                document.getElementById('quantity3').addEventListener('change', function() {
+                                                    if (this.value < 1) {
+                                                        this.value = 1;
+                                                    }
+                                                    document.getElementById('price3').innerText = '£' + (5.00 * this.value).toFixed(2);
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>                         
                         </div>
                     </div>
                     <div id="tab-2" class="tab-pane fade show p-0">
@@ -466,80 +519,87 @@
         
 
         <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container-fluid bg-dark text-white text-white-50 footer pt-2 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                            <div class="p-2 me-2">
+                                <img class="img-fluid" src="img/logo_white.png" alt="Icon"
+                                    style="width: 100px; height: 70px;">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="tel:07443 751 150" class="btn btn-outline-light py-3" style="border-radius: 50px;">
+                            <i class="fa fa-phone-alt me-2"></i>07443 751 150
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="mailto:kajal@pristinelaserclinic.co.uk" class="btn btn-outline-light py-3"
+                            style="border-radius: 50px;">
+                            <i class="fa fa-envelope me-2"></i>kajal@pristinelaserclinic.co.uk
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="https://maps.app.goo.gl/UvPZazNR58Kabet17" class="btn btn-outline-light py-3"
+                            style="border-radius: 50px;">
+                            <i class="fa fa-map-marker-alt me-2"></i>45 Bridge Street, Pinner, HA5 3HR
+                        </a>
+                    </div>
+                </div>
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><a href="https://maps.app.goo.gl/UvPZazNR58Kabet17">45 Bridge Street, Pinner, HA5 3HR</a></p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:07443 751 150">  07443 751 150</a></p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:kajal@pristinelaserclinic.co.uk">kajal@pristinelaserclinic.co.uk</a></p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/pristine_laser_clinic/"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/pristinelaserclinic.london/"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@pristine_laser_clinic"><i class="fa fa-music"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://uk.linkedin.com/in/kajal-patel-b8925228a"><i class="fab fa-linkedin-in"></i></a>
+                        <div class="col-md-12 d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social"
+                                href="https://www.instagram.com/pristine_laser_clinic/"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social"
+                                href="https://www.facebook.com/pristinelaserclinic.london/"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social"
+                                href="https://www.tiktok.com/@pristine_laser_clinic"><i class="fa fa-music"></i></a>
+                            <a class="btn btn-outline-light btn-social"
+                                href="https://uk.linkedin.com/in/kajal-patel-b8925228a"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="col-md-12 py-2">
+                            &copy; <a class="border-bottom text-white" href="#">Pristine Laser Clinic</a>, All Right
+                            Reserved.
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Quick Links</h5>
-                        <a class="btn btn-link text-white-50" href="about.html">About Us</a>
-                        <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
-                        <a class="btn btn-link text-white-50" href="laser-pricing.html">Our Services</a>
-                        <a class="btn btn-link text-white-50" href="faqs.html">FAQs</a>
-                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    <div class="col-lg-3 col-md-6 text-white">
+                        <h5 class="text-white mb-4"><i class="fa fa-link me-2"></i>Quick Links</h5>
+                        <a class="btn btn-link text-white" href="about.html">About Us</a>
+                        <a class="btn btn-link text-white" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link text-white" href="laser-pricing.html">Our Services</a>
+                        <a class="btn btn-link text-white" href="faqs.html">FAQs</a>
+                        <a class="btn btn-link text-white" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white" href="">Terms & Condition</a>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Photo Gallery</h5>
-                        <div class="row g-2 pt-2">
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/Before After Armpits.png" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/Before After Cheeks.png" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/Before After Lips.png" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/Kajal working on female client's forearms.png" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/Kajal with client working underarms.png" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/Kajal with client working on hand.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Newsletter</h5>
-                        <p>Subscribe to recieve latest offers and blogs</p>
+                    <div class="col-lg-3 col-md-6 text-white ">
+                        <h5 class="text-white mb-4"><i class="fa fa-envelope me-2"></i>Newsletter</h5>
+                        <p class="text-white">Subscribe to recieve latest offers and blogs</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5 text-white" type="text"
+                                placeholder="Your email">
+                            <button type="button"
+                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                         </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4"><i class="fa fa-car me-2"></i>Parking</h5>
+                        <p>
+                        <ul style="padding-left: 0px;" class="text-white">
+                            <li>1 hour free parking on Bridge Street (must register vehicle at Pay & Display).</li>
+                            <li>2 hours free parking in Lidl Car Park.</li>
+                            <li>Free parking on side street (except between the hours of 11am-12pm).</li>
+                        </ul>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Pristine Laser Clinic</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							<!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> -->
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="mailto:kajal@pristinelaserclinic.co.uk">Help</a>
-                                <a href="faqs.html">FAQs</a>
-                            </div>
-                        </div>
-                    </div>
-        </div> 
+        </div>
         <!-- Footer End -->
 
 

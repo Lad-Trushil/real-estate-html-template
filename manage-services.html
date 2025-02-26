@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Services - Pristine Laser Clinic</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://www.gstatic.com/ https://apis.google.com/ https://www.gstatic.com/_/mss/boq-identity/ https://accounts.google.com/"></head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Manage Services</h1>
+            <div>
+                <span id="userEmail" class="me-3"></span>
+                <div id="loginForm" style="display: none;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Login Required</h5>
+                            <p class="card-text">Please sign in with your Google account to continue.</p>
+                            <button id="googleLoginBtn" class="btn btn-primary">
+                                <img src="img/google-icon-logo-png-transparent.png" alt="Google" style="height: 20px; margin-right: 10px;">
+                                Sign in with Google
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="btn btn-danger btn-sm" style="display: none;">Logout</button>
+            </div>
+        </div>
+        
+        <!-- Content will be shown after authentication -->
+        <div id="content" style="display: none;">
+            <!-- Add New Service Button -->
+            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#serviceModal">
+                Add New Service
+            </button>
+
+            <!-- Service Modal -->
+            <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="serviceModalLabel">Add New Service</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="serviceForm">
+                                <div class="mb-3">
+                                    <label for="serviceTitle" class="form-label">Service Title</label>
+                                    <input type="text" class="form-control" id="serviceTitle" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="serviceArea" class="form-label">Service Area</label>
+                                    <select class="form-select" id="serviceArea" required>
+                                        <option value="Face">Face</option>
+                                        <option value="Body">Body</option>
+                                        <option value="Custom Packages">Custom Packages</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Gender</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male" required>
+                                        <label class="form-check-label" for="genderMale">Male</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female" required>
+                                        <label class="form-check-label" for="genderFemale">Female</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Session Prices</label>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="price1Session" class="form-label">1 Session</label>
+                                            <input type="number" class="form-control" id="price1Session" step="0.01" required>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="price3Sessions" class="form-label">3 Sessions</label>
+                                            <input type="number" class="form-control" id="price3Sessions" step="0.01" required>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="price6Sessions" class="form-label">6 Sessions</label>
+                                            <input type="number" class="form-control" id="price6Sessions" step="0.01" required>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="price8Sessions" class="form-label">8 Sessions</label>
+                                            <input type="number" class="form-control" id="price8Sessions" step="0.01" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="serviceImage" class="form-label">Service Image</label>
+                                    <input type="file" class="form-control" id="serviceImage" accept="image/*">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Service</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services List -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Existing Services</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Area</th>
+                                <th>Gender</th>
+                                <th>Session Prices</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="servicesList">
+                            <!-- Services will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { 
+            getFirestore,
+            collection,
+            getDocs,
+            addDoc,
+            updateDoc,
+            deleteDoc,
+            doc,
+            getDoc,
+            setDoc,
+            query,
+            where
+        } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { 
+            getAuth, 
+            GoogleAuthProvider, 
+            signInWithPopup,
+            signOut
+        } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+    
+        const firebaseConfig = {
+            apiKey: "AIzaSyCOapemIrapxhCd3jy4P8S79Lay2Mc7IKc",
+            authDomain: "plcnew-fd208.firebaseapp.com",
+            projectId: "plcnew-fd208",
+            storageBucket: "plcnew-fd208.appspot.com",
+            messagingSenderId: "138976177389",
+            appId: "1:138976177389:web:d4f9fd4b0759b05482b0e4",
+            measurementId: "G-KXWPX34M7P"
+        };
+    
+        // Initialize Firebase services
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+        const storage = getStorage(app);
+        
+        // Configure Google Auth provider
+        const provider = new GoogleAuthProvider();
+        provider.addScope('email');
+        provider.addScope('profile');
+        provider.setCustomParameters({
+            prompt: 'select_account',
+            login_hint: 'kajal@pristinelaserclinic.co.uk'
+        });
+    
+        // Show login form on page load
+        const loginForm = document.getElementById('loginForm');
+        if (loginForm) loginForm.style.display = 'block';
+    
+        // Handle login
+        document.getElementById('googleLoginBtn').addEventListener('click', async () => {
+            try {
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                checkAuthorization(user);
+            } catch (error) {
+                console.error('Login failed:', error);
+                alert('Login failed. Please try again.');
+            }
+        });
+    
+        // Handle logout
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                window.location.href = 'index.html';
+            });
+        });
+    
+        // Check user authorization
+        function checkAuthorization(user) {
+            if (user.email === 'kajal@pristinelaserclinic.co.uk') {
+                const userEmail = document.getElementById('userEmail');
+                const loginForm = document.getElementById('loginForm');
+                const logoutBtn = document.getElementById('logoutBtn');
+                const content = document.getElementById('content');
+                
+                if (userEmail) userEmail.textContent = user.email;
+                if (loginForm) loginForm.style.display = 'none';
+                if (logoutBtn) logoutBtn.style.display = 'inline-block';
+                if (content) content.style.display = 'block';
+                loadServices();
+            } else {
+                signOut(auth).then(() => {
+                    alert('You are not authorized to access this page.');
+                    window.location.href = 'index.html';
+                });
+            }
+        }
+    
+        // Load existing services
+        async function loadServices() {
+            const servicesList = document.getElementById('servicesList');
+            while (servicesList.firstChild) {
+                servicesList.removeChild(servicesList.firstChild);
+            }
+    
+            try {
+                const querySnapshot = await getDocs(collection(db, 'services'));
+                querySnapshot.forEach(doc => {
+                    const service = doc.data();
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${service.title}</td>
+                        <td>${service.area}</td>
+                        <td>${service.gender}</td>
+                        <td>
+                            <div>1 Session: £${service.sessionPrices.session1}</div>
+                            <div>3 Sessions: £${service.sessionPrices.session3}</div>
+                            <div>6 Sessions: £${service.sessionPrices.session6}</div>
+                            <div>8 Sessions: £${service.sessionPrices.session8}</div>
+                        </td>
+                        <td>
+                            ${service.imageUrl ? `<img src="${service.imageUrl}" alt="${service.title}" style="width: 50px; height: 50px;">` : ''}
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-warning edit-btn" data-id="${doc.id}">Edit</button>
+                            <button class="btn btn-sm btn-danger delete-btn" data-id="${doc.id}">Delete</button>
+                        </td>
+                    `;
+                    servicesList.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error loading services: ', error);
+                alert('Error loading services: ' + error.message);
+            }
+        }
+    
+        // Service Form Submission
+        document.getElementById('serviceForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            try {
+                const serviceTitle = document.getElementById('serviceTitle').value.trim();
+                const serviceArea = document.getElementById('serviceArea').value;
+                const gender = document.querySelector('input[name="gender"]:checked').value;
+                const price1Session = parseFloat(document.getElementById('price1Session').value);
+                const price3Sessions = parseFloat(document.getElementById('price3Sessions').value);
+                const price6Sessions = parseFloat(document.getElementById('price6Sessions').value);
+                const price8Sessions = parseFloat(document.getElementById('price8Sessions').value);
+                const serviceImage = document.getElementById('serviceImage').files[0];
+        
+                let imageUrl = '';
+        
+                if (serviceImage) {
+                    // Ensure the user is authenticated
+                    if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
+                        await gapi.auth2.getAuthInstance().signIn();
+                    }
+        
+                    const fileMetadata = {
+                        'name': serviceImage.name
+                    };
+                    const media = {
+                        mimeType: serviceImage.type,
+                        body: serviceImage
+                    };
+                    const response = await gapi.client.drive.files.create({
+                        resource: fileMetadata,
+                        media: media,
+                        fields: 'id'
+                    });
+                    const fileId = response.result.id;
+                    imageUrl = `https://drive.google.com/uc?id=${fileId}`;
+                }
+        
+                const service = {
+                    title: serviceTitle,
+                    area: serviceArea,
+                    gender: gender,
+                    sessionPrices: {
+                        session1: price1Session,
+                        session3: price3Sessions,
+                        session6: price6Sessions,
+                        session8: price8Sessions
+                    },
+                    imageUrl: imageUrl
+                };
+        
+                const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+                const isEdit = document.getElementById('serviceForm').dataset.editId;
+                
+                if (isEdit) {
+                    await updateDoc(doc(db, 'services', isEdit), service);
+                    alert('Service updated successfully!');
+                } else {
+                    await addDoc(collection(db, 'services'), service);
+                    alert('Service added successfully!');
+                }
+                
+                modal.hide();
+                loadServices();
+                resetForm();
+            } catch (error) {
+                console.error('Error adding service: ', error);
+                alert('Error adding service');
+            }
+        });
+    
+        // Add event listeners for edit/delete buttons
+        document.addEventListener('click', async (e) => {
+            if (e.target.classList.contains('edit-btn')) {
+                const id = e.target.dataset.id;
+                await editService(id);
+            } else if (e.target.classList.contains('delete-btn')) {
+                const id = e.target.dataset.id;
+                if (confirm('Are you sure you want to delete this service?')) {
+                    try {
+                        await deleteDoc(doc(db, 'services', id));
+                        loadServices();
+                    } catch (error) {
+                        console.error('Error deleting service: ', error);
+                        alert('Error deleting service');
+                    }
+                }
+            }
+        });
+    
+        // Edit service
+        async function editService(id) {
+            try {
+                const docRef = doc(db, 'services', id);
+                const docSnap = await getDoc(docRef);
+                
+                if (docSnap.exists()) {
+                    const service = docSnap.data();
+                    
+                    // Populate form fields
+                    document.getElementById('serviceTitle').value = service.title;
+                    document.getElementById('serviceArea').value = service.area;
+                    document.querySelector(`input[name="gender"][value="${service.gender}"]`).checked = true;
+                    document.getElementById('price1Session').value = service.sessionPrices.session1;
+                    document.getElementById('price3Sessions').value = service.sessionPrices.session3;
+                    document.getElementById('price6Sessions').value = service.sessionPrices.session6;
+                    document.getElementById('price8Sessions').value = service.sessionPrices.session8;
+                    
+                    // Set form to edit mode
+                    document.getElementById('serviceForm').dataset.editId = id;
+                    
+                    // Show modal
+                    const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+                    modal.show();
+                } else {
+                    alert('Service not found!');
+                }
+            } catch (error) {
+                console.error('Error editing service: ', error);
+                alert('Error editing service');
+            }
+        }
+    
+        // Reset form to initial state
+        function resetForm() {
+            document.getElementById('serviceForm').reset();
+            delete document.getElementById('serviceForm').dataset.editId;
+        }
+    
+        // Delete service
+        async function deleteService(id) {
+            if (confirm('Are you sure you want to delete this service?')) {
+                try {
+                    await deleteDoc(doc(db, 'services', id));
+                    loadServices();
+                } catch (error) {
+                    console.error('Error deleting service: ', error);
+                    alert('Error deleting service');
+                }
+            }
+        }
+    
+        // Load Google API client library
+        function loadGapiClient() {
+            gapi.load('client:auth2', initGapiClient);
+        }
+    
+        // Initialize Google API client library
+        async function initGapiClient() {
+            await gapi.client.init({
+                apiKey: 'YOUR_API_KEY',
+                clientId: 'YOUR_CLIENT_ID',
+                discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
+                scope: 'https://www.googleapis.com/auth/drive.file'
+            });
+    
+            // Sign in the user if they are not already signed in
+            if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
+                await gapi.auth2.getAuthInstance().signIn();
+            }
+        }
+    
+        // Load Google API client library on page load
+        window.onload = loadGapiClient;
+    </script>
+</body>
+</html>

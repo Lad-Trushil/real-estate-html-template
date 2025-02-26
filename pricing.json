@@ -1,0 +1,2290 @@
+{
+  "women": {
+    "face": [
+      {
+        "part_name": "Full Head",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 100
+          },
+          {
+            "session": 3,
+            "price": 300
+          },
+          {
+            "session": 6,
+            "price": 600
+          },
+          {
+            "session": 8,
+            "price": 8
+          }
+        ]
+      },
+      {
+        "part_name": "Full Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 70
+          },
+          {
+            "session": 3,
+            "price": 210
+          },
+          {
+            "session": 6,
+            "price": 420
+          },
+          {
+            "session": 8,
+            "price": 560
+          }
+        ]
+      },
+      {
+        "part_name": "Half Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 60
+          },
+          {
+            "session": 3,
+            "price": 180
+          },
+          {
+            "session": 6,
+            "price": 360
+          },
+          {
+            "session": 8,
+            "price": 480
+          }
+        ]
+      },
+      {
+        "part_name": "Neck (front)",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Neck (back)",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Forehead",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Lip",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Chin",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Extended Chin",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Jawline",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Cheeks",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Beard Line",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Sides of Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Monobrow",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 30
+          },
+          {
+            "session": 3,
+            "price": 90
+          },
+          {
+            "session": 6,
+            "price": 180
+          },
+          {
+            "session": 8,
+            "price": 240
+          }
+        ]
+      },
+      {
+        "part_name": "Nose",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Ears",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      }
+    ],
+    "body": [
+      {
+        "part_name": "Full Body",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 500
+          },
+          {
+            "session": 3,
+            "price": 1500
+          },
+          {
+            "session": 6,
+            "price": 3000
+          },
+          {
+            "session": 8,
+            "price": 4000
+          }
+        ]
+      },
+      {
+        "part_name": "Full Legs",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 140
+          },
+          {
+            "session": 3,
+            "price": 420
+          },
+          {
+            "session": 6,
+            "price": 840
+          },
+          {
+            "session": 8,
+            "price": 1120
+          }
+        ]
+      },
+      {
+        "part_name": "Lower Legs",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Legs",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 90
+          },
+          {
+            "session": 3,
+            "price": 270
+          },
+          {
+            "session": 6,
+            "price": 540
+          },
+          {
+            "session": 8,
+            "price": 720
+          }
+        ]
+      },
+      {
+        "part_name": "Knees",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 50
+          },
+          {
+            "session": 3,
+            "price": 150
+          },
+          {
+            "session": 6,
+            "price": 300
+          },
+          {
+            "session": 8,
+            "price": 400
+          }
+        ]
+      },
+      {
+        "part_name": "Buttocks",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Buttocks incl. Peri Anal",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 85
+          },
+          {
+            "session": 3,
+            "price": 255
+          },
+          {
+            "session": 6,
+            "price": 510
+          },
+          {
+            "session": 8,
+            "price": 680
+          }
+        ]
+      },
+      {
+        "part_name": "Any Bikini incl. Peri Anal",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 70
+          },
+          {
+            "session": 3,
+            "price": 210
+          },
+          {
+            "session": 6,
+            "price": 420
+          },
+          {
+            "session": 8,
+            "price": 560
+          }
+        ]
+      },
+      {
+        "part_name": "Bikini Line",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Navel Line",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Cleavage",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Chest",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Abdomen",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 70
+          },
+          {
+            "session": 3,
+            "price": 210
+          },
+          {
+            "session": 6,
+            "price": 420
+          },
+          {
+            "session": 8,
+            "price": 560
+          }
+        ]
+      },
+      {
+        "part_name": "Full Front",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 110
+          },
+          {
+            "session": 3,
+            "price": 330
+          },
+          {
+            "session": 6,
+            "price": 660
+          },
+          {
+            "session": 8,
+            "price": 880
+          }
+        ]
+      },
+      {
+        "part_name": "Full Back",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 100
+          },
+          {
+            "session": 3,
+            "price": 300
+          },
+          {
+            "session": 6,
+            "price": 600
+          },
+          {
+            "session": 8,
+            "price": 800
+          }
+        ]
+      },
+      {
+        "part_name": "Lower Back",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 70
+          },
+          {
+            "session": 3,
+            "price": 210
+          },
+          {
+            "session": 6,
+            "price": 420
+          },
+          {
+            "session": 8,
+            "price": 560
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Back",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 60
+          },
+          {
+            "session": 3,
+            "price": 180
+          },
+          {
+            "session": 6,
+            "price": 360
+          },
+          {
+            "session": 8,
+            "price": 480
+          }
+        ]
+      },
+      {
+        "part_name": "Full Arms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 110
+          },
+          {
+            "session": 3,
+            "price": 330
+          },
+          {
+            "session": 6,
+            "price": 660
+          },
+          {
+            "session": 8,
+            "price": 880
+          }
+        ]
+      },
+      {
+        "part_name": "Forearms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 70
+          },
+          {
+            "session": 3,
+            "price": 210
+          },
+          {
+            "session": 6,
+            "price": 420
+          },
+          {
+            "session": 8,
+            "price": 560
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Arms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 70
+          },
+          {
+            "session": 3,
+            "price": 210
+          },
+          {
+            "session": 6,
+            "price": 420
+          },
+          {
+            "session": 8,
+            "price": 560
+          }
+        ]
+      },
+      {
+        "part_name": "Underarms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Nipples",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 90
+          },
+          {
+            "session": 6,
+            "price": 180
+          },
+          {
+            "session": 8,
+            "price": 240
+          }
+        ]
+      },
+      {
+        "part_name": "Hands & Fingers",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Feet & Toes",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 90
+          },
+          {
+            "session": 6,
+            "price": 180
+          },
+          {
+            "session": 8,
+            "price": 240
+          }
+        ]
+      }
+    ],
+    "custom_packages": [
+      {
+        "part_name": "Bikini & Underarms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 90
+          },
+          {
+            "session": 3,
+            "price": 270
+          },
+          {
+            "session": 6,
+            "price": 540
+          },
+          {
+            "session": 8,
+            "price": 720
+          }
+        ]
+      },
+      {
+        "part_name": "Full Legs, Bikini, Underarms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 210
+          },
+          {
+            "session": 3,
+            "price": 630
+          },
+          {
+            "session": 6,
+            "price": 1260
+          },
+          {
+            "session": 8,
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "part_name": "Lower Legs, Bikini, Underarms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 150
+          },
+          {
+            "session": 3,
+            "price": 450
+          },
+          {
+            "session": 6,
+            "price": 900
+          },
+          {
+            "session": 8,
+            "price": 1200
+          }
+        ]
+      },
+      {
+        "part_name": "Chest, Abdomen, Full Back, Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Chest & Abdomen",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 110
+          },
+          {
+            "session": 3,
+            "price": 330
+          },
+          {
+            "session": 6,
+            "price": 660
+          },
+          {
+            "session": 8,
+            "price": 880
+          }
+        ]
+      },
+      {
+        "part_name": "Chest & Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Arms & Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Full Back & Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Lip & Chin",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 50
+          },
+          {
+            "session": 3,
+            "price": 150
+          },
+          {
+            "session": 6,
+            "price": 300
+          },
+          {
+            "session": 8,
+            "price": 400
+          }
+        ]
+      },
+      {
+        "part_name": "Lip, Chin, Sides of Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 60
+          },
+          {
+            "session": 3,
+            "price": 180
+          },
+          {
+            "session": 6,
+            "price": 360
+          },
+          {
+            "session": 8,
+            "price": 480
+          }
+        ]
+      },
+      {
+        "part_name": "Full Face & Neck",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 85
+          },
+          {
+            "session": 3,
+            "price": 255
+          },
+          {
+            "session": 6,
+            "price": 510
+          },
+          {
+            "session": 8,
+            "price": 680
+          }
+        ]
+      },
+      {
+        "part_name": "Half Face & Neck",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 75
+          },
+          {
+            "session": 3,
+            "price": 225
+          },
+          {
+            "session": 6,
+            "price": 450
+          },
+          {
+            "session": 8,
+            "price": 600
+          }
+        ]
+      },
+      {
+        "part_name": "Full Body & Full Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 450
+          },
+          {
+            "session": 3,
+            "price": 1350
+          },
+          {
+            "session": 6,
+            "price": 2700
+          },
+          {
+            "session": 8,
+            "price": 3600
+          }
+        ]
+      }
+    ]
+  },
+  "men": {
+    "face": [
+      {
+        "part_name": "Full Head",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 100
+          },
+          {
+            "session": 3,
+            "price": 300
+          },
+          {
+            "session": 6,
+            "price": 600
+          },
+          {
+            "session": 8,
+            "price": 800
+          }
+        ]
+      },
+      {
+        "part_name": "Full Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Half Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 60
+          },
+          {
+            "session": 3,
+            "price": 180
+          },
+          {
+            "session": 6,
+            "price": 360
+          },
+          {
+            "session": 8,
+            "price": 480
+          }
+        ]
+      },
+      {
+        "part_name": "Neck (front)",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Neck (back)",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Forehead",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Lip",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Chin",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Extended Chin",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Jawline",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Cheeks",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Beard Line",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Sides of Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Monobrow",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 30
+          },
+          {
+            "session": 3,
+            "price": 90
+          },
+          {
+            "session": 6,
+            "price": 180
+          },
+          {
+            "session": 8,
+            "price": 240
+          }
+        ]
+      },
+      {
+        "part_name": "Nose",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Ears",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      }
+    ],
+    "body": [
+      {
+        "part_name": "Full Body",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 500
+          },
+          {
+            "session": 3,
+            "price": 1500
+          },
+          {
+            "session": 6,
+            "price": 3000
+          },
+          {
+            "session": 8,
+            "price": 4000
+          }
+        ]
+      },
+      {
+        "part_name": "Full Legs",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 140
+          },
+          {
+            "session": 3,
+            "price": 420
+          },
+          {
+            "session": 6,
+            "price": 840
+          },
+          {
+            "session": 8,
+            "price": 1120
+          }
+        ]
+      },
+      {
+        "part_name": "Lower Legs",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Legs",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 90
+          },
+          {
+            "session": 3,
+            "price": 270
+          },
+          {
+            "session": 6,
+            "price": 540
+          },
+          {
+            "session": 8,
+            "price": 720
+          }
+        ]
+      },
+      {
+        "part_name": "Knees",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 50
+          },
+          {
+            "session": 3,
+            "price": 150
+          },
+          {
+            "session": 6,
+            "price": 300
+          },
+          {
+            "session": 8,
+            "price": 400
+          }
+        ]
+      },
+      {
+        "part_name": "Buttocks",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Buttocks incl. Peri Anal",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 85
+          },
+          {
+            "session": 3,
+            "price": 255
+          },
+          {
+            "session": 6,
+            "price": 510
+          },
+          {
+            "session": 8,
+            "price": 680
+          }
+        ]
+      },
+      {
+        "part_name": "Any Bikini incl. Peri Anal",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Bikini Line",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Navel Line",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 105
+          },
+          {
+            "session": 6,
+            "price": 210
+          },
+          {
+            "session": 8,
+            "price": 280
+          }
+        ]
+      },
+      {
+        "part_name": "Cleavage",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Chest",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Abdomen",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 70
+          },
+          {
+            "session": 3,
+            "price": 210
+          },
+          {
+            "session": 6,
+            "price": 420
+          },
+          {
+            "session": 8,
+            "price": 560
+          }
+        ]
+      },
+      {
+        "part_name": "Full Front",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 110
+          },
+          {
+            "session": 3,
+            "price": 330
+          },
+          {
+            "session": 6,
+            "price": 660
+          },
+          {
+            "session": 8,
+            "price": 880
+          }
+        ]
+      },
+      {
+        "part_name": "Full Back",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 100
+          },
+          {
+            "session": 3,
+            "price": 300
+          },
+          {
+            "session": 6,
+            "price": 600
+          },
+          {
+            "session": 8,
+            "price": 800
+          }
+        ]
+      },
+      {
+        "part_name": "Lower Back",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 70
+          },
+          {
+            "session": 3,
+            "price": 210
+          },
+          {
+            "session": 6,
+            "price": 420
+          },
+          {
+            "session": 8,
+            "price": 560
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Back",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 90
+          },
+          {
+            "session": 3,
+            "price": 270
+          },
+          {
+            "session": 6,
+            "price": 540
+          },
+          {
+            "session": 8,
+            "price": 720
+          }
+        ]
+      },
+      {
+        "part_name": "Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 70
+          },
+          {
+            "session": 3,
+            "price": 210
+          },
+          {
+            "session": 6,
+            "price": 420
+          },
+          {
+            "session": 8,
+            "price": 560
+          }
+        ]
+      },
+      {
+        "part_name": "Full Arms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 130
+          },
+          {
+            "session": 3,
+            "price": 390
+          },
+          {
+            "session": 6,
+            "price": 780
+          },
+          {
+            "session": 8,
+            "price": 1040
+          }
+        ]
+      },
+      {
+        "part_name": "Forearms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Arms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 80
+          },
+          {
+            "session": 3,
+            "price": 240
+          },
+          {
+            "session": 6,
+            "price": 480
+          },
+          {
+            "session": 8,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "part_name": "Underarms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Nipples",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 35
+          },
+          {
+            "session": 3,
+            "price": 90
+          },
+          {
+            "session": 6,
+            "price": 180
+          },
+          {
+            "session": 8,
+            "price": 240
+          }
+        ]
+      },
+      {
+        "part_name": "Hands & Fingers",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 120
+          },
+          {
+            "session": 6,
+            "price": 240
+          },
+          {
+            "session": 8,
+            "price": 320
+          }
+        ]
+      },
+      {
+        "part_name": "Feet & Toes",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 40
+          },
+          {
+            "session": 3,
+            "price": 90
+          },
+          {
+            "session": 6,
+            "price": 180
+          },
+          {
+            "session": 8,
+            "price": 240
+          }
+        ]
+      }
+    ],
+    "custom_packages": [
+      {
+        "part_name": "Bikini & Underarms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Full Legs, Bikini, Underarms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Lower Legs, Bikini, Underarms",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Chest, Abdomen, Full Back, Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 260
+          },
+          {
+            "session": 3,
+            "price": 780
+          },
+          {
+            "session": 6,
+            "price": 1560
+          },
+          {
+            "session": 8,
+            "price": 2080
+          }
+        ]
+      },
+      {
+        "part_name": "Chest & Abdomen",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 130
+          },
+          {
+            "session": 3,
+            "price": 390
+          },
+          {
+            "session": 6,
+            "price": 780
+          },
+          {
+            "session": 8,
+            "price": 1040
+          }
+        ]
+      },
+      {
+        "part_name": "Chest & Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 120
+          },
+          {
+            "session": 3,
+            "price": 360
+          },
+          {
+            "session": 6,
+            "price": 720
+          },
+          {
+            "session": 8,
+            "price": 960
+          }
+        ]
+      },
+      {
+        "part_name": "Upper Arms & Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 130
+          },
+          {
+            "session": 3,
+            "price": 390
+          },
+          {
+            "session": 6,
+            "price": 780
+          },
+          {
+            "session": 8,
+            "price": 1040
+          }
+        ]
+      },
+      {
+        "part_name": "Full Back & Shoulders",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 140
+          },
+          {
+            "session": 3,
+            "price": 420
+          },
+          {
+            "session": 6,
+            "price": 840
+          },
+          {
+            "session": 8,
+            "price": 1120
+          }
+        ]
+      },
+      {
+        "part_name": "Lip & Chin",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Lip, Chin, Sides of Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 0
+          },
+          {
+            "session": 3,
+            "price": 0
+          },
+          {
+            "session": 6,
+            "price": 0
+          },
+          {
+            "session": 8,
+            "price": 0
+          }
+        ]
+      },
+      {
+        "part_name": "Full Face & Neck",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 95
+          },
+          {
+            "session": 3,
+            "price": 285
+          },
+          {
+            "session": 6,
+            "price": 570
+          },
+          {
+            "session": 8,
+            "price": 760
+          }
+        ]
+      },
+      {
+        "part_name": "Half Face & Neck",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 85
+          },
+          {
+            "session": 3,
+            "price": 255
+          },
+          {
+            "session": 6,
+            "price": 510
+          },
+          {
+            "session": 8,
+            "price": 680
+          }
+        ]
+      },
+      {
+        "part_name": "Full Body & Full Face",
+        "sessions": [
+          {
+            "session": 1,
+            "price": 550
+          },
+          {
+            "session": 3,
+            "price": 1650
+          },
+          {
+            "session": 6,
+            "price": 3300
+          },
+          {
+            "session": 8,
+            "price": 4400
+          }
+        ]
+      }
+    ]
+  }
+}
