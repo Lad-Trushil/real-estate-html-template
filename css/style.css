@@ -32,6 +32,11 @@
 p{
     color: #000;
 }
+
+.title{
+    font-size: 30px;
+    color: #0d8a81;
+}
 /*** Button ***/
 .btn {
     transition: .5s;
@@ -90,18 +95,18 @@ p{
     color: #fff;
     margin-top: -100px;
     position: relative;
-  }
-  
-  .hero-slider {
+}
+
+.hero-slider {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-  }
-  
-  .hero-slide {
+}
+
+.hero-slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -111,48 +116,92 @@ p{
     background-position: center;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-  }
-  
-  .hero-slide.active {
+}
+
+.hero-slide.active {
     opacity: 1;
-  }
-  
-  .hero-content {
+}
+
+.hero-content {
     position: relative;
     z-index: 1;
     text-align: center;
     padding: 20px;
     width: 100%;
-  }
-  
-  .hero-title {
+}
+
+.hero-title {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
-  }
-  
-  .hero-text {
-    font-size: 18px;
-    margin-bottom: 40px;
-  }
-  
-  .hero-button {
-    background-color: #333;
+}
+
+.scroll-down-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
     color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
     cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .hero-button:hover {
-    background-color: #555;
-  }
-  
-  .hero-button .badge {
-    margin-left: 10px;
-  }
+}
+
+.scroll-down-button i {
+    animation: scroll-down 2s infinite;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-slide {
+        height: 50vh;
+    }
+
+    .hero-content {
+        bottom: 10px;
+    }
+
+    .scroll-down-button {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-slide {
+        height: 35vh;
+        margin-top: 100px;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .hero-slider{
+        height: 50vh;
+    }
+
+    .hero-section {
+        height: 300px;
+    }
+
+    .hero-content {
+        display: none;
+    }
+
+    .scroll-down-button {
+        font-size: 16px;
+    }
+}
+
+@keyframes scroll-down {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .btn-square,
 .btn-sm-square,
 .btn-lg-square {
@@ -207,7 +256,7 @@ p{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255,255, 255, 0.8));
     z-index: -1;
 }
 
@@ -331,7 +380,18 @@ p{
         opacity: 1;
     }
 }
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 100 !important;
+    color: var(--primary);
+}
 
+.glass-effect {
+    background: linear-gradient(135deg,rgba(255, 255, 255, 1), rgba(157, 246, 239, 0.5), rgba(255, 255, 255, 1));
+    backdrop-filter: blur(50px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+}
 
 /*** Header ***/
 @media (min-width: 992px) {
@@ -396,19 +456,9 @@ p{
 .about-img img {
     position: relative;
     z-index: 2;
+    border-radius: 10px;
 }
 
-.about-img::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    transform: skew(20deg);
-    z-index: 1;
-}
 
 
 /*** Category ***/
@@ -514,7 +564,6 @@ p{
 
 /*** Team ***/
 .team-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
     transition: .5s;
 }
 
@@ -670,18 +719,7 @@ p{
     justify-content: center;
 }
 
-.services-carousel {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Increased height */
-}
 
-.services-carousel-inner {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
-}
 .service-card {
     width: calc(25% - 20px);
 
@@ -762,18 +800,7 @@ p{
     background-color: #f1f1f1;
     cursor: pointer;
 }
-.add-to-cart-btn button {
-    width: 40px;
-    overflow: hidden;
-    white-space: nowrap;
-}
-.add-to-cart-btn button:hover {
-    width: 120px;
-}
-.add-to-cart-btn button:hover::after {
-    content: " Add to cart";
-    margin-left: 5px;
-}
+
 .property-item {
     position: relative;
 }
@@ -781,19 +808,10 @@ p{
     width: 100%;
     height: auto;
 }
-.add-to-cart-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-.property-item:hover .add-to-cart-btn {
-    display: block;
-}
+
 .service-card-title {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: normal;
     margin-bottom: 10px;
 }
 
@@ -816,29 +834,59 @@ p{
     backdrop-filter: blur(10px);
 }
 
+.services-carousel-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.services-carousel {
+    display: flex;
+    align-items: center;
+}
+
+.services-carousel-inner {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* For Firefox */
+}
+
+.services-carousel-inner::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.service-card {
+    margin: 5px;
+    padding: 0px;
+    width: fit-content;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
 .services-carousel-prev, .services-carousel-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    position: absolute;
     color: #0E2E50;
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
     padding: 10px;
     font-size: 30px;
     cursor: pointer;
-    border-radius: 50%; /* Make the button a circle */
-    width: 50px; /* Adjusted width to make the button a circle */
-    height: 50px; /* Adjusted height to make the button a circle */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(10px);
 }
 
-.services-carousel-container{
-    overflow: hidden;
-}
 .services-carousel-prev {
     left: 10px;
 }
@@ -872,3 +920,36 @@ p{
         transform: translateY(0);
     }
 }
+
+.cart-step {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateX(100%);
+    display: none;
+}
+
+.cart-step.active {
+    opacity: 1;
+    transform: translateX(0);
+    display: block;
+}
+
+@keyframes add-to-cart {
+    0% {
+        transform: scale(1);
+        background-color: #007bff;
+    }
+    50% {
+        transform: scale(1.2);
+        background-color: #28a745;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #007bff;
+    }
+}
+
+.added-to-cart {
+    animation: add-to-cart 0.5s ease-in-out;
+}
+

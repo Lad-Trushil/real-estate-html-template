@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +54,7 @@
                     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="border-radius: 30px;border:none;">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse navbar-collapse-mobile" id="navbarCollapse">
+                <div class="collapse navbar-collapse navbar-collapse-mobile bg-white p-3" id="navbarCollapse">
                     <div class="navbar-nav ms-auto" style="gap: 30px;">
                         <!-- <a href="index.html" class="nav-item nav-link active">Home</a>-->
                         <a href="about.html" class="nav-item nav-link">About</a>
@@ -63,18 +62,18 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                                 aria-expanded="false">Laser</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="laser-pricing.html" class="dropdown-item bg-white mb-1 shadow"
-                                    style="border-radius: 50px!important;">Men</a>
-                                <a href="property-type.html" class="dropdown-item bg-white shadow"
-                                    style="border-radius: 50px!important;">Women</a>
+                                <a href="laser-pricing.html" class="dropdown-item bg-white mb-1 text-primary"
+                                    style="border-radius: 10px!important;">Men</a>
+                                <a href="property-type.html" class="dropdown-item bg-white text-primary"
+                                    style="border-radius: 10px!important;">Women</a>
                             </div>
                         </div>
                         <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>                    
-                    <a href="" class="btn btn-primary py-2 px-4"><i class="fa fa-calendar-alt me-2"></i> Book Consultation <span
-                        class="badge bg-dark">Free</span></a>
-                </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>                        
+                    </div>             
+                </div>                       
+                <a href="https://bookings.gettimely.com/pristinelaserclinic/bb/book" class="btn btn-primary py-2 px-4" target="_blank"><i class="fa fa-calendar-alt me-2"></i> Book Consultation <span
+                    class="badge bg-dark">Free</span></a>
             </nav>
         </div>
         <!-- Navbar End -->
@@ -82,23 +81,22 @@
         <!-- Hero Start -->
         <section class="hero-section">
             <div class="hero-slider">
+                <div class="hero-slide active" style="background-image: url('img/Slider/2.png');"></div>
                 <div class="hero-slide" style="background-image: url('img/Slider/1.png');"></div>
-                <div class="hero-slide" style="background-image: url('img/Slider/2.png');"></div>
                 <div class="hero-slide" style="background-image: url('img/Slider/3.png');"></div>
             </div>
             <div class="hero-content">
                 <div class="backdrop"></div>
-                <p class="hero-title text-white">Experience the best laser hair removal services with our certified specialists.
-                </p>
+                <!-- <p class="hero-title text-white">Experience the best laser hair removal services with our certified specialists.</p> -->
                 <a href="#next-section" class="scroll-down-button">
-    <i class="fas fa-chevron-down"></i>
-</a>
-            </div>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div> 
         </section>
         <!-- Hero End -->
 
         <!-- Call to Action Start -->
-        <div class="container-xxl py-5 cta-background-gradient-animation" id="next-section">
+        <!-- <div class="container-xxl py-5 cta-background-gradient-animation" id="next-section">
             <div class="container">
                 <div class="bg-transparent rounded p-3">
                     <div class="bg-transparent rounded p-4">
@@ -161,7 +159,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Call to Action End -->
 
         <!-- Services List Start -->
@@ -173,87 +171,71 @@
                         <p class="w-50 text-center mx-auto">We offer a wide range of services to help you achieve your beauty goals.</p>
                     </div>
                 </div>
-                <div class="services-carousel">
-                    <div class="services-carousel-inner">
-                        <div class="service-card">
-                            <img src="img/new_services/Beardline.png" alt="Underarms">
-                            <div class="service-card-info">
-                                <h5 class="service-card-title">Beardline</h5>
-                            </div>
+                <div class="services-carousel-container">
+                    <div class="services-carousel">
+                        <div class="services-carousel-inner" id="servicesCarouselInner">
+                            <a href="./laser-pricing.html" class="service-card">
+                                <img src="img/new_services/Full Arms.png" alt="Abdomen">
+                                <div class="service-card-info">
+                                    <h5 class="service-card-title">Arms</h5>
+                                </div>
+                                <button class="service-card-button">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </a>
+                            <a href="./laser-pricing.html" class="service-card">
+                                <img src="img/new_services/Full Face.png" alt="Abdomen">
+                                <div class="service-card-info">
+                                    <h5 class="service-card-title">Face</h5>
+                                </div>
+                                <button class="service-card-button">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </a>
+                            <a href="./laser-pricing.html" class="service-card">
+                                <img src="img/new_services/Full Legs.png" alt="Abdomen">
+                                <div class="service-card-info">
+                                    <h5 class="service-card-title">Legs</h5>
+                                </div>
                             <button class="service-card-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                        <div class="service-card">
-                            <img src="img/new_services/Bikini.png" alt="Bikini">
-                            <div class="service-card-info">
-                                <h5 class="service-card-title">Bikini</h5>
-                            </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </a>
+                            <a href="./laser-pricing.html" class="service-card">
+                                <img src="img/new_services/Beard Line.png" alt="Abdomen">
+                                <div class="service-card-info">
+                                    <h5 class="service-card-title">Beard Line</h5>
+                                </div>
                             <button class="service-card-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                        <div class="service-card">
-                            <img src="img/new_services/Breast.png" alt="Breast">
-                            <div class="service-card-info">
-                                <h5 class="service-card-title">Breast</h5>
-                            </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </a>
+                            <a href="./laser-pricing.html" class="service-card">
+                                <img src="img/new_services/Full Back.png" alt="Abdomen">
+                                <div class="service-card-info">
+                                    <h5 class="service-card-title">Back</h5>
+                                </div>
                             <button class="service-card-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                        <div class="service-card">
-                            <img src="img/new_services/buttock.png" alt="Buttock">
-                            <div class="service-card-info">
-                                <h5 class="service-card-title">Buttock</h5>
-                            </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </a>
+                            <a href="./laser-pricing.html" class="service-card">
+                                <img src="img/new_services/Chin.png" alt="Abdomen">
+                                <div class="service-card-info">
+                                    <h5 class="service-card-title">Chin</h5>
+                                </div>
                             <button class="service-card-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </a>                            
                         </div>
-                        <div class="service-card">
-                            <img src="img/new_services/Cheeks.png" alt="Cheeks">
-                            <div class="service-card-info">
-                                <h5 class="service-card-title">Cheeks</h5>
-                            </div>
-                            <button class="service-card-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                        <div class="service-card">
-                            <img src="img/new_services/cheeks.png" alt="Cheeks">
-                            <div class="service-card-info">
-                                <h5 class="service-card-title">Cheeks</h5>
-                            </div>
-                            <button class="service-card-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                        <div class="service-card">
-                            <img src="img/new_services/chin.png" alt="chin">
-                            <div class="service-card-info">
-                                <h5 class="service-card-title">Chin</h5>
-                            </div>
-                            <button class="service-card-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                        <div class="service-card">
-                            <img src="img/new_services/eyebrows.png" alt="Eyebrows">
-                            <div class="service-card-info">
-                                <h5 class="service-card-title">Eyebrows</h5>
-                            </div>
-                            <button class="service-card-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
+                        <button class="services-carousel-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="services-carousel-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
-                    <button class="services-carousel-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="services-carousel-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
                 </div>
         </div>
         </div>
@@ -264,12 +246,11 @@
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-md-8 wow fadeIn" data-wow-delay="0.5s">
-                        <h1 class="mb-4" style="font-weight: 300;">National Award Winner</h1>
+                        <p class="mb-4 title">National Award Winner</p>
                         <p class="mb-4">Beauty and Skincare Awards UK for the Laser
                             Specialist of the Year 2024, along side prestigious qualifications in laser and light
                             treatments for hair removal and skin rejuvenation.</p>
-                        <a href="about.html" class="btn btn-white border" style="color: #000;border: 1px solid #000 !important;border-radius: 50px;">More About Me</a>
-
+                        <a href="about.html" class="btn btn-white border" style="color: #000;border: 1px solid #000 !important;border-radius: 50px;">Know More</a>
                         <div class="row row-cols-1 row-cols-md-4 g-4 mt-5">
                             <div class="col">
                                 <div class="card h-100 text-left border-0">
@@ -279,8 +260,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="col">
                                 <div class="card h-100 text-left border-0 border-start">
                                     <div class="card-body">
@@ -292,15 +271,13 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-md-4 wow fadeIn" data-wow-delay="0.1s">
                         <div class="team-item rounded overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="img/Kajal_close_picture_r.png" alt="">
-                                <div
-                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                <img class="img" src="img/gallery/Kajal_close_picture.png" alt="">
+                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
                                     <a class="btn btn-square mx-1"
                                         href="https://www.instagram.com/pristine_laser_clinic/"><i
                                             class="fab fa-instagram"></i></a>
@@ -311,16 +288,17 @@
                                 </div>
                             </div>
                             <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Kajal Patel</h5>
+                                <h5 class="mb-0">Kajal Patel</h5>
                                 <h6 class="mb-3">Laser Specialist</h5>
-
                             </div>
                         </div>
-                        <!-- <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                                <img class="img-fluid w-100" src="img/Kajal_close_picture.png">
-                            </div> -->
                     </div>
 
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+                        <div class="elfsight-app-6929479b-3dca-457f-bbe3-1212e98f89fa" data-elfsight-app-lazy></div>                    </div>
                 </div>
             </div>
         </div>
@@ -331,42 +309,36 @@
             <div class="row g-0 gx-5 align-items-end">
                 <div class="col-lg-12">
                     <div class="text-start mx-auto mb-5 wow slideInLeft text-center" data-wow-delay="0.1s">
-                        <h6 class="text-white bg-primary" style="display: inline-block; padding: 0 10px;">Our Gallery
-                        </h6>
-                        <h1 class="mb-3" style="font-weight: 200;">Our Work</h1>
+                        <h1 class="mb-3">Our Work</h1>
                         <p class="w-50 text-center mx-auto">Explore our gallery to see the results of our laser hair
                             removal treatments and the state-of-the-art facilities at our clinic.</p>
                     </div>
                 </div>
                 <div class="col-lg-12 wow fadeIn justify-content-center p-2 border" data-wow-delay="0.1s">
-                    <div class="row g-2">
+                    <div class="row g-2">                 
                         <div class="col-lg-4 col-md-6">
-                            <div class="row g-2">
-                                <div class="col-12">
-                                    <img src="img/gallery/laser-epilation-hair-removal-therapy.jpg"
-                                        class="img-fluid rounded" alt="Gallery Image 2">
-                                </div>
-                                <div class="col-12">
-                                    <img src="img/gallery/woman-cosmetology-studio-laser-hair-removal (1).jpg"
-                                        class="img-fluid rounded" alt="Gallery Image 3">
-                                </div>
-                            </div>
+                            <img src="img/gallery/Kajal with client working on forearm.png"
+                                class="img-fluid rounded w-100" alt="Kajal with client working on forearm">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <img src="img/gallery/laser-epilation-hair-removal-therapy (1).jpg"
-                                class="img-fluid rounded w-100" alt="Gallery Image 1">
+                            <img src="img/gallery/Kajal with client working on hand.png"
+                                class="img-fluid rounded w-100" alt="Kajal with client working on hand">
+                        </div>                          
+                        <div class="col-lg-4 col-md-6">
+                            <img src="img/gallery/Kajal with client working underarms.png"
+                                class="img-fluid rounded w-100" alt="Kajal with client working underarms">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <div class="row g-2">
-                                <div class="col-12">
-                                    <img src="img/gallery/woman-cosmetology-studio-laser-hair-removal.jpg"
-                                        class="img-fluid rounded" alt="Gallery Image 2">
-                                </div>
-                                <div class="col-12">
-                                    <img src="img/gallery/woman-getting-anticellulite-anti-fat-therapy.jpg"
-                                        class="img-fluid rounded" alt="Gallery Image 3">
-                                </div>
-                            </div>
+                            <img src="img/gallery/Kajal working on female client's forearms.png"
+                                class="img-fluid rounded w-100" alt="Kajal working on female client's forearms">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <img src="img/gallery/Pristine Laser Clinic Street View 1.png"
+                                class="img-fluid rounded w-100" alt="Pristine Laser Clinic Street View 1">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <img src="img/gallery/Pristine Laser Clinic Street View 2.jpg"
+                                class="img-fluid rounded w-100" alt="Pristine Laser Clinic Street View 1">
                         </div>
                     </div>
                 </div>
@@ -374,69 +346,22 @@
         </div>
         <!-- GallerServicesy List End -->
 
-
         <!-- Testimonial Start -->
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-start mx-auto mb-5 wow slideInLeft text-center" data-wow-delay="0.1s">
-                    <h6 class="text-white bg-primary" style="display: inline-block; padding: 0 10px;">Client Say's</h6>
-                    <h1 class="mb-3" style="font-weight: 200;">Testimonial</h1>
+                <div class="row">
+
+                <div class="col-12 data-wow-delay="0.1s">
+                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                <div class="elfsight-app-447d01fa-a5e6-4ea0-b791-9f0778e93eac" data-elfsight-app-lazy></div>
                 </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item bg-transparent rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <p>Kajal is so lovely and informative, felt completely comfortable and already seeing
-                                positive results! 6/6 sessions and hair is complete gone! So impressed!!!
-                            </p>
-                            <div class="d-flex align-items-center">
-                                <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-1.jpg"
-                                    style="width: 45px; height: 45px;">
-                                <div class="ps-3">
-                                    <h6 class="fw-bold mb-1">Gabrielle Zara Kai</h6>
-                                    <small>October 2024</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <p>I love my hair removal and I wished I had done it sooner !!!! I wear a short little dress
-                                or hot pants whenever I want !!! Go swimming without worrying about hair on my legs. My
-                                face is completely hair free so I can tie my hair up and not worry about how close I am
-                                to someone in the sunlight !!! It's just life changing!!!</p>
-                            <div class="d-flex align-items-center">
-                                <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-2.jpg"
-                                    style="width: 45px; height: 45px;">
-                                <div class="ps-3">
-                                    <h6 class="fw-bold mb-1">Surekha Patel</h6>
-                                    <small>September 2024</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <p>Kajal is amazing! Super professional and friendly. I have PCOS and had gotten laser done
-                                on my face before but I had noticed increased growth again. 6 sessions with her have
-                                been very effective. With PCOS eliminating growth completely is always a challenge but
-                                I’ve seen great results.</p>
-                            <div class="d-flex align-items-center">
-                                <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-3.jpg"
-                                    style="width: 45px; height: 45px;">
-                                <div class="ps-3">
-                                    <h6 class="fw-bold mb-1">Milli Samar</h6>
-                                    <small>September 2024</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="row g-5 mt-0 justify-content-center fadeIn"
                     style="gap: 10px;background-color: #FFEDDD; border-radius:70px;">
-                    <div class="col-2 mt-1 mb-1">
+                    <div class="col-6 col-md-2 mt-1 mb-1">
                         <img class="img-fluid rounded" src="img/google-reviews-logo.png" alt="Image 1">
                     </div>
-                    <div class="col-2 mt-1 mb-1">
+                    <div class="col-6 col-md-2 mt-1 mb-1">
                         <img class="img-fluid rounded" src="img/trustpilot_logo.png" alt="Image 2">
                     </div>
                 </div>
@@ -458,7 +383,7 @@
                 <div class="col-lg-4 wow fadeIn p-4 rounded text-center" data-wow-delay="0.5s">
                                 <p>1 Year Unlimited Laser Hair Removal</p>
                                 <h1 class="text-primary" style="font-weight: 200;">Face & Body For £394</h1>
-                                <a href="" class="btn btn-primary border py-3 px-4 me-2"
+                                <a href="" class="btn btn-primary border py-2 px-4 me-2"
                                     style="border-radius: 50px; position: relative;">
                                     Book Consultation
                                     <span class="badge bg-dark"
@@ -537,7 +462,7 @@
                         <a class="btn btn-link text-white" href="contact.html">Contact Us</a>
                         <a class="btn btn-link text-white" href="laser-pricing.html">Our Services</a>
                         <a class="btn btn-link text-white" href="faqs.html">FAQs</a>
-                        <a class="btn btn-link text-white" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white" href="PrivacyPolicy.html">Privacy Policy</a>
                         <a class="btn btn-link text-white" href="">Terms & Condition</a>
                     </div>
                     <div class="col-lg-3 col-md-6 text-white ">
@@ -577,7 +502,7 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 

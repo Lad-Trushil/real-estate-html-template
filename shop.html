@@ -49,11 +49,17 @@
                 <a href="index.html" class="navbar-brand logo">
                     <img src="img/Logo_rectangle.png" alt="Logo">
                 </a>
+                <button class="btn position-relative text-primary" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <i class="fa fa-shopping-bag"></i>
+                    <span id="cartItemCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        0
+                    </span>
+                </button>
                 <button type="button" class="navbar-toggler text-primary py-2 navbar-toggler-mobile"
                     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="border-radius: 30px;border:none;">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse navbar-collapse-mobile" id="navbarCollapse">
+                <div class="collapse navbar-collapse navbar-collapse-mobile bg-white p-3" id="navbarCollapse">
                     <div class="navbar-nav ms-auto" style="gap: 30px;">
                         <!-- <a href="index.html" class="nav-item nav-link active">Home</a>-->
                         <a href="about.html" class="nav-item nav-link">About</a>
@@ -61,23 +67,89 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                                 aria-expanded="false">Laser</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="laser-pricing.html" class="dropdown-item bg-white mb-1 shadow"
+                                <a href="laser-pricing.html" class="dropdown-item bg-white mb-1 shadow text-primary"
                                     style="border-radius: 50px!important;">Men</a>
-                                <a href="property-type.html" class="dropdown-item bg-white shadow"
+                                <a href="property-type.html" class="dropdown-item bg-white shadow text-primary"
                                     style="border-radius: 50px!important;">Women</a>
                             </div>
                         </div>
                         <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>                    
-                    <a href="" class="btn btn-primary py-2 px-4"><i class="fa fa-calendar-alt me-2"></i> Book Consultation <span
-                        class="badge bg-dark">Free</span></a>
-                </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>                        
+                    </div>             
+                </div>                       
+                <a href="" class="btn btn-primary py-2 px-4"><i class="fa fa-calendar-alt me-2"></i> Book Consultation <span
+                    class="badge bg-dark">Free</span></a>
             </nav>
         </div>
-        <!-- Navbar End -->
+        <!-- Navbar End --> 
 
-        <!-- Property List Start -->
+        <!-- Cart Modal -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true" style="z-index: 9999;top: 90px;">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content" style="border-radius: 20px;border:none;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cartModalLabel">Checkout - Step <span id="currentStep">1</span> of 3</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="progress" style="height: 5px;">
+                        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Step 1: Cart Items -->
+                        <div id="cartStep1" class="cart-step">
+                            <h6>Cart Items</h6>
+                            <div id="cartItems">
+                                <!-- Cart items will be displayed here -->   
+                            </div>   
+                            <div class="text-end">             
+                                <button class="btn btn-primary mt-3" onclick="showStep(2)">Next</button>
+                            </div>
+                        </div>
+                        <!-- Step 2: Customer Details -->
+                        <div id="cartStep2" class="cart-step">
+                            <h6>Please provide your contact details</h6>
+                            <div class="container">
+                                <div class="row">
+                                    <form id="customerDetailsForm">
+                                        <div class="col-12 mb-3">
+                                            <label for="customerName" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="customerName" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="customerPhone" class="form-label">Phone Number</label>
+                                            <input type="tel" class="form-control" id="customerPhone" required>
+                                        </div>            
+                                <div class="col-12 mb-3">
+                                    <label for="customerEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="customerEmail" required>
+                                </div>
+                            </div>
+                        </form>
+                            </div>
+                            <div class="text-end">
+                                <button class="btn btn-light mt-3" onclick="showStep(1)">Back</button>
+                                <button class="btn btn-primary mt-3" onclick="showStep(3)">Next</button>
+                            </div>
+                        </div>
+                        <!-- Step 3: Order Summary -->
+                        <div id="cartStep3" class="cart-step">
+                            <h6>Order Summary</h6>
+                            <div class="row" id="orderSummary">
+                                <!-- Order summary will be displayed here -->
+                            </div>
+                            <div id="paypal-button-container" class="mt-3"></div>
+                            <div class="text-end">
+                                <button class="btn btn-light mt-3" onclick="showStep(2)">Back</button>
+                                <!-- <button class="btn btn-success btn-md mt-3" style="border-radius:50px" id="payButton">Pay</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cart Modal End -->
+
+        <!-- List Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-0 gx-5 align-items-end">
@@ -90,433 +162,96 @@
                     <div class="col-lg-12 text-start text-lg-start wow slideInRight" data-wow-delay="0.1s">
                         <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
                             <li class="nav-item me-2">
-                                <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#tab-1" style="border-radius: 50px;">Products</a>
+                                <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#products" style="border-radius: 50px;">Products</a>
                             </li>
                             <li class="nav-item me-2">
-                                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2"  style="border-radius: 50px;">Vouchers</a>
+                                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#vouchers"  style="border-radius: 50px;">Vouchers</a>
                             </li>
-                            <!-- <li class="nav-item me-0">
-                                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-3">Custom</a>
-                            </li> -->
                         </ul>
                     </div>
                 </div>
                 <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-4">
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        <img src="img/ProductsVouchers/Aloe vera gel.png" alt="Aloe Vera Gel" class="service-image">
-                                        <div class="add-to-cart-btn" style="position: absolute; top: 10px; right: 10px;">
-                                            <button class="btn btn-primary" style="border-radius: 50px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 250%);">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div class="service-card-info" style="position: relative;">
-                                            <div class="p-0 pb-0">
-                                                <div class="d-flex">
-                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">Aloe Vera Gel</a></small>
-                                                    <small class="flex-fill text-center"><h5 class="mb-2" id="price1">£4.99</h5></small>
-                                                </div>                    
-                                                <p style="text-align: left; font-size: 12px; display: inline;"></p>
-                                                    Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.
-                                                    <span id="dots1">...</span>
-                                                    <span id="more1" style="display: none;">Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.Aloe Pura Organic Aloe Vera Gel is your all-round skincare essential.</span>
-                                                    <button onclick="readMore(1)" id="readMoreBtn1" class="btn btn-link p-0" style="font-size: 12px;">Read more</button>
-                                                </p>
-                                                <script>
-                                                    function readMore(id) {
-                                                        var dots = document.getElementById("dots" + id);
-                                                        var moreText = document.getElementById("more" + id);
-                                                        var btnText = document.getElementById("readMoreBtn" + id);
-
-                                                        if (dots.style.display === "none") {
-                                                            dots.style.display = "inline";
-                                                            btnText.innerHTML = "Read more";
-                                                            moreText.style.display = "none";
-                                                        } else {
-                                                            dots.style.display = "none";
-                                                            btnText.innerHTML = "Read less";
-                                                            moreText.style.display = "inline";
-                                                        }
-                                                    }
-                                                </script>                                                
-                                            </div>
-                                            <small>Select Quantity</small>
-                                            <div class="d-flex border-top">
-                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="minus-btn1">
-                                                    <i class="fa fa-minus text-danger"></i>
-                                                </button>
-                                                <input type="number" id="quantity1" name="quantity" value="1" min="1" class="flex-fill text-center border-end" style="border: none; width: 50px;">
-                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="plus-btn1" onmouseover="this.querySelector('i').style.color='white';" onmouseout="this.querySelector('i').style.color='';">
-                                                    <i class="fa fa-plus text-primary"></i>
-                                                </button>
-                                            </div>
-                                            <script>
-                                                document.getElementById('plus-btn1').addEventListener('click', function() {
-                                                    var quantityInput = document.getElementById('quantity1');
-                                                    quantityInput.value = parseInt(quantityInput.value) + 1;
-                                                    document.getElementById('price1').innerText = '£' + (4.99 * quantityInput.value).toFixed(2);
-                                                });
-
-                                                document.getElementById('minus-btn1').addEventListener('click', function() {
-                                                    var quantityInput = document.getElementById('quantity1');
-                                                    if (quantityInput.value > 1) {
-                                                        quantityInput.value = parseInt(quantityInput.value) - 1;
-                                                        document.getElementById('price1').innerText = '£' + (4.99 * quantityInput.value).toFixed(2);
-                                                    }
-                                                });
-
-                                                document.getElementById('quantity1').addEventListener('change', function() {
-                                                    if (this.value < 1) {
-                                                        this.value = 1;
-                                                    }
-                                                    document.getElementById('price1').innerText = '£' + (4.99 * this.value).toFixed(2);
-                                                });
-                                            </script>
-                                        </div>
-                                    </div>                                    
-                                </div>
-                            </div>                       
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        <img src="img/ProductsVouchers/Gel Oil free.png" alt="Heliocare Gel" class="service-image">
-                                        <div class="add-to-cart-btn" style="position: absolute; top: 10px; right: 10px;">
-                                            <button class="btn btn-primary" style="border-radius: 50px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 250%);">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div class="service-card-info" style="position: relative;">
-                                            <div class="p-0 pb-0">
-                                                <div class="d-flex">
-                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">Heliocare Gel</a></small>
-                                                    <small class="flex-fill text-center"><h5 class="mb-2" id="price2">£22.99</h5></small>
-                                                </div>                    
-                                                <p style="text-align: left; font-size: 12px; display: inline;"></p>
-                                                    This ultra-light mattifying gel absorbs quickly into the skin, providing a dry-touch, matte finish.
-                                                    <span id="dots2">...</span>
-                                                    <span id="more2" style="display: none;">This ultra-light mattifying gel absorbs quickly into the skin, providing a dry-touch, matte finish. This ultra-light mattifying gel absorbs quickly into the skin, providing a dry-touch, matte finish.</span>
-                                                    <button onclick="readMore(2)" id="readMoreBtn2" class="btn btn-link p-0" style="font-size: 12px;">Read more</button>
-                                                </p>
-                                                
-                                            </div>
-                                            <small>Select Quantity</small>
-                                            <div class="d-flex border-top">
-                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="minus-btn2">
-                                                    <i class="fa fa-minus text-danger"></i>
-                                                </button>
-                                                <input type="number" id="quantity2" name="quantity" value="1" min="1" class="flex-fill text-center border-end" style="border: none; width: 50px;">
-                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="plus-btn2" onmouseover="this.querySelector('i').style.color='white';" onmouseout="this.querySelector('i').style.color='';">
-                                                    <i class="fa fa-plus text-primary"></i>
-                                                </button>
-                                            </div>
-                                            <script>
-                                                document.getElementById('plus-btn2').addEventListener('click', function() {
-                                                    var quantityInput = document.getElementById('quantity2');
-                                                    quantityInput.value = parseInt(quantityInput.value) + 1;
-                                                    document.getElementById('price2').innerText = '£' + (22.99 * quantityInput.value).toFixed(2);
-                                                });
-
-                                                document.getElementById('minus-btn2').addEventListener('click', function() {
-                                                    var quantityInput = document.getElementById('quantity2');
-                                                    if (quantityInput.value > 1) {
-                                                        quantityInput.value = parseInt(quantityInput.value) - 1;
-                                                        document.getElementById('price2').innerText = '£' + (22.99 * quantityInput.value).toFixed(2);
-                                                    }
-                                                });
-
-                                                document.getElementById('quantity2').addEventListener('change', function() {
-                                                    if (this.value < 1) {
-                                                        this.value = 1;
-                                                    }
-                                                    document.getElementById('price2').innerText = '£' + (22.99 * this.value).toFixed(2);
-                                                });
-                                            </script>
-                                        </div>
-                                    </div>                                    
-                                </div>
-                            </div>                       
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        <img src="img/ProductsVouchers/Exfoliating Mitt Teal.png" alt="Exfoliating Mitt" class="service-image">
-                                        <div class="add-to-cart-btn" style="position: absolute; top: 10px; right: 10px;">
-                                            <button class="btn btn-primary" style="border-radius: 50px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 250%);">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div class="service-card-info" style="position: relative;">
-                                            <div class="p-0 pb-0">
-                                                <div class="d-flex">
-                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">Exfoliating Mitt</a></small>
-                                                    <small class="flex-fill text-center"><h5 class="mb-2" id="price3">£5.00</h5></small>
-                                                </div>                    
-                                                <p style="text-align: left; font-size: 12px; display: inline;"></p>
-                                                    The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.
-                                                    <span id="dots3">...</span>
-                                                    <span id="more3" style="display: none;">The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin. The traditional Moroccan Kessa glove, used to remove dead skin cells and impurities, promoting smoother and more radiant skin.</span>
-                                                    <button onclick="readMore(3)" id="readMoreBtn3" class="btn btn-link p-0" style="font-size: 12px;">Read more</button>
-                                                </p>
-                                                
-                                            </div>
-                                            <small>Select Quantity</small>
-                                            <div class="d-flex border-top">
-                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="minus-btn3">
-                                                    <i class="fa fa-minus text-danger"></i>
-                                                </button>
-                                                <input type="number" id="quantity3" name="quantity" value="1" min="1" class="flex-fill text-center border-end" style="border: none; width: 50px;">
-                                                <button class="flex-fill text-center border-end btn btn-outline-primary" id="plus-btn3" onmouseover="this.querySelector('i').style.color='white';" onmouseout="this.querySelector('i').style.color='';">
-                                                    <i class="fa fa-plus text-primary"></i>
-                                                </button>
-                                            </div>
-                                            <script>
-                                                document.getElementById('plus-btn3').addEventListener('click', function() {
-                                                    var quantityInput = document.getElementById('quantity3');
-                                                    quantityInput.value = parseInt(quantityInput.value) + 1;
-                                                    document.getElementById('price3').innerText = '£' + (5.00 * quantityInput.value).toFixed(2);
-                                                });
-
-                                                document.getElementById('minus-btn3').addEventListener('click', function() {
-                                                    var quantityInput = document.getElementById('quantity3');
-                                                    if (quantityInput.value > 1) {
-                                                        quantityInput.value = parseInt(quantityInput.value) - 1;
-                                                        document.getElementById('price3').innerText = '£' + (5.00 * quantityInput.value).toFixed(2);
-                                                    }
-                                                });
-
-                                                document.getElementById('quantity3').addEventListener('change', function() {
-                                                    if (this.value < 1) {
-                                                        this.value = 1;
-                                                    }
-                                                    document.getElementById('price3').innerText = '£' + (5.00 * this.value).toFixed(2);
-                                                });
-                                            </script>
-                                        </div>
-                                    </div>                                    
-                                </div>
-                            </div>                         
+                    <div id="products" class="tab-pane fade show p-0 active">
+                        <div class="container">
+                            <div class="row align-items-start g-4" id="productsList"></div>
                         </div>
                     </div>
-                    <div id="tab-2" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="product-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/ProductsVouchers/Gift_Voucher_50.jpeg" alt=""></a>
-                                        <!-- <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div> -->
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <a class="d-block h5 mb-2" href="">Gift Voucher</a>
-                                        <h5 class="text-primary mb-3">£50.00</h5>
-                                        <p>The reciever get a £50 gift voucher to spend on their next service.</p>
-                                        <small>Select Quantity</small>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2 bg-primary"><i class="fa fa-plus text-white me-2"></i></small>
-                                        <small class="flex-fill text-center border-end py-2">0</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-minus text-danger me-2"></i></small>
-                                        <small class="flex-fill text-center py-2 bg-dark text-white"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="product-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/ProductsVouchers/Gift_Voucher_30.jpeg" alt=""></a>
-                                        <!-- <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div> -->
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <a class="d-block h5 mb-2" href="">Gift Voucher</a>
-                                        <h5 class="text-primary mb-3">£30.00</h5>
-                                        <p>The reciever get a £30 gift voucher to spend on their next service.</p>
-                                        <small>Select Quantity</small>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2 bg-primary"><i class="fa fa-plus text-white me-2"></i></small>
-                                        <small class="flex-fill text-center border-end py-2">0</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-minus text-danger me-2"></i></small>
-                                        <small class="flex-fill text-center py-2 bg-dark text-white"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="product-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/ProductsVouchers/Gift_Voucher_100.jpeg" alt=""></a>
-                                        <!-- <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div> -->
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <a class="d-block h5 mb-2" href="">Gift Voucher</a>
-                                        <h5 class="text-primary mb-3">£100.00</h5>
-                                        <p>The reciever get a £100 gift voucher to spend on their next service.</p>
-                                        <small>Select Quantity</small>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2 bg-primary"><i class="fa fa-plus text-white me-2"></i></small>
-                                        <small class="flex-fill text-center border-end py-2">0</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-minus text-danger me-2"></i></small>
-                                        <small class="flex-fill text-center py-2 bg-dark text-white"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="col-12 text-center">
-                                <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
-                            </div> -->
+                    <div id="vouchers" class="tab-pane fade show p-0">
+                        <div class="container">
+                            <div class="row align-items-start g-4" id="vouchersList"></div>
                         </div>
                     </div>
-                    <div id="tab-3" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- List End -->
+
+        <!-- Call to Action Start -->
+        <div class="container-xxl py-5 cta-background-gradient-animation" id="next-section">
+            <div class="container">
+                <div class="bg-transparent rounded p-3">
+                    <div class="bg-transparent rounded p-4">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="mb-4">
+                                    <h1 class="mb-3" style="font-weight: 200;">We Specialize In All Hair Removal
+                                        Treatments
+                                    </h1>
                                 </div>
+                                <a href="tel:07443 751 150" class="btn btn-white border py-2 px-4 me-2" style="color: #000;border: 1px solid #000 !important;border-radius: 50px;"><i
+                                        class="fa fa-phone-alt me-2"></i>Make A Call</a>
+                                <a href="" class="btn btn-primary py-2 px-4"><i class="fa fa-calendar-alt me-2"></i>Get
+                                    Appoinment</a>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-2.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
+                            <div class="col-lg-5 wow fadeIn bg-primary p-4 rounded" data-wow-delay="0.5s">
+                                <div class="wow fadeInUp" data-wow-delay="0.5s">
+                                    <form>
+                                        <div class="row g-3">
+                                            <h3 class="text-center text-white" style="font-weight: 200;">Book an
+                                                appointment
+                                            </h3>
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control text-primary id=" name"
+                                                        placeholder="Your Name">
+                                                    <label for="name">Your Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="email" class="form-control" id="email"
+                                                        placeholder="Your Email">
+                                                    <label for="email">Your Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="datetime" class="form-control" id="subject"
+                                                        placeholder="Subject">
+                                                    <label for="subject">Date & Time</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <input type="number" class="form-control" id="subject"
+                                                        placeholder="Subject">
+                                                    <label for="message">Phone number</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <button class="btn bg-white w-30 py-2" type="submit"
+                                                    style="border-radius: 50px;">Book Now</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-3.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Office</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-4.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Building</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-5.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Home</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/property-6.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Shop</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">$12,345</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Property List End -->
-
-
-               <!-- Call to Action Start -->
-               <div class="container-xxl py-5">
-                <div class="container">
-                    <div class="bg-light rounded p-3">
-                        <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                                    <img class="img-fluid rounded w-100" src="img/Kajal with client working on forearm.png" alt="">
-                                </div>
-                                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                                    <div class="mb-4">
-                                        <h1 class="mb-3">Contact With Our Certified Laser Specialist</h1>
-                                        <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p>
-                                    </div>
-                                    <a href="tel:07443 751 150" class="btn btn-primary py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>Make A Call</a>
-                                    <a href="" class="btn btn-dark py-3 px-4"><i class="fa fa-calendar-alt me-2"></i>Get Appoinment</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Call to Action End -->
-        
+        <!-- Call to Action End -->
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white text-white-50 footer pt-2 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -550,6 +285,13 @@
                 </div>
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
+                        <!-- <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><a
+                                    href="https://maps.app.goo.gl/UvPZazNR58Kabet17" class="text-white">45 Bridge Street, Pinner, HA5 3HR</a>
+                            </p>
+                            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:07443 751 150"> 07443 751
+                                    150</a></p>
+                            <p class="mb-2"><i class="fa fa-envelope me-3"></i><a
+                                    href="mailto:kajal@pristinelaserclinic.co.uk">kajal@pristinelaserclinic.co.uk</a></p> -->
                         <div class="col-md-12 d-flex pt-2">
                             <a class="btn btn-outline-light btn-social"
                                 href="https://www.instagram.com/pristine_laser_clinic/"><i
@@ -614,6 +356,7 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AfF5ey_5hDvb6pCKyCsmgPAt1stXzw-CWxWibZmtziN2uXOdOsMKOhwJgGlnCd0ELhXuZ8vh0yzPwHgh&currency=GBP&components=buttons,marks"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

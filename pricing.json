@@ -6,19 +6,19 @@
         "sessions": [
           {
             "session": 1,
-            "price": 100
+            "price": 80
           },
           {
             "session": 3,
-            "price": 300
+            "price": 240
           },
           {
             "session": 6,
-            "price": 600
+            "price": 480
           },
           {
             "session": 8,
-            "price": 8
+            "price": 640
           }
         ]
       },
