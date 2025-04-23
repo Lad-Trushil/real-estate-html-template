@@ -72,6 +72,49 @@
         setInterval(nextSlide, 5000); // Change slide every 5 seconds
     
 
+    // Show the popup after a delay
+    setTimeout(function () {
+        $('#subscribeModal').modal('show');
+    }, 2000); // Show after 2 seconds
+
+    // Handle form submission
+    $('#subscribeForm').on('submit', function (e) {
+        e.preventDefault();
+        var data = $(this).serialize();
+        var action = $(this).attr('action');
+        $.post(action, data, function () {
+            $('#subscribeForm')[0].reset();
+            $('#success_msg').show();
+            setTimeout(function () {
+                $('#subscribeModal').modal('hide');
+                $('#success_msg').hide();
+            }, 3000); // Hide after 3 seconds
+        });
+    });
+
+    
+    $('#subscribeButton').on('click', function() {
+        var email = $('#subscriptionEmail').val();
+        if (email) {
+            $.ajax({
+                url: 'https://script.google.com/macros/s/AKfycbx2SC1iO10PZPD73v4edjEQKh8-G5mX4GohUEuAdZfYMJ6_Fru3_YXMZ1s6EmZBqAvMDA/exec',
+                method: 'POST',
+                data: {
+                    email: email
+                },
+                success: function(response) {
+                    alert('Thank you for subscribing!');
+                    $('#subscriptionEmail').val(''); // Clear the input field
+                },
+                error: function(error) {
+                    alert('There was an error. Please try again.');
+                }
+            });
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    });
+    
     // Header carousel
     $(".header-carousel").owlCarousel({
         autoplay: true,
@@ -109,7 +152,7 @@
     });
 
     const currentPage = window.location.pathname.split('/').pop().split('.')[0];
-    if (currentPage === 'laser-pricing') {
+    if (currentPage === 'laser-pricing-women') {
         fetch('https://script.google.com/macros/s/AKfycbxh6vIW-Ez9qfok-nGUwn5jPyfPQRpfNmrcWt0zSi17KkX9lsWshdAaxPe0s9wP68vYnw/exec?action=pricing')
             .then(response => {
                 if (!response.ok) {
@@ -123,88 +166,33 @@
                 data.women.face.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
                         var img = new Image();
-                        img.src = `./img/new_services/${service.part_name}.png`;
+                        img.src = `./img/women_services/women_${service.part_name}.png`;
                         img.onload = function () {
                             var serviceCard = `
                             <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="pricing-card">
-                                    <span class="badge bg-primary" style="position: absolute; top: 10px; right: 10px;">Face</span>
-                                        <span class="badge" style="position: absolute; top: 35px; right: 10px;background-color: #f8d7da; color: #721c24;">
-                                            <i class="fa fa-female"></i>
-                                        </span>
                                         
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
                                                 <div class="d-flex">
-                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><h5 class="mb-0" id="price">£${service.sessions[0].price}</h5></small>
-                                                </div>
-                                                <div class="add-to-cart-btn">
-                                                    <button class="btn btn-primary" style="border-radius: 50px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>
-                                                </div>
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
-                                                ${service.sessions.map((session, index) => `
-                                                    ${session.price !== undefined && session.session !== undefined ? `
-                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-dark text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
-                                                        <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
-                                                        <i class="fa fa-chair text-primary"></i>${session.session}
-                                                    </label>
-                                                    ` : ''}
-                                                `).join('')}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>`;
-                            $('#servicesListWomen').last().append(serviceCard);
-                        };
-                    }
-                });
-
-                // Generate service cards for men (Face) 
-                data.men.face.forEach((service, index) => {
-                    if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/new_services/${service.part_name}.png`;
-                        img.onload = function () {
-                            // if (index % 4 === 0) {
-                            //     $('#servicesListMen').append('<div class="row"></div>');
-                            // }
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        <span class="badge bg-primary" style="position: absolute; top: 10px; right: 10px;">Face</span>
-                                        <span class="badge" style="position: absolute; top: 35px; right: 10px;background-color: #cce5ff; color: #004085;">
-                                            <i class="fa fa-male"></i>
-                                        </span>
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
-                                        
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="d-flex">
-                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><h5 class="mb-0" id="price">£${service.sessions[0].price}</h5></small>
+                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                    <div class="flex-fill text-center add-to-cart-btn">
+                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                            <i class="fa fa-plus"></i> Add to Cart
+                                                        </button>
+                                                    </div>
                                                 </div>                                                
-                                                <div class="add-to-cart-btn">
-                                                    <button class="btn btn-primary" style="border-radius: 50px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>
-                                                </div>
                                                 <small>Select number of sessions</small>
                                             </div>
                                             <div class="d-flex border-top">
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
-                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-dark text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
+                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
                                                         <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
-                                                        <i class="fa fa-chair text-primary"></i>${session.session}
+                                                        <i class="fa fa-chair"></i>${session.session}
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
@@ -213,16 +201,16 @@
                                     </div>
                                 </div>
                             </div>`;
-                            $('#servicesListMen').last().append(serviceCard);
+                            $('#servicesListWomenFace').last().append(serviceCard);
                         };
                     }
                 });
 
-                // Generate service cards for body (Women) 
-                data.women.body.forEach((service, index) => {
+                // Generate service cards for women (Upper Body) 
+                data.women.upperbody.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
                         var img = new Image();
-                        img.src = `./img/new_services/${service.part_name}.png`;
+                        img.src = `./img/women_services/women_${service.part_name}.png`;
                         img.onload = function () {
                             // if (index % 4 === 0) {
                             //     $('#servicesListWomen').append('<div class="row"></div>');
@@ -231,33 +219,27 @@
                             <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="pricing-card">
-                                    <span class="badge bg-primary" style="position: absolute; top: 10px; right: 10px;">Body</span>
-                                        <span class="badge" style="position: absolute; top: 35px; right: 10px;background-color: #f8d7da; color: #721c24;">
-                                            <i class="fa fa-female"></i>
-                                        </span>
                                         
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
-                                        
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
                                                 <div class="d-flex">
-                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><h5 class="mb-0" id="price">£${service.sessions[0].price}</h5></small>
-                                                </div>
-                                                
-                                                <div class="add-to-cart-btn">
-                                                    <button class="btn btn-primary" style="border-radius: 50px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>
-                                                </div>
+                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                    <div class="flex-fill text-center add-to-cart-btn">
+                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                            <i class="fa fa-plus"></i> Add to Cart
+                                                        </button>
+                                                    </div>
+                                                </div>                                                
                                                 <small>Select number of sessions</small>
                                             </div>
                                             <div class="d-flex border-top">
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
-                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-dark text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
+                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
                                                         <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
-                                                        <i class="fa fa-chair text-primary"></i>${session.session}
+                                                        <i class="fa fa-chair"></i>${session.session}
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
@@ -266,49 +248,45 @@
                                     </div>
                                 </div>
                             </div>`;
-                            $('#servicesListWomen').last().append(serviceCard);
+                            $('#servicesListWomenUpperBody').last().append(serviceCard);
                         };
                     }
                 });
 
-                // Generate service cards for body (Men) 
-                data.men.body.forEach((service, index) => {
+                // Generate service cards for women (Lower Body) 
+                data.women.lowerbody.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
                         var img = new Image();
-                        img.src = `./img/new_services/${service.part_name}.png`;
+                        img.src = `./img/women_services/women_${service.part_name}.png`;
                         img.onload = function () {
                             // if (index % 4 === 0) {
-                            //     $('#servicesListMen').append('<div class="row"></div>');
+                            //     $('#servicesListWomen').append('<div class="row"></div>');
                             // }
                             var serviceCard = `
                             <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="pricing-card">
-                                        <span class="badge bg-primary" style="position: absolute; top: 10px; right: 10px;">Body</span>
-                                        <span class="badge" style="position: absolute; top: 35px; right: 10px;background-color: #cce5ff; color: #004085;">
-                                            <i class="fa fa-male"></i>
-                                        </span>
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         
+                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
                                                 <div class="d-flex">
-                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><h5 class="mb-0" id="price">£${service.sessions[0].price}</h5></small>
+                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                    <div class="flex-fill text-center add-to-cart-btn">
+                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                            <i class="fa fa-plus"></i> Add to Cart
+                                                        </button>
+                                                    </div>
                                                 </div>                                                
-                                                <div class="add-to-cart-btn">
-                                                    <button class="btn btn-primary" style="border-radius: 50px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>
-                                                </div>
                                                 <small>Select number of sessions</small>
                                             </div>
                                             <div class="d-flex border-top">
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
-                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-dark text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
+                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
                                                         <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
-                                                        <i class="fa fa-chair text-primary"></i>${session.session}
+                                                        <i class="fa fa-chair"></i>${session.session}
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
@@ -317,16 +295,16 @@
                                     </div>
                                 </div>
                             </div>`;
-                            $('#servicesListMen').last().append(serviceCard);
+                            $('#servicesListWomenLowerBody').last().append(serviceCard);
                         };
                     }
                 });
 
-                // Generate service cards for custom packages (Women) 
+                // Generate service cards for women (Custom packages) 
                 data.women.custom_packages.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
                         var img = new Image();
-                        img.src = `./img/new_services/${service.part_name}.png`;
+                        img.src = `./img/women_services/women_${service.part_name}.png`;
                         img.onload = function () {
                             // if (index % 4 === 0) {
                             //     $('#servicesListWomen').append('<div class="row"></div>');
@@ -335,32 +313,27 @@
                             <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="pricing-card">
-                                    <span class="badge bg-primary" style="position: absolute; top: 10px; right: 10px;">Custom Package</span>
-                                    <span class="badge" style="position: absolute; top: 35px; right: 10px;background-color: #f8d7da; color: #721c24;">
-                                            <i class="fa fa-female"></i>
-                                        </span>
                                         
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
-                                        
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
                                                 <div class="d-flex">
-                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><h5 class="mb-0" id="price">£${service.sessions[0].price}</h5></small>
+                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                    <div class="flex-fill text-center add-to-cart-btn">
+                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                            <i class="fa fa-plus"></i> Add to Cart
+                                                        </button>
+                                                    </div>
                                                 </div>                                                
-                                                <div class="add-to-cart-btn">
-                                                    <button class="btn btn-primary" style="border-radius: 50px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>
-                                                </div>
                                                 <small>Select number of sessions</small>
                                             </div>
                                             <div class="d-flex border-top">
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
-                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-dark text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
+                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
                                                         <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
-                                                        <i class="fa fa-chair text-primary"></i>${session.session}
+                                                        <i class="fa fa-chair"></i>${session.session}
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
@@ -369,81 +342,254 @@
                                     </div>
                                 </div>
                             </div>`;
-                            $('#servicesListWomen').last().append(serviceCard);
+                            $('#servicesListWomenCustomPackages').last().append(serviceCard);
                         };
                     }
                 });
 
-                // Generate service cards for custom packages (Men) 
-                data.men.custom_packages.forEach((service, index) => {
-                    if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/new_services/${service.part_name}.png`;
-                        img.onload = function () {
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        <span class="badge bg-primary" style="position: absolute; top: 10px; right: 10px;">Custom Package</span>
-                                        <span class="badge" style="position: absolute; top: 35px; right: 10px;background-color: #cce5ff; color: #004085;">
-                                            <i class="fa fa-male"></i>
-                                        </span>
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
-                                        
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="d-flex">
-                                                    <small class="flex-fill text-center"><a class="h5 pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><h5 class="mb-0" id="price">£${service.sessions[0].price}</h5></small>
-                                                </div>                                                
-                                                <div class="add-to-cart-btn">
-                                                    <button class="btn btn-primary" style="border-radius: 50px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>
-                                                </div>
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
-                                                ${service.sessions.map((session, index) => `
-                                                    ${session.price !== undefined && session.session !== undefined ? `
-                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-dark text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
-                                                        <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
-                                                        <i class="fa fa-chair text-primary"></i>${session.session}
-                                                    </label>
-                                                    ` : ''}
-                                                `).join('')}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>`;
-                            $('#servicesListMen').last().append(serviceCard);
-                        };
-                    }
-                });
-
-                // Add event listeners to radio buttons after the service cards are appended
-                $('#servicesListWomen, #servicesListMen').on('change', 'input[type="radio"]', function () {
+                 // Add event listeners to radio buttons after the service cards are appended
+                $('#servicesListWomenFace, #servicesListWomenUpperBody, #servicesListWomenLowerBody, #servicesListWomenCustomPackages').on('change', 'input[type="radio"]', function () {
+                    // Find the closest service card
+                    const serviceCard = $(this).closest('.property-item');
+                
                     // Remove styles from all radio button parents within the same card
-                    const serviceCard = this.closest('.property-item');
-                    serviceCard.querySelectorAll(`input[name="${this.name}"]`).forEach((el) => {
-                        el.parentElement.classList.remove('bg-dark', 'text-white', 'selected');
+                    serviceCard.find(`input[name="${this.name}"]`).each(function () {
+                        $(this).parent().removeClass('bg-primary text-white selected');
                     });
-
+                
                     // Add styles to the selected radio button's parent
-                    this.parentElement.classList.add('bg-dark', 'text-white', 'selected');
-
+                    $(this).parent().addClass('bg-primary text-white selected');
+                
                     // Update the price display within the same card
-                    serviceCard.querySelector('#price').innerText = '£' + this.value;
-
-                    // Perform any additional changes to the serviceCard if needed
-                    serviceCard.classList.add('highlight'); // Example class for highlighting
+                    const selectedPrice = $(this).val();
+                    serviceCard.find(`#price`).text('£' + selectedPrice);
+                
+                    // Optional: Add any additional changes to the serviceCard if needed
+                    serviceCard.addClass('highlight'); // Example class for highlighting
                 });
 
                 // Attach event listener to Add to Cart buttons
                 $(document).on('click', '.add-to-cart-btn button', handleAddToCartClick);
 
 
+            })
+            .catch(error => {
+                console.error('Error fetching pricing data:', error);
+                // Handle the error gracefully, e.g., show a message or use fallback data
+            });
+    }else if (currentPage === 'laser-pricing-men') {
+        fetch('https://script.google.com/macros/s/AKfycbxh6vIW-Ez9qfok-nGUwn5jPyfPQRpfNmrcWt0zSi17KkX9lsWshdAaxPe0s9wP68vYnw/exec?action=pricing')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+
+                // Generate service cards for men (Face) 
+                data.men.face.forEach((service, index) => {
+                    if (service.part_name && service.sessions && service.sessions.length > 0) {
+                        var img = new Image();
+                        img.src = `./img/men_services/men_${service.part_name}.png`;
+                        img.onload = function () {
+                            var serviceCard = `
+                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="pricing-card">
+                                        
+                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
+                                        <div class="service-card-info">
+                                            <div class="p-0 pb-0">
+                                                <div class="d-flex">
+                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                    <div class="flex-fill text-center add-to-cart-btn">
+                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                            <i class="fa fa-plus"></i> Add to Cart
+                                                        </button>
+                                                    </div>
+                                                </div>                                                
+                                                <small>Select number of sessions</small>
+                                            </div>
+                                            <div class="d-flex border-top">
+                                                ${service.sessions.map((session, index) => `
+                                                    ${session.price !== undefined && session.session !== undefined ? `
+                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
+                                                        <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
+                                                        <i class="fa fa-chair"></i>${session.session}
+                                                    </label>
+                                                    ` : ''}
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                            $('#servicesListMenFace').last().append(serviceCard);
+                        };
+                    }
+                });
+
+                // Generate service cards for men (Upper Body) 
+                data.men.upperbody.forEach((service, index) => {
+                    if (service.part_name && service.sessions && service.sessions.length > 0) {
+                        var img = new Image();
+                        img.src = `./img/men_services/men_${service.part_name}.png`;
+                        img.onload = function () {
+                            var serviceCard = `
+                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="pricing-card">
+                                        
+                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
+                                        <div class="service-card-info">
+                                            <div class="p-0 pb-0">
+                                                <div class="d-flex">
+                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                    <div class="flex-fill text-center add-to-cart-btn">
+                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                            <i class="fa fa-plus"></i> Add to Cart
+                                                        </button>
+                                                    </div>
+                                                </div>                                                
+                                                <small>Select number of sessions</small>
+                                            </div>
+                                            <div class="d-flex border-top">
+                                                ${service.sessions.map((session, index) => `
+                                                    ${session.price !== undefined && session.session !== undefined ? `
+                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
+                                                        <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
+                                                        <i class="fa fa-chair"></i>${session.session}
+                                                    </label>
+                                                    ` : ''}
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                            $('#servicesListMenUpperBody').last().append(serviceCard);
+                        };
+                    }
+                });
+
+                // Generate service cards for men (Lower Body) 
+                data.men.lowerbody.forEach((service, index) => {
+                    if (service.part_name && service.sessions && service.sessions.length > 0) {
+                        var img = new Image();
+                        img.src = `./img/men_services/men_${service.part_name}.png`;
+                        img.onload = function () {
+                            // if (index % 4 === 0) {
+                            //     $('#servicesListWomen').append('<div class="row"></div>');
+                            // }
+                            var serviceCard = `
+                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="pricing-card">
+                                        
+                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
+                                        <div class="service-card-info">
+                                            <div class="p-0 pb-0">
+                                                <div class="d-flex">
+                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                    <div class="flex-fill text-center add-to-cart-btn">
+                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                            <i class="fa fa-plus"></i> Add to Cart
+                                                        </button>
+                                                    </div>
+                                                </div>                                                
+                                                <small>Select number of sessions</small>
+                                            </div>
+                                            <div class="d-flex border-top">
+                                                ${service.sessions.map((session, index) => `
+                                                    ${session.price !== undefined && session.session !== undefined ? `
+                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
+                                                        <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
+                                                        <i class="fa fa-chair"></i>${session.session}
+                                                    </label>
+                                                    ` : ''}
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                            $('#servicesListMenLowerBody').last().append(serviceCard);
+                        };
+                    }
+                });
+
+                // Generate service cards for men (Custom packages) 
+                data.men.custom_packages.forEach((service, index) => {
+                    if (service.part_name && service.sessions && service.sessions.length > 0) {
+                        var img = new Image();
+                        img.src = `./img/men_services/men_${service.part_name}.png`;
+                        img.onload = function () {
+                            var serviceCard = `
+                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="pricing-card">
+                                        
+                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
+                                        <div class="service-card-info">
+                                            <div class="p-0 pb-0">
+                                                <div class="d-flex">
+                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                    <div class="flex-fill text-center add-to-cart-btn">
+                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                            <i class="fa fa-plus"></i> Add to Cart
+                                                        </button>
+                                                    </div>
+                                                </div>                                                
+                                                <small>Select number of sessions</small>
+                                            </div>
+                                            <div class="d-flex border-top">
+                                                ${service.sessions.map((session, index) => `
+                                                    ${session.price !== undefined && session.session !== undefined ? `
+                                                    <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
+                                                        <input type="radio" id="${service.part_name}-${session.price}" name="${service.part_name}" value="${session.price}" style="display: none;" ${index === 0 ? 'checked' : ''}>
+                                                        <i class="fa fa-chair"></i>${session.session}
+                                                    </label>
+                                                    ` : ''}
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                            $('#servicesListMenCustomPackages').last().append(serviceCard);
+                        };
+                    }
+                });
+
+                 // Add event listeners to radio buttons after the service cards are appended
+                $('#servicesListMenFace, #servicesListMenUpperBody, #servicesListMenLowerBody, #servicesListMenCustomPackages').on('change', 'input[type="radio"]', function () {
+                    // Find the closest service card
+                    const serviceCard = $(this).closest('.property-item');
+                
+                    // Remove styles from all radio button parents within the same card
+                    serviceCard.find(`input[name="${this.name}"]`).each(function () {
+                        $(this).parent().removeClass('bg-primary text-white selected');
+                    });
+                
+                    // Add styles to the selected radio button's parent
+                    $(this).parent().addClass('bg-primary text-white selected');
+                
+                    // Update the price display within the same card
+                    const selectedPrice = $(this).val();
+                    serviceCard.find(`#price`).text('£' + selectedPrice);
+                
+                    // Optional: Add any additional changes to the serviceCard if needed
+                    serviceCard.addClass('highlight'); // Example class for highlighting
+                });
+
+
+                // Attach event listener to Add to Cart buttons
+                $(document).on('click', '.add-to-cart-btn button', handleAddToCartClick);
             })
             .catch(error => {
                 console.error('Error fetching pricing data:', error);
@@ -475,14 +621,16 @@
                                         <div class="service-card-info" style="position: relative;">
                                             <div class="p-0 pb-0">
                                                 <div class="d-flex">
-                                                    <small class="flex-fill"><a class="pricing-card-title" href="">${product.name}</a></small>
-                                                    <small class="flex-fill"><h6 class="mb-2" id="price" data-price="${product.price}">£ ${product.price}</h6></small>
-                                                </div>
-                                                <div class="add-to-cart-btn">
-                                            <button class="btn btn-primary" style="border-radius: 50px;">
-                                                <i class="fa fa-plus"></i> Add to Cart
-                                            </button>
-                                        </div>
+                                                    <small class="flex-fill"><h5 class="pricing-card-title" href="">${product.name}</h5></small>
+                                                    <small class="flex-fill"><h5 class="mb-2" id="price" data-price="${product.price}">£${product.price}</h5></small>
+                                                    <small class=""flex-fill add-to-cart-btn">
+                                                        <div class="add-to-cart-btn">
+                                                            <button class="btn btn-primary" style="border-radius: 50px; font-size: 12px;">
+                                                                <i class="fa fa-plus"></i> Add to Cart
+                                                            </button>
+                                                        </div>
+                                                    </small>
+                                                </div>                                                
                                                 <p class="description" style="text-align: left;">
                                                     ${product.description}
                                                 </p>
@@ -513,13 +661,16 @@
                                         <div class="service-card-info" style="position: relative;">
                                             <div class="p-0 pb-0">
                                                 <div class="d-flex">
-                                                    <small class="flex-fill text-left"><a class="pricing-card-title" href="">${product.name}</a></small>
-                                                    <small class="flex-fill text-right"><h6 class="mb-2" id="price" data-price="${product.price}">£ ${product.price}</h6></small>
-                                                </div>
-                                                <div class="add-to-cart-btn">
-                                            <button class="btn btn-primary" style="border-radius: 50px;">
-                                                <i class="fa fa-plus"></i> Add to Cart
-                                            </button>
+                                                    <small class="flex-fill"><h5 class="pricing-card-title" href="">${product.name}</h5></small>
+                                                    <small class="flex-fill"><h5 class="mb-2" id="price" data-price="${product.price}">£${product.price}</h5></small>
+                                                    <small class=""flex-fill add-to-cart-btn">
+                                                        <div class="add-to-cart-btn">
+                                                            <button class="btn btn-primary" style="border-radius: 50px; font-size: 12px;">
+                                                                <i class="fa fa-plus"></i> Add to Cart
+                                                            </button>
+                                                        </div>
+                                                    </small>
+                                                </div>  
                                         </div>
                                                 <p class="description" style="text-align: left;">
                                                     ${product.description}
@@ -576,8 +727,7 @@
         // Attach event listener to Add to Cart buttons for products and vouchers
         $(document).on('click', '.add-to-cart-btn button', handleAddToCartClick);
 
-    } else if (currentPage === 'faqs') {
-    
+    } else if (currentPage === 'faqs') {    
         fetch('https://script.google.com/macros/s/AKfycbxh6vIW-Ez9qfok-nGUwn5jPyfPQRpfNmrcWt0zSi17KkX9lsWshdAaxPe0s9wP68vYnw/exec?action=faqs')
             .then(response => {
                 if (!response.ok) {
@@ -630,6 +780,54 @@
                 scrollLeft: '+=' + scrollStep
             }, 'smooth');
         });
+    } else if (currentPage === 'blog') {
+        fetch('https://script.google.com/macros/s/AKfycbxh6vIW-Ez9qfok-nGUwn5jPyfPQRpfNmrcWt0zSi17KkX9lsWshdAaxPe0s9wP68vYnw/exec?action=blog')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Generate cards for products 
+                data.forEach((blog, index) => {
+                    if (blog.title) {
+                        // Inside the fetch then block for faqs
+                        var blogCard = `
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <a data-bs-toggle="modal" data-bs-target="#blogModal${index}">
+                                        <img src="${blog.image}" class="card-img-top" alt="${blog.image}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${blog.title}</h5>
+                                            <p class="card-text">${blog.short_description}...<a data-bs-toggle="modal" data-bs-target="#blogModal${index}">Read More</a></p>                                            
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                             <div class="modal fade" id="blogModal${index}" tabindex="-1" aria-labelledby="blogModalLabel${index}" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="blogModalLabel${index}">${blog.title}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>${blog.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        $('#blogList').last().append(blogCard);                        
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching faqs data:', error);
+                // Handle the error gracefully, e.g., show a message or use fallback data
+            });
     }
 
     // Cart object to store cart items
@@ -882,7 +1080,276 @@ function generateOrderSummary() {
     $('#orderSummary').html(orderSummaryHtml);
 }
 
-
-
-
-
+document.addEventListener("DOMContentLoaded", function () {
+    // Configuration - dynamic based on screen size
+    let itemsPerSlide = window.innerWidth < 720 ? 1 : 3; // Responsive items per slide
+    const totalItems = 9; // Total real items (without clones)
+    let slideBy = window.innerWidth < 720 ? 1 : 1; // How many items to advance/retreat per click
+  
+    // DOM elements
+    const carousel = document.getElementById("multiCarousel");
+    const carouselInner = document.getElementById("carouselInner");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const carouselTitle = document.getElementById("carouselTitle");
+  
+    // Function to update configuration based on screen size
+    function updateConfig() {
+      const isMobile = window.innerWidth < 720;
+      itemsPerSlide = isMobile ? 1 : 3;
+      slideBy = isMobile ? 1 : 1;
+    }
+  
+    // Dynamically add clone elements
+    function initializeClones() {
+      const originalItems = Array.from(
+        document.querySelectorAll(".multi-carousel-item:not(.clone)")
+      );
+  
+      // Clear existing clones
+      document.querySelectorAll(".clone").forEach((clone) => clone.remove());
+  
+      // Prepend clones of last items
+      const lastClones = originalItems
+        .slice(-itemsPerSlide)
+        .map((item) => {
+          const clone = item.cloneNode(true);
+          clone.classList.add("clone");
+          return clone;
+        })
+        .reverse();
+      lastClones.forEach((clone) => carouselInner.prepend(clone));
+  
+      // Append clones of first items
+      const firstClones = originalItems.slice(0, itemsPerSlide).map((item) => {
+        const clone = item.cloneNode(true);
+        clone.classList.add("clone");
+        return clone;
+      });
+      firstClones.forEach((clone) => carouselInner.append(clone));
+    }
+  
+    // Calculate and set the height for carousel items
+    function setCarouselHeight() {
+      const titleHeight = carouselTitle.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const carouselHeight = windowHeight - titleHeight - 100;
+      document.documentElement.style.setProperty(
+        "--carousel-height",
+        `${carouselHeight}px`
+      );
+    }
+  
+    // Initial setup
+    updateConfig();
+    initializeClones();
+    setCarouselHeight();
+  
+    // Start with the first real set of images
+    let currentIndex = 0; // Index of current visible center image (0 to totalItems-1)
+    let position = itemsPerSlide; // Real position considering clones
+    let isAnimating = false;
+  
+    // Update carousel position
+    function updateCarouselPosition(animate = true) {
+      if (animate) {
+        carouselInner.style.transition = "transform 0.5s ease";
+      } else {
+        carouselInner.style.transition = "none";
+      }
+  
+      const translateX = (position * -100) / itemsPerSlide;
+      carouselInner.style.transform = `translateX(${translateX}%)`;
+    }
+  
+    // Initialize position
+    updateCarouselPosition(false);
+  
+    // Handle transition end
+    carouselInner.addEventListener("transitionend", function () {
+      isAnimating = false;
+  
+      // Handle infinite loop logic
+      if (position >= totalItems + itemsPerSlide) {
+        position = itemsPerSlide + (position - (totalItems + itemsPerSlide));
+        updateCarouselPosition(false);
+      } else if (position < itemsPerSlide) {
+        position = totalItems + position;
+        updateCarouselPosition(false);
+      }
+  
+      currentIndex = (position - itemsPerSlide) % totalItems;
+    });
+  
+    // Navigation functions
+    function next() {
+      if (isAnimating) return;
+      isAnimating = true;
+      position += slideBy;
+      updateCarouselPosition();
+    }
+  
+    function prev() {
+      if (isAnimating) return;
+      isAnimating = true;
+      position -= slideBy;
+      updateCarouselPosition();
+    }
+  
+    // Event listeners for buttons
+    nextBtn.addEventListener("click", next);
+    prevBtn.addEventListener("click", prev);
+  
+    // Mouse drag functionality
+    let isDragging = false;
+    let startX = 0;
+    let startPosition = 0;
+  
+    // Prevent image drag
+    const carouselImages = document.querySelectorAll("#carouselInner img");
+    carouselImages.forEach((img) => {
+      img.addEventListener("dragstart", (e) => {
+        e.preventDefault();
+      });
+      img.style.pointerEvents = "none";
+    });
+  
+    carousel.addEventListener("mousedown", startDrag);
+    carousel.addEventListener("touchstart", startDrag, { passive: true });
+  
+    carousel.addEventListener("mousemove", drag);
+    carousel.addEventListener("touchmove", drag, { passive: true });
+  
+    carousel.addEventListener("mouseup", endDrag);
+    carousel.addEventListener("touchend", endDrag);
+    carousel.addEventListener("mouseleave", endDrag);
+  
+    function startDrag(e) {
+      if (e.target.tagName === "IMG") {
+        e.preventDefault();
+      }
+  
+      if (isAnimating) return;
+  
+      isDragging = true;
+      startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+      startPosition = position;
+      carousel.classList.add("dragging");
+      carouselInner.style.transition = "none";
+      document.body.style.cursor = "grabbing";
+      document.body.style.userSelect = "none";
+      registerUserActivity();
+    }
+  
+    function drag(e) {
+      if (!isDragging) return;
+  
+      const x = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+      const walk = ((x - startX) / carousel.offsetWidth) * itemsPerSlide;
+      const newPosition = startPosition - walk;
+      const translateX = (newPosition * -100) / itemsPerSlide;
+      carouselInner.style.transform = `translateX(${translateX}%)`;
+    }
+  
+    function endDrag(e) {
+      if (!isDragging) return;
+  
+      isDragging = false;
+      carousel.classList.remove("dragging");
+      document.body.style.cursor = "";
+      document.body.style.userSelect = "";
+      carouselInner.style.transition = "transform 0.5s ease";
+  
+      const x = e.type?.includes("mouse")
+        ? e.clientX
+        : e.changedTouches
+        ? e.changedTouches[0].clientX
+        : startX;
+      const walk = ((x - startX) / carousel.offsetWidth) * itemsPerSlide;
+  
+      if (walk > 0.2) {
+        prev();
+      } else if (walk < -0.2) {
+        next();
+      } else {
+        updateCarouselPosition();
+      }
+  
+      registerUserActivity();
+    }
+  
+    // Keyboard navigation
+    document.addEventListener("keydown", function (e) {
+      if (
+        carousel.offsetParent === null ||
+        document.activeElement.tagName === "INPUT" ||
+        document.activeElement.tagName === "TEXTAREA" ||
+        document.activeElement.isContentEditable
+      ) {
+        return;
+      }
+  
+      switch (e.key) {
+        case "ArrowLeft":
+          e.preventDefault();
+          prev();
+          registerUserActivity();
+          break;
+        case "ArrowRight":
+          e.preventDefault();
+          next();
+          registerUserActivity();
+          break;
+      }
+    });
+  
+    // Auto-advance system
+    let autoAdvanceInterval;
+    let userActivityTimeout;
+  
+    function startAutoAdvance() {
+      clearInterval(autoAdvanceInterval);
+      autoAdvanceInterval = setInterval(next, 5000);
+    }
+  
+    function resetAutoAdvanceTimer() {
+      clearTimeout(userActivityTimeout);
+      clearInterval(autoAdvanceInterval);
+      userActivityTimeout = setTimeout(startAutoAdvance, 10000);
+    }
+  
+    function registerUserActivity() {
+      resetAutoAdvanceTimer();
+    }
+  
+    startAutoAdvance();
+  
+    carousel.addEventListener("mouseenter", () => {
+      clearInterval(autoAdvanceInterval);
+    });
+  
+    carousel.addEventListener("mouseleave", () => {
+      resetAutoAdvanceTimer();
+    });
+  
+    carousel.addEventListener("click", registerUserActivity);
+    carousel.addEventListener("wheel", registerUserActivity);
+  
+    // Handle window resize
+    window.addEventListener("resize", function () {
+      const wasMobile = itemsPerSlide === 1;
+      updateConfig();
+      setCarouselHeight();
+  
+      // Only reinitialize if mobile state changed
+      if (
+        (wasMobile && itemsPerSlide > 1) ||
+        (!wasMobile && itemsPerSlide === 1)
+      ) {
+        initializeClones();
+        position = itemsPerSlide; // Reset position
+        updateCarouselPosition(false);
+      }
+    });
+  });
+  

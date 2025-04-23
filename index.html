@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -30,6 +33,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script
+        id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/d6e9a8e3505f4cd6abd97f1e7/f01f0f7f17d4e90f1b644138f.js");</script>
 </head>
 
 <body>
@@ -42,7 +47,7 @@
             </div>
         </div>
         <!-- Spinner End -->
-
+ 
         <!-- Navbar Start -->
         <div class="container-fluid nav-bar fixed-top bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white rounded navbar py-0 px-4 m-10 navbar-mobile"
@@ -54,208 +59,173 @@
                     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="border-radius: 30px;border:none;">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse navbar-collapse-mobile bg-white p-3" id="navbarCollapse">
+                <div class="collapse navbar-collapse navbar-collapse-mobile bg-white p-3" style="border-radius: 20px;" id="navbarCollapse">
                     <div class="navbar-nav ms-auto" style="gap: 30px;">
                         <!-- <a href="index.html" class="nav-item nav-link active">Home</a>-->
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">Laser</a>
-                            <div class="dropdown-menu bg-transparent border-0">
-                                <a href="laser-pricing.html" class="dropdown-item bg-white mb-1 text-primary"
-                                    style="border-radius: 10px!important;">Men</a>
-                                <a href="property-type.html" class="dropdown-item bg-white text-primary"
-                                    style="border-radius: 10px!important;">Women</a>
-                            </div>
-                        </div>
-                        <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>                        
-                    </div>             
-                </div>                       
-                <a href="https://bookings.gettimely.com/pristinelaserclinic/bb/book" class="btn btn-primary py-2 px-4" target="_blank"><i class="fa fa-calendar-alt me-2"></i> Book Consultation <span
-                    class="badge bg-dark">Free</span></a>
+                        <a href="about.html" class="nav-item nav-link text-center">About us</a>
+                        <a href="laser-pricing-men.html" class="nav-item nav-link text-center">Laser for Men</a>
+                        <a href="laser-pricing-women.html" class="nav-item nav-link text-center">Laser for Women</a>
+                        <a href="shop.html" class="nav-item nav-link text-center">Shop</a>
+                        <a href="contact.html" class="nav-item nav-link text-center">Contact</a> 
+                    </div>
+                </div>
+                <a href="https://bookings.gettimely.com/pristinelaserclinic/bb/book" class="btn btn-primary py-2 px-4 text-center d-none d-lg-inline-block"
+                        target="_blank"><i class="fa fa-calendar-alt me-2"></i> Book Consultation <span
+                            class="badge bg-dark">Free</span></a>
             </nav>
         </div>
         <!-- Navbar End -->
 
-        <!-- Hero Start -->
-        <section class="hero-section">
-            <div class="hero-slider">
-                <div class="hero-slide active" style="background-image: url('img/Slider/2.png');"></div>
-                <div class="hero-slide" style="background-image: url('img/Slider/1.png');"></div>
-                <div class="hero-slide" style="background-image: url('img/Slider/3.png');"></div>
-            </div>
-            <div class="hero-content">
-                <div class="backdrop"></div>
-                <!-- <p class="hero-title text-white">Experience the best laser hair removal services with our certified specialists.</p> -->
-                <a href="#next-section" class="scroll-down-button">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-            </div> 
-        </section>
-        <!-- Hero End -->
-
-        <!-- Call to Action Start -->
-        <!-- <div class="container-xxl py-5 cta-background-gradient-animation" id="next-section">
-            <div class="container">
-                <div class="bg-transparent rounded p-3">
-                    <div class="bg-transparent rounded p-4">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="mb-4">
-                                    <h1 class="mb-3" style="font-weight: 200;">We Specialize In All Hair Removal
-                                        Treatments
-                                    </h1>
-                                </div>
-                                <a href="tel:07443 751 150" class="btn btn-white border py-2 px-4 me-2" style="color: #000;border: 1px solid #000 !important;border-radius: 50px;"><i
-                                        class="fa fa-phone-alt me-2"></i>Make A Call</a>
-                                <a href="" class="btn btn-primary py-2 px-4"><i class="fa fa-calendar-alt me-2"></i>Get
-                                    Appoinment</a>
+        <!-- Popup Form Start -->
+        <!-- <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true" style="border-radius: 50px;margin-top: 100px;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="subscribeModalLabel">Subscribe to our Newsletter</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="subscribeForm" action="https://script.google.com/macros/s/AKfycbx2SC1iO10PZPD73v4edjEQKh8-G5mX4GohUEuAdZfYMJ6_Fru3_YXMZ1s6EmZBqAvMDA/exec" method="POST">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your email" required>
                             </div>
-                            <div class="col-lg-5 wow fadeIn bg-primary p-4 rounded" data-wow-delay="0.5s">
-                                <div class="wow fadeInUp" data-wow-delay="0.5s">
-                                    <form>
-                                        <div class="row g-3">
-                                            <h3 class="text-center text-white" style="font-weight: 200;">Book an
-                                                appointment
-                                            </h3>
-                                            <div class="col-md-12">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control text-primary id=" name"
-                                                        placeholder="Your Name">
-                                                    <label for="name">Your Name</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-floating">
-                                                    <input type="email" class="form-control" id="email"
-                                                        placeholder="Your Email">
-                                                    <label for="email">Your Email</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-floating">
-                                                    <input type="datetime" class="form-control" id="subject"
-                                                        placeholder="Subject">
-                                                    <label for="subject">Date & Time</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-floating">
-                                                    <input type="number" class="form-control" id="subject"
-                                                        placeholder="Subject">
-                                                    <label for="message">Phone number</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 text-center">
-                                                <button class="btn bg-white w-30 py-2" type="submit"
-                                                    style="border-radius: 50px;">Book Now</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                        <p id="success_msg" class="mt-3 text-success" style="display:none;">Thank you for subscribing!</p>
                     </div>
                 </div>
             </div>
         </div> -->
-        <!-- Call to Action End -->
+        <!-- Popup Form End -->
+
+        <!-- Hero Start -->
+        <div class="container" style="overflow: hidden;">
+            <div class="hero-section">
+                <div class="hero-slider">
+                    <div class="hero-slide active" style="background-image: url('img/Slider/2.png');"></div>
+                    <div class="hero-slide" style="background-image: url('img/Slider/1.png');"></div>
+                    <div class="hero-slide" style="background-image: url('img/Slider/3.png');"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="backdrop"></div>
+                    <!-- <p class="hero-title text-white">Experience the best laser hair removal services with our certified specialists.</p> -->
+                    <a href="#next-section" class="scroll-down-button">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
 
         <!-- Services List Start -->
-        <div class="container py-5" style="overflow: hidden;">
-            <div class="row g-0 gx-5 align-items-end">
-                <div class="col-lg-12">
-                    <div class="text-start mx-auto mb-5 wow slideInLeft text-center" data-wow-delay="0.1s">
-                        <h1 class="mb-3" style="font-weight: 200;">Our Services</h1>
-                        <p class="w-50 text-center mx-auto">We offer a wide range of services to help you achieve your beauty goals.</p>
+        <div class="container-fluid">
+            <div class="heading mt-3 mb-3">
+              <h2  style="display: none;" class="text-center" id="carouselTitle">Bootstrap 5 Carousel with Multiple Items</h2>
+              <p style="display: none;">© Image credits: <a href="https://piclumen.com/app/user/social-home/241774" target="_blank">bro-dee / PicLumen</a></p>
+              <div class="text-start mx-auto mb-5 mt-5 text-center">
+                <h1 class="mb-3" style="font-weight: 200;">Our Services</h1>
+                <p class="text-center mx-auto">We offer a personalised service to help you achieve your beauty goals.</p>
+            </div>
+            </div>
+          
+            <div class="multi-carousel-container" id="multiCarousel">
+              <div class="multi-carousel-inner" id="carouselInner">
+                <!-- Original items only -->
+                <div class="multi-carousel-item" data-index="0">
+                  <div class="img-container">
+                    <img src="img/women_services/women_Upper Lip.png" alt="Laser Hair Removal for Women's Upper Lip">
+                    <div class="service-card-info">
+                        <h5 class="service-card-title">Upper Lip</h5>
                     </div>
+                  </div>
                 </div>
-                <div class="services-carousel-container">
-                    <div class="services-carousel">
-                        <div class="services-carousel-inner" id="servicesCarouselInner">
-                            <a href="./laser-pricing.html" class="service-card">
-                                <img src="img/new_services/Full Arms.png" alt="Abdomen">
-                                <div class="service-card-info">
-                                    <h5 class="service-card-title">Arms</h5>
-                                </div>
-                                <button class="service-card-button">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </a>
-                            <a href="./laser-pricing.html" class="service-card">
-                                <img src="img/new_services/Full Face.png" alt="Abdomen">
-                                <div class="service-card-info">
-                                    <h5 class="service-card-title">Face</h5>
-                                </div>
-                                <button class="service-card-button">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </a>
-                            <a href="./laser-pricing.html" class="service-card">
-                                <img src="img/new_services/Full Legs.png" alt="Abdomen">
-                                <div class="service-card-info">
-                                    <h5 class="service-card-title">Legs</h5>
-                                </div>
-                            <button class="service-card-button">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </a>
-                            <a href="./laser-pricing.html" class="service-card">
-                                <img src="img/new_services/Beard Line.png" alt="Abdomen">
-                                <div class="service-card-info">
-                                    <h5 class="service-card-title">Beard Line</h5>
-                                </div>
-                            <button class="service-card-button">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </a>
-                            <a href="./laser-pricing.html" class="service-card">
-                                <img src="img/new_services/Full Back.png" alt="Abdomen">
-                                <div class="service-card-info">
-                                    <h5 class="service-card-title">Back</h5>
-                                </div>
-                            <button class="service-card-button">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </a>
-                            <a href="./laser-pricing.html" class="service-card">
-                                <img src="img/new_services/Chin.png" alt="Abdomen">
-                                <div class="service-card-info">
-                                    <h5 class="service-card-title">Chin</h5>
-                                </div>
-                            <button class="service-card-button">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </a>                            
-                        </div>
-                        <button class="services-carousel-prev">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="services-carousel-next">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+                <div class="multi-carousel-item" data-index="1">
+                  <div class="img-container">
+                    <img src="img/men_services/men_Beard Line.png" alt="Laser Hair Removal for Men's Beard Line">
+                    <div class="service-card-info">
+                        <h5 class="service-card-title">Beard Line</h5>
                     </div>
+                  </div>
                 </div>
-        </div>
-        </div>
+                <div class="multi-carousel-item" data-index="2">
+                  <div class="img-container">
+                    <img src="img/women_services/women_Full Legs.png" alt="Laser Hair Removal for Women's Full Legs">
+                    <div class="service-card-info">
+                        <h5 class="service-card-title">Full Legs</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="multi-carousel-item" data-index="3">
+                  <div class="img-container">
+                    <img src="img/men_services/men_Chest.png" alt="Laser Hair Removal for Men's Chest">
+                    <div class="service-card-info">
+                        <h5 class="service-card-title">Chest</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="multi-carousel-item" data-index="4">
+                  <div class="img-container">
+                    <img src="img/women_services/women_Bikini Line.png" alt="Laser Hair Removal for Women's Bikini Line">
+                  </div>
+                  <div class="service-card-info">
+                    <h5 class="service-card-title">Bikini Line</h5>
+                </div>
+                </div>
+                <div class="multi-carousel-item" data-index="5">
+                  <div class="img-container">
+                    <img src="img/men_services/men_Full Back.png" alt="Laser Hair Removal for men's Full back">
+                  </div>
+                  <div class="service-card-info">
+                    <h5 class="service-card-title">Back</h5>
+                </div>
+                </div>
+                <div class="multi-carousel-item" data-index="6">
+                  <div class="img-container">
+                    <img src="img/women_services/women_Chin.png" alt="Laser Hair Removal for Women's Chin">
+                  </div>
+                  <div class="service-card-info">
+                    <h5 class="service-card-title">Chin</h5>
+                </div>
+                </div>
+                <div class="multi-carousel-item" data-index="7">
+                  <div class="img-container">
+                    <img src="img/men_services/men_Neck (back).png" alt="Laser Hair Removal for men's neck back behind">
+                  </div>
+                  <div class="service-card-info">
+                    <h5 class="service-card-title">Neck</h5>
+                </div>
+                </div>
+                <div class="multi-carousel-item" data-index="8">
+                  <div class="img-container">
+                    <img src="img/women_services/women_Underarms.png" alt="Laser Hair Removal for Women's Underarms">
+                  </div>
+                  <div class="service-card-info">
+                    <h5 class="service-card-title">Underarms</h5>
+                </div>
+                </div>
+              </div>
+          
+              <button class="multi-carousel-control-prev" id="prevBtn">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="multi-carousel-control-next" id="nextBtn">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
         <!-- Services List End -->
 
         <!-- About Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-md-8 wow fadeIn" data-wow-delay="0.5s">
-                        <p class="mb-4 title">National Award Winner</p>
-                        <p class="mb-4">Beauty and Skincare Awards UK for the Laser
-                            Specialist of the Year 2024, along side prestigious qualifications in laser and light
-                            treatments for hair removal and skin rejuvenation.</p>
-                        <a href="about.html" class="btn btn-white border" style="color: #000;border: 1px solid #000 !important;border-radius: 50px;">Know More</a>
-                        <div class="row row-cols-1 row-cols-md-4 g-4 mt-5">
+        <div class="container-xxl p-0">           
+                <div class="row align-items-center">
+                    <div class="col-md-5 align-items-end" style="margin-left: 10%;">
+                        <h2 class="mb-4 title">National Multi-Award Winner</h2>                        
+                        <div class="row row-cols-1 row-cols-md-2">
                             <div class="col">
                                 <div class="card h-100 text-left border-0">
                                     <div class="card-body">
-                                        <h2 class="card-title mb-3">500+</h2>
+                                        <h2 class="card-title mb-3">1000+</h2>
                                         <p class="card-text text-muted">Satisfied Customers</p>
                                     </div>
                                 </div>
@@ -272,12 +242,15 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="about.html" class="btn btn-white border mt-3 py-2 px-4 me-2"
+                            style="color: #5e5e5e;border: 1px solid #5e5e5e !important;border-radius: 50px;">Know More</a>
                     </div>
-                    <div class="col-md-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="col-md-4">
                         <div class="team-item rounded overflow-hidden">
                             <div class="position-relative">
                                 <img class="img" src="img/gallery/Kajal_close_picture.png" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                <div
+                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
                                     <a class="btn btn-square mx-1"
                                         href="https://www.instagram.com/pristine_laser_clinic/"><i
                                             class="fab fa-instagram"></i></a>
@@ -288,57 +261,66 @@
                                 </div>
                             </div>
                             <div class="text-center p-4 mt-3">
-                                <h5 class="mb-0">Kajal Patel</h5>
-                                <h6 class="mb-3">Laser Specialist</h5>
+                                <h4 class="mb-2">Kajal Patel</h4>
+                                <h5 class="mb-3">Laser Specialist</h5>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-                        <div class="elfsight-app-6929479b-3dca-457f-bbe3-1212e98f89fa" data-elfsight-app-lazy></div>                    </div>
+                <div class="row p-0">
+                     <div class="col-md-12" id="instagram-feed">
+                        <div class="elfsight-app-6929479b-3dca-457f-bbe3-1212e98f89fa" data-elfsight-app-lazy></div>
+                        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                    </div> 
                 </div>
-            </div>
+           
         </div>
         <!-- About End -->
 
         <!-- Gallery List Start -->
-        <div class="container-xxl py-5 p-5">
+        <div class="container-xxl py-5">
             <div class="row g-0 gx-5 align-items-end">
                 <div class="col-lg-12">
-                    <div class="text-start mx-auto mb-5 wow slideInLeft text-center" data-wow-delay="0.1s">
+                    <div class="text-start mx-auto mb-5 text-center">
                         <h1 class="mb-3">Our Work</h1>
                         <p class="w-50 text-center mx-auto">Explore our gallery to see the results of our laser hair
-                            removal treatments and the state-of-the-art facilities at our clinic.</p>
+                            removal treatments.</p>
                     </div>
                 </div>
-                <div class="col-lg-12 wow fadeIn justify-content-center p-2 border" data-wow-delay="0.1s">
-                    <div class="row g-2">                 
+                <div class="col-lg-12 justify-content-center p-2 border">
+                    <div class="row g-2">
                         <div class="col-lg-4 col-md-6">
-                            <img src="img/gallery/Kajal with client working on forearm.png"
-                                class="img-fluid rounded w-100" alt="Kajal with client working on forearm">
+                            <img src="img/gallery/Before and After picture of Armpits.jpg"
+                                class="img-fluid rounded w-100" alt="Before and After picture of Armpits">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <img src="img/gallery/Kajal with client working on hand.png"
-                                class="img-fluid rounded w-100" alt="Kajal with client working on hand">
-                        </div>                          
-                        <div class="col-lg-4 col-md-6">
-                            <img src="img/gallery/Kajal with client working underarms.png"
-                                class="img-fluid rounded w-100" alt="Kajal with client working underarms">
+                            <img src="img/gallery/Before and After picture of female bikini.jpg" class="img-fluid rounded w-100"
+                                alt="Before and After picture of female bikini">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <img src="img/gallery/Kajal working on female client's forearms.png"
-                                class="img-fluid rounded w-100" alt="Kajal working on female client's forearms">
+                            <img src="img/gallery/Before and After Picture of Women Face Side.jpg"
+                                class="img-fluid rounded w-100" alt="Before and After Picture of Women Face Side">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <img src="img/gallery/Pristine Laser Clinic Street View 1.png"
-                                class="img-fluid rounded w-100" alt="Pristine Laser Clinic Street View 1">
+                            <img src="img/gallery/Before and After picture of male beard.jpg"
+                                class="img-fluid rounded w-100" alt="Before and After picture of male beard">
+                        </div>                        
+                        <div class="col-lg-4 col-md-6">
+                            <img src="img/gallery/Before and After picture of Male ears.jpg"
+                                class="img-fluid rounded w-100" alt="Before and After picture of Male ears">
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <img src="img/gallery/Pristine Laser Clinic Street View 2.jpg"
-                                class="img-fluid rounded w-100" alt="Pristine Laser Clinic Street View 1">
+                            <img src="img/gallery/Before and After picture of male legs.jpg"
+                                class="img-fluid rounded w-100" alt="Before and After picture of male legs">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <img src="img/gallery/Before and After picture White Female Forearms.jpg"
+                                class="img-fluid rounded w-100" alt="Before and After picture White Female Forearms">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <img src="img/gallery/BeforeAfter Men Full Front.jpg"
+                                class="img-fluid rounded w-100" alt="BeforeAfter Men Full Front">
                         </div>
                     </div>
                 </div>
@@ -347,16 +329,15 @@
         <!-- GallerServicesy List End -->
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
+        <div class="container-xxl">
             <div class="container">
                 <div class="row">
-
-                <div class="col-12 data-wow-delay="0.1s">
-                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-                <div class="elfsight-app-447d01fa-a5e6-4ea0-b791-9f0778e93eac" data-elfsight-app-lazy></div>
+                    <div class="col-12">
+                        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                        <div class="elfsight-app-447d01fa-a5e6-4ea0-b791-9f0778e93eac" data-elfsight-app-lazy></div>
+                    </div>
                 </div>
-                </div>
-                <div class="row g-5 mt-0 justify-content-center fadeIn"
+                <div class="row g-5 mt-0 justify-content-center"
                     style="gap: 10px;background-color: #FFEDDD; border-radius:70px;">
                     <div class="col-6 col-md-2 mt-1 mb-1">
                         <img class="img-fluid rounded" src="img/google-reviews-logo.png" alt="Image 1">
@@ -370,26 +351,26 @@
         <!-- Testimonial End -->
 
         <!-- Call to Action Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="bg-white rounded p-3">
+        <div class="container-xxl p-0">
+            <div class="container p-0">
+                <div class="bg-white rounded p-0">
                     <div class="bg-white rounded pl-0">
                         <div class="row g-0 align-items-center">
-                            <div class="col-lg-7 wow fadeIn" data-wow-delay="0.1s">
-                                <img class="img-fluid rounded w-100"
+                            <div class="col-lg-7 ">
+                                <img class="img-fluid rounded w-80"
                                     src="img/beautiful-female-legs-ass-back-body-isolated-white-wall-lying-floor-with-long-leg-beauty-spa-skin-care-concept.png"
                                     alt="">
                             </div>
-                <div class="col-lg-4 wow fadeIn p-4 rounded text-center" data-wow-delay="0.5s">
+                            <div class="col-lg-4 p-4 rounded text-center">
                                 <p>1 Year Unlimited Laser Hair Removal</p>
-                                <h1 class="text-primary" style="font-weight: 200;">Face & Body For £394</h1>
+                                <h1 class="text-primary" style="font-weight: 200;">Face & Body For £499</h1>
                                 <a href="" class="btn btn-primary border py-2 px-4 me-2"
                                     style="border-radius: 50px; position: relative;">
                                     Book Consultation
                                     <span class="badge bg-dark"
                                         style="position: absolute; top: -10px; right: -10px;">Free</span>
                                 </a>
-                                <p>Don't Miss the Exclusive opportunity</p>
+                                <p class="mt-3">Don't Miss this Exclusive opportunity</p>
                             </div>
                         </div>
                     </div>
@@ -399,10 +380,11 @@
         </div>
         <!-- Call to Action End -->
 
+
         <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white text-white-50 footer pt-2 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container-fluid bg-dark text-white text-white-50 footer pt-2 mt-0">
             <div class="container py-5">
-                <div class="row g-4">
+                <div class="row g-4 px-2">
                     <div class="col-lg-3 col-md-6">
                         <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
                             <div class="p-2 me-2">
@@ -410,34 +392,6 @@
                                     style="width: 100px; height: 70px;">
                             </div>
                         </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <a href="tel:07443 751 150" class="btn btn-outline-light py-3" style="border-radius: 50px;">
-                            <i class="fa fa-phone-alt me-2"></i>07443 751 150
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <a href="mailto:kajal@pristinelaserclinic.co.uk" class="btn btn-outline-light py-3"
-                            style="border-radius: 50px;">
-                            <i class="fa fa-envelope me-2"></i>kajal@pristinelaserclinic.co.uk
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <a href="https://maps.app.goo.gl/UvPZazNR58Kabet17" class="btn btn-outline-light py-3"
-                            style="border-radius: 50px;">
-                            <i class="fa fa-map-marker-alt me-2"></i>45 Bridge Street, Pinner, HA5 3HR
-                        </a>
-                    </div>
-                </div>
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <!-- <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i><a
-                                    href="https://maps.app.goo.gl/UvPZazNR58Kabet17" class="text-white">45 Bridge Street, Pinner, HA5 3HR</a>
-                            </p>
-                            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:07443 751 150"> 07443 751
-                                    150</a></p>
-                            <p class="mb-2"><i class="fa fa-envelope me-3"></i><a
-                                    href="mailto:kajal@pristinelaserclinic.co.uk">kajal@pristinelaserclinic.co.uk</a></p> -->
                         <div class="col-md-12 d-flex pt-2">
                             <a class="btn btn-outline-light btn-social"
                                 href="https://www.instagram.com/pristine_laser_clinic/"><i
@@ -451,37 +405,90 @@
                                 href="https://uk.linkedin.com/in/kajal-patel-b8925228a"><i
                                     class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <div class="col-md-12 py-2">
-                            &copy; <a class="border-bottom text-white" href="#">Pristine Laser Clinic</a>, All Right
+                        <div class="col-md-12 mt-2 py-2 align-items-center">
+                            <p class="text-white-50 mb-0">Follow us on social media to stay updated with our latest offers and news.</p>
+                            &copy; <a class="border-bottom text-white" href="#">Pristine Laser Clinic</a>, <br> All Right
                             Reserved.
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-white">
+                    <div class="col-lg-2 col-md-6 text-white">
+                        <a href="tel:07443 751 150" class="btn btn-outline-light py-2 mb-4" style="border-radius: 50px;">
+                            <i class="fa fa-phone-alt me-2"></i>07443 751 150
+                        </a>
                         <h5 class="text-white mb-4"><i class="fa fa-link me-2"></i>Quick Links</h5>
-                        <a class="btn btn-link text-white" href="about.html">About Us</a>
-                        <a class="btn btn-link text-white" href="contact.html">Contact Us</a>
-                        <a class="btn btn-link text-white" href="laser-pricing.html">Our Services</a>
-                        <a class="btn btn-link text-white" href="faqs.html">FAQs</a>
-                        <a class="btn btn-link text-white" href="PrivacyPolicy.html">Privacy Policy</a>
-                        <a class="btn btn-link text-white" href="">Terms & Condition</a>
+                        <ul class="list-unstyled" style="margin-left: 20px;">
+                        <li><a class="btn btn-link text-white" href="about.html">About Us</a></li>
+                        <li><a class="btn btn-link text-white" href="contact.html">Contact Us</a></li>
+                        <li><a class="btn btn-link text-white" href="laser-pricing.html">Our Services</a></li>
+                        <li><a class="btn btn-link text-white" href="faqs.html">FAQs</a></li>
+                        <li><a class="btn btn-link text-white" href="blog.html">Blogs</a></li>
+                        <li><a class="btn btn-link text-white" href="PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a class="btn btn-link text-white" href="TermsConditions.html">Terms & Condition</a></li>
+                        </ul>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-white ">
-                        <h5 class="text-white mb-4"><i class="fa fa-envelope me-2"></i>Newsletter</h5>
-                        <p class="text-white">Subscribe to recieve latest offers and blogs</p>
+                    <div class="col-lg-3 col-md-6 text-white">  
+                        <a href="mailto:kajal@pristinelaserclinic.co.uk" class="btn btn-outline-light py-2 mb-4"
+                            style="border-radius: 50px;">
+                            <i class="fa fa-envelope me-2"></i>kajal@pristinelaserclinic.co.uk
+                        </a>                   
+                        <form
+                            action="https://pristinelaserclinic.us11.list-manage.com/subscribe/post?u=d6e9a8e3505f4cd6abd97f1e7&amp;id=deaba3f76a&amp;f_id=001011e1f0"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                            class="validate" target="_self" novalidate="">
+                            <div id="mc_embed_signup_scroll">
+                                <p class="text-white">Subscribe to receive latest offers</p>
+                                <div class="mc-field-group"><input type="email"
+                                        name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="Your email">
+                                </div>
+                                <div hidden=""><input type="hidden" name="tags" value="8118065"></div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="text-danger response" id="mce-error-response" style="display: none;"></div>
+                                    <div class="text-success response" id="mce-success-response" style="display: none;">
+                                    </div>
+                                </div>
+                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                    /* real people should not fill this in and expect good things - do not
+                                    remove this or risk form bot signups */
+                                    <input type="text" name="b_d6e9a8e3505f4cd6abd97f1e7_deaba3f76a"
+                                        tabindex="-1" value="">
+                                </div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe"
+                                            class="button p-2" value="Subscribe">
+                                        <p style="margin: 0px auto;"><a href="http://eepurl.com/jazqqg"
+                                                title="Mailchimp - email marketing made easy and fun"><span
+                                                    style="display: inline-block; background-color: transparent; border-radius: 4px;"><img
+                                                        class="refferal_badge"
+                                                        src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-light.svg"
+                                                        alt="Intuit Mailchimp"
+                                                        style="width: 150px; height: 30px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>    
+                        <p class="text-white text-center mb-0">Flexible Payment options with </p>
+                        <img class="mb-2" src="img/Payl8r_Purple_Logo_Transparent.png" alt="Payl8r Available" style="width: 150px;  display: flex; padding: 2px 0px; justify-content: center; align-items: center;">     
+                        <p class="text-white text-center">Find the Payl8r button at checkout to pay in installments.</p>
+                        <!-- <h5 class="text-white mb-4"><i class="fa fa-envelope me-2"></i>Newsletter</h5>
+                        <p class="text-white">Subscribe to recieve latest offers and blogs</p>                        
                         <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5 text-white" type="text"
-                                placeholder="Your email">
-                            <button type="button"
-                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                        </div>
+                            <input id="subscriptionEmail" class="form-control bg-transparent w-100 py-3 ps-4 pe-5 text-white" type="text" placeholder="Your email">
+                            <button id="subscribeButton" type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </div> -->
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
+                        <a href="https://maps.app.goo.gl/UvPZazNR58Kabet17" class="btn btn-outline-light py-2 mb-4"
+                        style="border-radius: 50px;">
+                        <i class="fa fa-map-marker-alt me-2"></i>45 Bridge Street, Pinner, HA5 3HR
+                    </a>
                         <h5 class="text-white mb-4"><i class="fa fa-car me-2"></i>Parking</h5>
                         <p>
-                        <ul style="padding-left: 0px;" class="text-white">
+                        <ul class="text-white" style="margin-left: 15px; width:80%;">
                             <li>1 hour free parking on Bridge Street (must register vehicle at Pay & Display).</li>
                             <li>2 hours free parking in Lidl Car Park.</li>
-                            <li>Free parking on side street (except between the hours of 11am-12pm).</li>
+                            <li>Free parking on side streets (except between the hours of 11am-12pm).</li>
                         </ul>
                         </p>
                     </div>
@@ -492,7 +499,6 @@
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
     </div>
 
     <!-- JavaScript Libraries -->
@@ -502,7 +508,7 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
