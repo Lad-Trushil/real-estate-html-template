@@ -176,18 +176,19 @@
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
-                                                <div class="d-flex">
+                                                <div class="flex-fill text-end add-to-cart-btn">
+                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                        <i class="fa fa-plus"></i> Add to Cart
+                                                    </button>                                                    
+                                                </div>   
+                                                <div class="d-flex glass-effect">
                                                     <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                    <div class="flex-fill text-center add-to-cart-btn">
-                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                            <i class="fa fa-plus"></i> Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>                                                
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
+                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                </div>                 
+                                                <div class="d-flex glass-effect p-1">
+                                                <small style="font-size:11px;">Select number of sessions</small>
+                                                </div>                                                         
+                                            <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
                                                     <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
@@ -196,6 +197,7 @@
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -223,18 +225,19 @@
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
-                                                <div class="d-flex">
+                                                <div class="flex-fill text-end add-to-cart-btn">
+                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                        <i class="fa fa-plus"></i> Add to Cart
+                                                    </button>                                                    
+                                                </div>   
+                                                <div class="d-flex glass-effect">
                                                     <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                    <div class="flex-fill text-center add-to-cart-btn">
-                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                            <i class="fa fa-plus"></i> Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>                                                
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
+                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                </div>                 
+                                                <div class="d-flex glass-effect p-1">
+                                                <small style="font-size:11px;">Select number of sessions</small>
+                                                </div>                                                         
+                                            <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
                                                     <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
@@ -243,6 +246,7 @@
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -259,9 +263,6 @@
                         var img = new Image();
                         img.src = `./img/women_services/women_${service.part_name}.png`;
                         img.onload = function () {
-                            // if (index % 4 === 0) {
-                            //     $('#servicesListWomen').append('<div class="row"></div>');
-                            // }
                             var serviceCard = `
                             <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
@@ -270,18 +271,19 @@
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
-                                                <div class="d-flex">
+                                                <div class="flex-fill text-end add-to-cart-btn">
+                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                        <i class="fa fa-plus"></i> Add to Cart
+                                                    </button>                                                    
+                                                </div>   
+                                                <div class="d-flex glass-effect">
                                                     <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                    <div class="flex-fill text-center add-to-cart-btn">
-                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                            <i class="fa fa-plus"></i> Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>                                                
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
+                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                </div>                 
+                                                <div class="d-flex glass-effect p-1">
+                                                <small style="font-size:11px;">Select number of sessions</small>
+                                                </div>                                                         
+                                            <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
                                                     <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
@@ -290,6 +292,7 @@
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -317,18 +320,19 @@
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
-                                                <div class="d-flex">
+                                                <div class="flex-fill text-end add-to-cart-btn">
+                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                        <i class="fa fa-plus"></i> Add to Cart
+                                                    </button>                                                    
+                                                </div>   
+                                                <div class="d-flex glass-effect">
                                                     <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                    <div class="flex-fill text-center add-to-cart-btn">
-                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                            <i class="fa fa-plus"></i> Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>                                                
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
+                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                </div>                 
+                                                <div class="d-flex glass-effect p-1">
+                                                <small style="font-size:11px;">Select number of sessions</small>
+                                                </div>                                                         
+                                            <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
                                                     <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
@@ -337,6 +341,7 @@
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -401,18 +406,19 @@
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
-                                                <div class="d-flex">
+                                                <div class="flex-fill text-end add-to-cart-btn">
+                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                        <i class="fa fa-plus"></i> Add to Cart
+                                                    </button>                                                    
+                                                </div>   
+                                                <div class="d-flex glass-effect">
                                                     <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                    <div class="flex-fill text-center add-to-cart-btn">
-                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                            <i class="fa fa-plus"></i> Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>                                                
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
+                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                </div>                 
+                                                <div class="d-flex glass-effect p-1">
+                                                <small style="font-size:11px;">Select number of sessions</small>
+                                                </div>                                                         
+                                            <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
                                                     <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
@@ -421,6 +427,7 @@
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -445,18 +452,19 @@
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
-                                                <div class="d-flex">
+                                                <div class="flex-fill text-end add-to-cart-btn">
+                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                        <i class="fa fa-plus"></i> Add to Cart
+                                                    </button>                                                    
+                                                </div>   
+                                                <div class="d-flex glass-effect">
                                                     <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                    <div class="flex-fill text-center add-to-cart-btn">
-                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                            <i class="fa fa-plus"></i> Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>                                                
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
+                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                </div>                 
+                                                <div class="d-flex glass-effect p-1">
+                                                <small style="font-size:11px;">Select number of sessions</small>
+                                                </div>                                                         
+                                            <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
                                                     <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
@@ -465,6 +473,7 @@
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -492,18 +501,19 @@
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
-                                                <div class="d-flex">
+                                                <div class="flex-fill text-end add-to-cart-btn">
+                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                        <i class="fa fa-plus"></i> Add to Cart
+                                                    </button>                                                    
+                                                </div>   
+                                                <div class="d-flex glass-effect">
                                                     <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                    <div class="flex-fill text-center add-to-cart-btn">
-                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                            <i class="fa fa-plus"></i> Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>                                                
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
+                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                </div>                 
+                                                <div class="d-flex glass-effect p-1">
+                                                <small style="font-size:11px;">Select number of sessions</small>
+                                                </div>                                                         
+                                            <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
                                                     <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
@@ -512,6 +522,7 @@
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -536,18 +547,19 @@
                                         <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
-                                                <div class="d-flex">
+                                                <div class="flex-fill text-end add-to-cart-btn">
+                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                        <i class="fa fa-plus"></i> Add to Cart
+                                                    </button>                                                    
+                                                </div>   
+                                                <div class="d-flex glass-effect">
                                                     <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                    <div class="flex-fill text-center add-to-cart-btn">
-                                                        <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                            <i class="fa fa-plus"></i> Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>                                                
-                                                <small>Select number of sessions</small>
-                                            </div>
-                                            <div class="d-flex border-top">
+                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                                </div>                 
+                                                <div class="d-flex glass-effect p-1">
+                                                <small style="font-size:11px;">Select number of sessions</small>
+                                                </div>                                                         
+                                            <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
                                                     <label class="flex-fill text-center border-end session-label ${index === 0 ? 'bg-primary text-white selected' : ''}" style="cursor: pointer;" for="${service.part_name}-${session.price}">
@@ -556,6 +568,7 @@
                                                     </label>
                                                     ` : ''}
                                                 `).join('')}
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -615,22 +628,20 @@
                             var productsCard = `
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
+                                    <div class="card shadow pricing-card p-1">
                                         <img src="${img.src}" alt="${product.name}" class="service-image mb-5">
                                         ${product.name.includes('Exfoliating Mitt') ? '<span class="badge bg-primary" style="position: absolute; top: 10px; left: 10px;">Buy 3 for £12</span>' : ''}
                                         <div class="service-card-info" style="position: relative;">
                                             <div class="p-0 pb-0">
                                                 <div class="d-flex">
-                                                    <small class="flex-fill"><h5 class="pricing-card-title" href="">${product.name}</h5></small>
-                                                    <small class="flex-fill"><h5 class="mb-2" id="price" data-price="${product.price}">£${product.price}</h5></small>
-                                                    <small class=""flex-fill add-to-cart-btn">
-                                                        <div class="add-to-cart-btn">
-                                                            <button class="btn btn-primary" style="border-radius: 50px; font-size: 12px;">
-                                                                <i class="fa fa-plus"></i> Add to Cart
-                                                            </button>
-                                                        </div>
-                                                    </small>
-                                                </div>                                                
+                                                    <small class="flex-fill"><h6 class="pricing-card-title" href="">${product.name}</h6></small>
+                                                    <small class="flex-fill"><h6 class="mb-2 pricing-card-price" id="price" data-price="${product.price}">£${product.price}</h6></small>                                                    
+                                                </div> 
+                                                <div class="add-to-cart-btn">
+                                                    <button class="btn btn-primary" style="border-radius: 50px; font-size: 15px;">
+                                                        <i class="fa fa-plus"></i> Add to Cart
+                                                    </button>
+                                                </div>                                               
                                                 <p class="description" style="text-align: left;">
                                                     ${product.description}
                                                 </p>
@@ -655,23 +666,20 @@
                             var productsCard = `
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
+                                    <div class="card shadow pricing-card p-1">
                                         <img src="${img.src}" alt="${product.name}" class="service-image mb-5">
                                         ${product.name.includes('Exfoliating Mitt') ? '<span class="badge bg-primary" style="position: absolute; top: 10px; left: 10px;">Buy 3 for £12</span>' : ''}
                                         <div class="service-card-info" style="position: relative;">
                                             <div class="p-0 pb-0">
                                                 <div class="d-flex">
-                                                    <small class="flex-fill"><h5 class="pricing-card-title" href="">${product.name}</h5></small>
-                                                    <small class="flex-fill"><h5 class="mb-2" id="price" data-price="${product.price}">£${product.price}</h5></small>
-                                                    <small class=""flex-fill add-to-cart-btn">
-                                                        <div class="add-to-cart-btn">
-                                                            <button class="btn btn-primary" style="border-radius: 50px; font-size: 12px;">
+                                                    <small class="flex-fill"><h6 class="pricing-card-title" href="">${product.name}</h6></small>
+                                                    <small class="flex-fill"><h6 class="mb-2 pricing-card-price" id="price" data-price="${product.price}">£${product.price}</h6></small>                                                    
+                                                </div> 
+                                                <div class="add-to-cart-btn">
+                                                            <button class="btn btn-primary" style="border-radius: 50px; font-size: 15px;">
                                                                 <i class="fa fa-plus"></i> Add to Cart
                                                             </button>
-                                                        </div>
-                                                    </small>
-                                                </div>  
-                                        </div>
+                                                </div>                                               
                                                 <p class="description" style="text-align: left;">
                                                     ${product.description}
                                                 </p>

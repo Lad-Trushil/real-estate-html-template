@@ -412,11 +412,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-effect {
-    background: linear-gradient(135deg,rgba(255, 255, 255, 1), rgba(157, 246, 239, 0.5), rgba(255, 255, 255, 1));
-    backdrop-filter: blur(50px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
     border: none;
-    border-radius: 10px;
 }
 
 /*** Header ***/
@@ -926,10 +924,9 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0);
     border-radius: 0 0 10px 10px;
-    backdrop-filter: blur(10px);
     text-align: center; /* Center align the title text */
 }
 
@@ -963,11 +960,43 @@ h1, h2, h3, h4, h5, h6 {
 .pricing-card-title {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400 !important;
+    font-weight: 600 !important;
     font-style: normal;
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 0px;
 }
+
+.pricing-card-price {
+    color: var(--primary);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600 !important;
+    font-style: normal;
+    font-size: 15px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+}
+
+.description {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400 !important;
+    font-style: normal;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.description ul li{
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400 !important;
+    font-style: normal;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
 
 .session-label:hover {
     background-color: #f1f1f1;
