@@ -637,7 +637,7 @@
                                                     <small class="flex-fill"><h6 class="pricing-card-title" href="">${product.name}</h6></small>
                                                     <small class="flex-fill"><h6 class="mb-2 pricing-card-price" id="price" data-price="${product.price}">£${product.price}</h6></small>                                                    
                                                 </div> 
-                                                <div class="add-to-cart-btn">
+                                                <div class="add-to-cart-btn my-2">
                                                     <button class="btn btn-primary" style="border-radius: 50px; font-size: 15px;">
                                                         <i class="fa fa-plus"></i> Add to Cart
                                                     </button>
@@ -675,7 +675,7 @@
                                                     <small class="flex-fill"><h6 class="pricing-card-title" href="">${product.name}</h6></small>
                                                     <small class="flex-fill"><h6 class="mb-2 pricing-card-price" id="price" data-price="${product.price}">£${product.price}</h6></small>                                                    
                                                 </div> 
-                                                <div class="add-to-cart-btn">
+                                                <div class="add-to-cart-btn my-2">
                                                             <button class="btn btn-primary" style="border-radius: 50px; font-size: 15px;">
                                                                 <i class="fa fa-plus"></i> Add to Cart
                                                             </button>
