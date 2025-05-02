@@ -220,6 +220,21 @@ p{
     }
 }
 
+@media (max-width: 768px) {
+    .hero-slide:nth-child(1) {
+        background-image: url('img/Slider/5.png') !important;
+    }
+    .hero-slide:nth-child(2) {
+        background-image: url('img/Slider/6.png') !important;
+    }
+    .hero-slide:nth-child(3) {
+        background-image: url('img/Slider/7.png') !important;
+    }
+    .hero-slide:nth-child(4) {
+        background-image: url('img/Slider/8.png') !important;
+    }
+}
+
 .btn-square,
 .btn-sm-square,
 .btn-lg-square {
