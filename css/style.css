@@ -6,6 +6,7 @@
     --dark: #0E2E50;
 }
 
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -30,15 +31,23 @@
 }
 
 body{
-        color: #000;
-        font-family: "Montserrat", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 300 !important;
-        font-style: normal;    
-        overflow-x: hidden;
-        width: 100vw;
-        margin-right: -50px;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300 !important;
+    font-style: normal;    
+    overflow-x: hidden !important;
 }
+
+html, body {
+    overflow-x: hidden !important;
+}
+
+.container-xxl, .container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
 
 p{
     color: #000;
@@ -198,6 +207,10 @@ hero-slide img{
         margin-bottom: 20px;
     }
 
+    #navbarCollapse{
+        background-color: #fff !important;
+    }
+
     hero-slide img{
         height: 100%;
     }
@@ -207,7 +220,7 @@ hero-slide img{
     }
 
     .hero-section {
-        height: 300px;
+        height: 50vh;
     }
 
     .hero-content {
@@ -231,7 +244,7 @@ hero-slide img{
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .hero-slide:nth-child(1) {
         background-image: url('../img/Slider/5.png') !important;
     }
@@ -1037,9 +1050,10 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
 }
 
+
 .service-card-title {
-    font-size: 18px;
-    font-weight: normal;
+    font-size: 20px;
+    font-weight: 500 !important;
     margin-bottom: 10px;
 }
 

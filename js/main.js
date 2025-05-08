@@ -173,7 +173,7 @@
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="pricing-card">
                                         
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
+                                        <img src="${img.src}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
                                                 <div class="flex-fill text-end add-to-cart-btn">
@@ -222,7 +222,7 @@
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="pricing-card">
                                         
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
+                                        <img src="${img.src}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
                                                 <div class="flex-fill text-end add-to-cart-btn">
@@ -268,7 +268,7 @@
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="pricing-card">
                                         
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
+                                        <img src="${img.src}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
                                                 <div class="flex-fill text-end add-to-cart-btn">
@@ -317,7 +317,7 @@
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="pricing-card">
                                         
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
+                                        <img src="${img.src}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
                                         <div class="service-card-info">
                                             <div class="p-0 pb-0">
                                                 <div class="flex-fill text-end add-to-cart-btn">
@@ -629,7 +629,7 @@
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="card shadow pricing-card p-1">
-                                        <img src="${img.src}" alt="${product.name}" class="service-image mb-5">
+                                        <img src="${img.src}" alt="${product.name}" loading="lazy" class="service-image mb-5">
                                         ${product.name.includes('Exfoliating Mitt') ? '<span class="badge bg-primary" style="position: absolute; top: 10px; left: 10px;">Buy 3 for £12</span>' : ''}
                                         <div class="service-card-info" style="position: relative;">
                                             <div class="p-0 pb-0">
@@ -667,7 +667,7 @@
                             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="card shadow pricing-card p-1">
-                                        <img src="${img.src}" alt="${product.name}" class="service-image mb-5">
+                                        <img src="${img.src}" alt="${product.name}" loading="lazy" class="service-image mb-5">
                                         ${product.name.includes('Exfoliating Mitt') ? '<span class="badge bg-primary" style="position: absolute; top: 10px; left: 10px;">Buy 3 for £12</span>' : ''}
                                         <div class="service-card-info" style="position: relative;">
                                             <div class="p-0 pb-0">
@@ -805,7 +805,7 @@
                             <div class="col-md-4">
                                 <div class="card">
                                     <a data-bs-toggle="modal" data-bs-target="#blogModal${index}">
-                                        <img src="${blog.image}" class="card-img-top" alt="${blog.image}">
+                                        <img src="${blog.image}"  loading="lazy" class="card-img-top" alt="${blog.image}">
                                         <div class="card-body">
                                             <h5 class="card-title">${blog.title}</h5>
                                             <p class="card-text">${blog.short_description}...<a data-bs-toggle="modal" data-bs-target="#blogModal${index}">Read More</a></p>                                            
@@ -853,7 +853,29 @@
 
         cart.forEach((item, index) => {
             const subtotal = item.price * item.quantity;
-            const cartItem = `
+            var cartItem;
+            const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+        if (currentPage === 'laser-pricing-men' || currentPage === 'laser-pricing-women') {
+            cartItem = `
+                        <div class="cart-item col-12 d-flex justify-content-between align-items-center">
+                            <p>${item.name} - £${item.price} x                         
+                                <select name="quantity" class="quantity-input" data-index="${index}" style="width: 60px; text-align: center;">
+                                    <option value="1" ${item.quantity == 1 ? 'selected' : ''}>1</option>
+                                    <option value="3" ${item.quantity == 3 ? 'selected' : ''}>3</option>
+                                    <option value="6" ${item.quantity == 6 ? 'selected' : ''}>6</option>
+                                    <option value="8" ${item.quantity == 8 ? 'selected' : ''}>8</option>
+                                </select>                        
+                                
+                                = £${subtotal.toFixed(2)}
+            
+                                <button class="btn text-danger btn-sm" style="border:1px red dotted;border-radius:50px;" onclick="removeFromCart(${index})">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </p>
+                        </div>
+                    `;
+     }else{
+            cartItem = `
                 <div class="cart-item col-12 d-flex justify-content-between align-items-center">
                     <p>${item.name} - £${item.price} x                         
                         <input type="number" name="quantity" value="${item.quantity}" min="1" class="quantity-input" data-index="${index}" style="width: 50px; text-align: center;">                        
@@ -866,6 +888,7 @@
                     </p>
                 </div>
             `;
+        }            
             cartContainer.append(cartItem);
         });
 
@@ -883,8 +906,8 @@
         // Display subtotal before packaging
         const subtotalBeforePackaging = total;
 
-        // Add this condition to check if the current page is not the laser pricing page
-        if (currentPage !== 'laser-pricing') {
+        // Add this condition to exclude laser-pricing-men and laser-pricing-women pages
+        if (currentPage !== 'laser-pricing-men' && currentPage !== 'laser-pricing-women') {
             cartContainer.append(`<p>Subtotal before Packaging: £${subtotalBeforePackaging.toFixed(2)}</p>`);
         }
 
@@ -925,7 +948,7 @@
 
     // Example function to update the cart item count
     function updateCartItemCount(count) {
-        document.getElementById('cartItemCount').textContent = count;
+        document.getElementById('cartItemCountNumber').textContent = count;
     }
 
 
@@ -933,42 +956,56 @@
     function handleAddToCartClick(event) {
         const button = $(event.target).closest('button'); // The button that was clicked
         const serviceCard = $(event.target).closest('.property-item');
-        const serviceName = serviceCard.find('.pricing-card-title').text();
-        const servicePrice = parseFloat(serviceCard.find('#price').text().replace('£', ''));
+        const serviceName = serviceCard.find('.pricing-card-title').text();        
         const itemType = serviceCard.closest('#productsList').length ? 'product' : 'voucher';
-
+    
         var selectedSession = serviceCard.find('input[type="radio"]:checked').val();
         if (!selectedSession) {
             // Select the first radio button if none is selected
             var firstRadioButton = serviceCard.find('input[type="radio"]').first();
             firstRadioButton.prop('checked', true);
-            selectedSession = firstRadioButton.val();
+            selectedSession = firstRadioButton.closest('label').text().trim(); // Get the label text as the session number
         }
-
+        
+        // Map the session values based on the selected radio button
+        const sessionValues = [1, 3, 6, 8]; // Define the session values
+        const selectedIndex = serviceCard.find('input[type="radio"]').index(serviceCard.find('input[type="radio"]:checked'));
+        selectedSession = sessionValues[selectedIndex] || 1; // Default to 1 if no valid index is found
+    
+        // Determine the quantity based on the session value for laser-pricing-men and laser-pricing-women
+        const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+        let quantity = 1; // Default quantity
+        var servicePrice;
+        if (currentPage === 'laser-pricing-men' || currentPage === 'laser-pricing-women') {
+            quantity = parseInt(selectedSession) || 1; // Use session value as quantity
+            servicePrice = serviceCard.find('input[type="radio"]').first().val(); // Get the price from the first radio button
+        }else{
+            servicePrice = parseFloat(serviceCard.find('#price').text().replace('£', ''));
+        }
+    
         const existingItemIndex = cart.findIndex(item => item.name === serviceName && item.session === selectedSession);
         if (existingItemIndex !== -1) {
-            cart[existingItemIndex].quantity += 1;
+            cart[existingItemIndex].quantity += quantity;
         } else {
             cart.push({
                 name: serviceName,
                 price: servicePrice,
                 session: selectedSession,
-                quantity: 1,
+                quantity: quantity,
                 type: itemType
             });
         }
-
+    
         updateCartDisplay();
-
+    
         // Change button text and add animation class
         button.text('Added!').addClass('added-to-cart');
-
+    
         // Revert button text and remove animation class after animation completes
         setTimeout(() => {
             button.text('').append('<i class="fa fa-plus"></i> Add to Cart').removeClass('added-to-cart');
         }, 1000); // Duration of the animation
     }
-
 
     // Function to remove item from cart
     window.removeFromCart = function (index) {
