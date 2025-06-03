@@ -165,29 +165,27 @@
                 // Generate service cards for women (Face) 
                 data.women.face.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/women_services/women_${service.part_name}.png`;
-                        img.onload = function () {
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        
-                                        <img src="${img.src}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="flex-fill text-end add-to-cart-btn">
-                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>                                                    
-                                                </div>   
-                                                <div class="d-flex glass-effect">
-                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                </div>                 
-                                                <div class="d-flex glass-effect p-1">
+                        // Build the card HTML synchronously
+                        var imgSrc = `./img/women_services/women_${service.part_name}.png`;
+                        var serviceCard = `
+                        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="pricing-card">
+                                    <img src="${imgSrc}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
+                                    <div class="service-card-info">
+                                        <div class="p-0 pb-0">
+                                            <div class="flex-fill text-end add-to-cart-btn">
+                                                <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>                                                    
+                                            </div>   
+                                            <div class="d-flex glass-effect">
+                                                <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                            </div>                 
+                                            <div class="d-flex glass-effect p-1">
                                                 <small style="font-size:11px;">Select number of sessions</small>
-                                                </div>                                                         
+                                            </div>                                                         
                                             <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
@@ -198,45 +196,39 @@
                                                     ` : ''}
                                                 `).join('')}
                                             </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#servicesListWomenFace').last().append(serviceCard);
-                        };
+                            </div>
+                        </div>`;
+                        // Append immediately to preserve order
+                        $('#servicesListWomenFace').append(serviceCard);
                     }
                 });
 
-                // Generate service cards for women (Upper Body) 
+                 // Generate service cards for women (Upper Body) 
                 data.women.upperbody.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/women_services/women_${service.part_name}.png`;
-                        img.onload = function () {
-                            // if (index % 4 === 0) {
-                            //     $('#servicesListWomen').append('<div class="row"></div>');
-                            // }
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        
-                                        <img src="${img.src}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="flex-fill text-end add-to-cart-btn">
-                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>                                                    
-                                                </div>   
-                                                <div class="d-flex glass-effect">
-                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                </div>                 
-                                                <div class="d-flex glass-effect p-1">
+                        var imgSrc = `./img/women_services/women_${service.part_name}.png`;
+                        var serviceCard = `
+                        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="pricing-card">
+                                    <img src="${imgSrc}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
+                                    <div class="service-card-info">
+                                        <div class="p-0 pb-0">
+                                            <div class="flex-fill text-end add-to-cart-btn">
+                                                <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>                                                    
+                                            </div>   
+                                            <div class="d-flex glass-effect">
+                                                <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                            </div>                 
+                                            <div class="d-flex glass-effect p-1">
                                                 <small style="font-size:11px;">Select number of sessions</small>
-                                                </div>                                                         
+                                            </div>                                                         
                                             <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
@@ -247,42 +239,39 @@
                                                     ` : ''}
                                                 `).join('')}
                                             </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#servicesListWomenUpperBody').last().append(serviceCard);
-                        };
+                            </div>
+                        </div>`;
+                        // Append immediately to preserve order
+                        $('#servicesListWomenUpperBody').append(serviceCard);
                     }
                 });
-
+                
                 // Generate service cards for women (Lower Body) 
                 data.women.lowerbody.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/women_services/women_${service.part_name}.png`;
-                        img.onload = function () {
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        
-                                        <img src="${img.src}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="flex-fill text-end add-to-cart-btn">
-                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>                                                    
-                                                </div>   
-                                                <div class="d-flex glass-effect">
-                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                </div>                 
-                                                <div class="d-flex glass-effect p-1">
+                        var imgSrc = `./img/women_services/women_${service.part_name}.png`;
+                        var serviceCard = `
+                        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="pricing-card">
+                                    <img src="${imgSrc}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
+                                    <div class="service-card-info">
+                                        <div class="p-0 pb-0">
+                                            <div class="flex-fill text-end add-to-cart-btn">
+                                                <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>                                                    
+                                            </div>   
+                                            <div class="d-flex glass-effect">
+                                                <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                            </div>                 
+                                            <div class="d-flex glass-effect p-1">
                                                 <small style="font-size:11px;">Select number of sessions</small>
-                                                </div>                                                         
+                                            </div>                                                         
                                             <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
@@ -293,45 +282,38 @@
                                                     ` : ''}
                                                 `).join('')}
                                             </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#servicesListWomenLowerBody').last().append(serviceCard);
-                        };
+                            </div>
+                        </div>`;
+                        $('#servicesListWomenLowerBody').append(serviceCard);
                     }
                 });
-
+                
                 // Generate service cards for women (Custom packages) 
                 data.women.custom_packages.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/women_services/women_${service.part_name}.png`;
-                        img.onload = function () {
-                            // if (index % 4 === 0) {
-                            //     $('#servicesListWomen').append('<div class="row"></div>');
-                            // }
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        
-                                        <img src="${img.src}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="flex-fill text-end add-to-cart-btn">
-                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>                                                    
-                                                </div>   
-                                                <div class="d-flex glass-effect">
-                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                </div>                 
-                                                <div class="d-flex glass-effect p-1">
+                        var imgSrc = `./img/women_services/women_${service.part_name}.png`;
+                        var serviceCard = `
+                        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="pricing-card">
+                                    <img src="${imgSrc}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
+                                    <div class="service-card-info">
+                                        <div class="p-0 pb-0">
+                                            <div class="flex-fill text-end add-to-cart-btn">
+                                                <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>                                                    
+                                            </div>   
+                                            <div class="d-flex glass-effect">
+                                                <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                            </div>                 
+                                            <div class="d-flex glass-effect p-1">
                                                 <small style="font-size:11px;">Select number of sessions</small>
-                                                </div>                                                         
+                                            </div>                                                         
                                             <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
@@ -342,13 +324,12 @@
                                                     ` : ''}
                                                 `).join('')}
                                             </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#servicesListWomenCustomPackages').last().append(serviceCard);
-                        };
+                            </div>
+                        </div>`;
+                        $('#servicesListWomenCustomPackages').append(serviceCard);
                     }
                 });
 
@@ -376,7 +357,6 @@
                 // Attach event listener to Add to Cart buttons
                 $(document).on('click', '.add-to-cart-btn button', handleAddToCartClick);
 
-
             })
             .catch(error => {
                 console.error('Error fetching pricing data:', error);
@@ -392,32 +372,29 @@
             })
             .then(data => {
 
-                // Generate service cards for men (Face) 
+                 // Generate service cards for men (Face) 
                 data.men.face.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/men_services/men_${service.part_name}.png`;
-                        img.onload = function () {
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="flex-fill text-end add-to-cart-btn">
-                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>                                                    
-                                                </div>   
-                                                <div class="d-flex glass-effect">
-                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                </div>                 
-                                                <div class="d-flex glass-effect p-1">
+                        var imgSrc = `./img/men_services/men_${service.part_name}.png`;
+                        var serviceCard = `
+                        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="pricing-card">
+                                    <img src="${imgSrc}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
+                                    <div class="service-card-info">
+                                        <div class="p-0 pb-0">
+                                            <div class="flex-fill text-end add-to-cart-btn">
+                                                <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>                                                    
+                                            </div>   
+                                            <div class="d-flex glass-effect">
+                                                <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                            </div>                 
+                                            <div class="d-flex glass-effect p-1">
                                                 <small style="font-size:11px;">Select number of sessions</small>
-                                                </div>                                                         
+                                            </div>                                                         
                                             <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
@@ -428,42 +405,39 @@
                                                     ` : ''}
                                                 `).join('')}
                                             </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#servicesListMenFace').last().append(serviceCard);
-                        };
+                            </div>
+                        </div>`;
+                        // Append immediately to preserve order
+                        $('#servicesListMenFace').append(serviceCard);
                     }
                 });
-
+                
                 // Generate service cards for men (Upper Body) 
                 data.men.upperbody.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/men_services/men_${service.part_name}.png`;
-                        img.onload = function () {
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="flex-fill text-end add-to-cart-btn">
-                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>                                                    
-                                                </div>   
-                                                <div class="d-flex glass-effect">
-                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                </div>                 
-                                                <div class="d-flex glass-effect p-1">
+                        var imgSrc = `./img/men_services/men_${service.part_name}.png`;
+                        var serviceCard = `
+                        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="pricing-card">
+                                    <img src="${imgSrc}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
+                                    <div class="service-card-info">
+                                        <div class="p-0 pb-0">
+                                            <div class="flex-fill text-end add-to-cart-btn">
+                                                <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>                                                    
+                                            </div>   
+                                            <div class="d-flex glass-effect">
+                                                <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                            </div>                 
+                                            <div class="d-flex glass-effect p-1">
                                                 <small style="font-size:11px;">Select number of sessions</small>
-                                                </div>                                                         
+                                            </div>                                                         
                                             <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
@@ -474,45 +448,38 @@
                                                     ` : ''}
                                                 `).join('')}
                                             </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#servicesListMenUpperBody').last().append(serviceCard);
-                        };
+                            </div>
+                        </div>`;
+                        $('#servicesListMenUpperBody').append(serviceCard);
                     }
                 });
-
+                
                 // Generate service cards for men (Lower Body) 
                 data.men.lowerbody.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/men_services/men_${service.part_name}.png`;
-                        img.onload = function () {
-                            // if (index % 4 === 0) {
-                            //     $('#servicesListWomen').append('<div class="row"></div>');
-                            // }
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="flex-fill text-end add-to-cart-btn">
-                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>                                                    
-                                                </div>   
-                                                <div class="d-flex glass-effect">
-                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                </div>                 
-                                                <div class="d-flex glass-effect p-1">
+                        var imgSrc = `./img/men_services/men_${service.part_name}.png`;
+                        var serviceCard = `
+                        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="pricing-card">
+                                    <img src="${imgSrc}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
+                                    <div class="service-card-info">
+                                        <div class="p-0 pb-0">
+                                            <div class="flex-fill text-end add-to-cart-btn">
+                                                <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>                                                    
+                                            </div>   
+                                            <div class="d-flex glass-effect">
+                                                <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                            </div>                 
+                                            <div class="d-flex glass-effect p-1">
                                                 <small style="font-size:11px;">Select number of sessions</small>
-                                                </div>                                                         
+                                            </div>                                                         
                                             <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
@@ -523,42 +490,38 @@
                                                     ` : ''}
                                                 `).join('')}
                                             </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#servicesListMenLowerBody').last().append(serviceCard);
-                        };
+                            </div>
+                        </div>`;
+                        $('#servicesListMenLowerBody').append(serviceCard);
                     }
                 });
-
+                
                 // Generate service cards for men (Custom packages) 
                 data.men.custom_packages.forEach((service, index) => {
                     if (service.part_name && service.sessions && service.sessions.length > 0) {
-                        var img = new Image();
-                        img.src = `./img/men_services/men_${service.part_name}.png`;
-                        img.onload = function () {
-                            var serviceCard = `
-                            <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="pricing-card">
-                                        
-                                        <img src="${img.src}" alt="${service.part_name}" class="service-image mb-5">
-                                        <div class="service-card-info">
-                                            <div class="p-0 pb-0">
-                                                <div class="flex-fill text-end add-to-cart-btn">
-                                                    <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>                                                    
-                                                </div>   
-                                                <div class="d-flex glass-effect">
-                                                    <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
-                                                    <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
-                                                </div>                 
-                                                <div class="d-flex glass-effect p-1">
+                        var imgSrc = `./img/men_services/men_${service.part_name}.png`;
+                        var serviceCard = `
+                        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="pricing-card">
+                                    <img src="${imgSrc}" alt="${service.part_name}" loading="lazy" class="service-image mb-5">
+                                    <div class="service-card-info">
+                                        <div class="p-0 pb-0">
+                                            <div class="flex-fill text-end add-to-cart-btn">
+                                                <button class="btn btn-primary m-0 p-1" style="border-radius: 50px; font-size: 12px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>                                                    
+                                            </div>   
+                                            <div class="d-flex glass-effect">
+                                                <small class="flex-fill text-center"><a class="pricing-card-title" href="">${service.part_name}</a></small>
+                                                <small class="flex-fill text-center"><p class="pricing-card-price mb-0" id="price">£${service.sessions[0].price}</p></small>
+                                            </div>                 
+                                            <div class="d-flex glass-effect p-1">
                                                 <small style="font-size:11px;">Select number of sessions</small>
-                                                </div>                                                         
+                                            </div>                                                         
                                             <div class="d-flex border-top">                                            
                                                 ${service.sessions.map((session, index) => `
                                                     ${session.price !== undefined && session.session !== undefined ? `
@@ -569,13 +532,12 @@
                                                     ` : ''}
                                                 `).join('')}
                                             </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#servicesListMenCustomPackages').last().append(serviceCard);
-                        };
+                            </div>
+                        </div>`;
+                        $('#servicesListMenCustomPackages').append(serviceCard);
                     }
                 });
 
@@ -621,76 +583,68 @@
                 // Generate cards for products 
                 data.products.forEach((product, index) => {
                     if (product.id) {
-                        var img = new Image();
-                        img.src = `./img/ProductsVouchers/${product.image}`;
-                        img.onload = function () {
-                            // Inside the fetch then block for products and vouchers
-                            var productsCard = `
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="card shadow pricing-card p-1">
-                                        <img src="${img.src}" alt="${product.name}" loading="lazy" class="service-image mb-5">
-                                        ${product.name.includes('Exfoliating Mitt') ? '<span class="badge bg-primary" style="position: absolute; top: 10px; left: 10px;">Buy 3 for £12</span>' : ''}
-                                        <div class="service-card-info" style="position: relative;">
-                                            <div class="p-0 pb-0">
-                                                <div class="d-flex">
-                                                    <small class="flex-fill"><h6 class="pricing-card-title" href="">${product.name}</h6></small>
-                                                    <small class="flex-fill"><h6 class="mb-2 pricing-card-price" id="price" data-price="${product.price}">£${product.price}</h6></small>                                                    
-                                                </div> 
-                                                <div class="add-to-cart-btn my-2">
-                                                    <button class="btn btn-primary" style="border-radius: 50px; font-size: 15px;">
-                                                        <i class="fa fa-plus"></i> Add to Cart
-                                                    </button>
-                                                </div>                                               
-                                                <p class="description" style="text-align: left;">
-                                                    ${product.description}
-                                                </p>
-                                            </div>
+                        var imgSrc = `./img/ProductsVouchers/${product.image}`;
+                        var productsCard = `
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="card shadow pricing-card p-1">
+                                    <img src="${imgSrc}" alt="${product.name}" loading="lazy" class="service-image mb-5">
+                                    ${product.name.includes('Exfoliating Mitt') ? '<span class="badge bg-primary" style="position: absolute; top: 10px; left: 10px;">Buy 3 for £12</span>' : ''}
+                                    <div class="service-card-info" style="position: relative;">
+                                        <div class="p-0 pb-0">
+                                            <div class="d-flex">
+                                                <small class="flex-fill"><h6 class="pricing-card-title" href="">${product.name}</h6></small>
+                                                <small class="flex-fill"><h6 class="mb-2 pricing-card-price" id="price" data-price="${product.price}">£${product.price}</h6></small>                                                    
+                                            </div> 
+                                            <div class="add-to-cart-btn my-2">
+                                                <button class="btn btn-primary" style="border-radius: 50px; font-size: 15px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>
+                                            </div>                                               
+                                            <p class="description" style="text-align: left;">
+                                                ${product.description}
+                                            </p>
                                         </div>
-                                        
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#productsList').last().append(productsCard);
-                        };
+                            </div>
+                        </div>`;
+                        // Append immediately to preserve order
+                        $('#productsList').append(productsCard);
                     }
                 });
-
+                
                 // Generate cards for voucher 
                 data.vouchers.forEach((product, index) => {
                     if (product.id) {
-                        var img = new Image();
-                        img.src = `./img/ProductsVouchers/${product.image}`;
-                        img.onload = function () {
-                            // Inside the fetch then block for products and vouchers
-                            var productsCard = `
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="card shadow pricing-card p-1">
-                                        <img src="${img.src}" alt="${product.name}" loading="lazy" class="service-image mb-5">
-                                        ${product.name.includes('Exfoliating Mitt') ? '<span class="badge bg-primary" style="position: absolute; top: 10px; left: 10px;">Buy 3 for £12</span>' : ''}
-                                        <div class="service-card-info" style="position: relative;">
-                                            <div class="p-0 pb-0">
-                                                <div class="d-flex">
-                                                    <small class="flex-fill"><h6 class="pricing-card-title" href="">${product.name}</h6></small>
-                                                    <small class="flex-fill"><h6 class="mb-2 pricing-card-price" id="price" data-price="${product.price}">£${product.price}</h6></small>                                                    
-                                                </div> 
-                                                <div class="add-to-cart-btn my-2">
-                                                            <button class="btn btn-primary" style="border-radius: 50px; font-size: 15px;">
-                                                                <i class="fa fa-plus"></i> Add to Cart
-                                                            </button>
-                                                </div>                                               
-                                                <p class="description" style="text-align: left;">
-                                                    ${product.description}
-                                                </p>
-                                            </div>
+                        var imgSrc = `./img/ProductsVouchers/${product.image}`;
+                        var productsCard = `
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="card shadow pricing-card p-1">
+                                    <img src="${imgSrc}" alt="${product.name}" loading="lazy" class="service-image mb-5">
+                                    ${product.name.includes('Exfoliating Mitt') ? '<span class="badge bg-primary" style="position: absolute; top: 10px; left: 10px;">Buy 3 for £12</span>' : ''}
+                                    <div class="service-card-info" style="position: relative;">
+                                        <div class="p-0 pb-0">
+                                            <div class="d-flex">
+                                                <small class="flex-fill"><h6 class="pricing-card-title" href="">${product.name}</h6></small>
+                                                <small class="flex-fill"><h6 class="mb-2 pricing-card-price" id="price" data-price="${product.price}">£${product.price}</h6></small>                                                    
+                                            </div> 
+                                            <div class="add-to-cart-btn my-2">
+                                                <button class="btn btn-primary" style="border-radius: 50px; font-size: 15px;">
+                                                    <i class="fa fa-plus"></i> Add to Cart
+                                                </button>
+                                            </div>                                               
+                                            <p class="description" style="text-align: left;">
+                                                ${product.description}
+                                            </p>
                                         </div>
-                                        
                                     </div>
                                 </div>
-                            </div>`;
-                            $('#vouchersList').last().append(productsCard);
-                        };
+                            </div>
+                        </div>`;
+                        // Append immediately to preserve order
+                        $('#vouchersList').append(productsCard);
                     }
                 });
             })
@@ -744,10 +698,10 @@
                 return response.json();
             })
             .then(data => {
-                // Generate cards for products 
+                // Generate cards for FAQs 
                 data.forEach((faq, index) => {
                     if (faq.answer && faq.question) {
-                        // Inside the fetch then block for faqs
+                        // Build the FAQ card HTML synchronously and append immediately to preserve order
                         var faqsCard = `
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="heading${index}">
@@ -762,7 +716,7 @@
                                 </div>
                             </div>
                         `;
-                        $('#faqsList').last().append(faqsCard);                        
+                        $('#faqsList').append(faqsCard);                        
                     }
                 });
             })
@@ -797,10 +751,9 @@
                 return response.json();
             })
             .then(data => {
-                // Generate cards for products 
+                // Generate cards for products (blogs)
                 data.forEach((blog, index) => {
                     if (blog.title) {
-                        // Inside the fetch then block for faqs
                         var blogCard = `
                             <div class="col-md-4">
                                 <div class="card">
@@ -813,8 +766,8 @@
                                     </a>
                                 </div>
                             </div>
-
-                             <div class="modal fade" id="blogModal${index}" tabindex="-1" aria-labelledby="blogModalLabel${index}" aria-hidden="true">
+                
+                            <div class="modal fade" id="blogModal${index}" tabindex="-1" aria-labelledby="blogModalLabel${index}" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -828,6 +781,7 @@
                                 </div>
                             </div>
                         `;
+                        // Append immediately to preserve order
                         $('#blogList').last().append(blogCard);                        
                     }
                 });
