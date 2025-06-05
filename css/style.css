@@ -986,6 +986,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .pricing-card{
     height: 100%;
+    border:none;
+    border-top: 1px solid rgba(0, 185, 142, .3) !important;
+    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

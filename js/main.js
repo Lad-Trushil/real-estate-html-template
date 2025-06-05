@@ -689,42 +689,44 @@
         // Attach event listener to Add to Cart buttons for products and vouchers
         $(document).on('click', '.add-to-cart-btn button', handleAddToCartClick);
 
-    } else if (currentPage === 'faqs') {    
-        fetch('https://script.google.com/macros/s/AKfycbxh6vIW-Ez9qfok-nGUwn5jPyfPQRpfNmrcWt0zSi17KkX9lsWshdAaxPe0s9wP68vYnw/exec?action=faqs')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Generate cards for FAQs 
-                data.forEach((faq, index) => {
-                    if (faq.answer && faq.question) {
-                        // Build the FAQ card HTML synchronously and append immediately to preserve order
-                        var faqsCard = `
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading${index}">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
-                                        ${faq.question}
-                                    </button>
-                                </h2>
-                                <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        ${faq.answer}
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        $('#faqsList').append(faqsCard);                        
-                    }
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching faqs data:', error);
-                // Handle the error gracefully, e.g., show a message or use fallback data
-            });
-    } else if (currentPage === '') {
+    } 
+    // else if (currentPage === 'faqs') {    
+    //     fetch('https://script.google.com/macros/s/AKfycbxh6vIW-Ez9qfok-nGUwn5jPyfPQRpfNmrcWt0zSi17KkX9lsWshdAaxPe0s9wP68vYnw/exec?action=faqs')
+    //         .then(response => {
+    //             if (!response.ok) {
+    //                 throw new Error('Network response was not ok');
+    //             }
+    //             return response.json();
+    //         })
+    //         .then(data => {
+    //             // Generate cards for FAQs 
+    //             data.forEach((faq, index) => {
+    //                 if (faq.answer && faq.question) {
+    //                     // Build the FAQ card HTML synchronously and append immediately to preserve order
+    //                     var faqsCard = `
+    //                         <div class="accordion-item">
+    //                             <h2 class="accordion-header" id="heading${index}">
+    //                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+    //                                     ${faq.question}
+    //                                 </button>
+    //                             </h2>
+    //                             <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#faqAccordion">
+    //                                 <div class="accordion-body">
+    //                                     ${faq.answer}
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     `;
+    //                     $('#faqsList').append(faqsCard);                        
+    //                 }
+    //             });
+    //         })
+    //         .catch(error => {
+    //             console.error('Error fetching faqs data:', error);
+    //             // Handle the error gracefully, e.g., show a message or use fallback data
+    //         });
+    // } 
+    else if (currentPage === '') {
         const $carouselInner = $('#servicesCarouselInner');
         const $prevButton = $('.services-carousel-prev');
         const $nextButton = $('.services-carousel-next');
@@ -742,6 +744,7 @@
                 scrollLeft: '+=' + scrollStep
             }, 'smooth');
         });
+
     } else if (currentPage === 'blog') {
         fetch('https://script.google.com/macros/s/AKfycbxh6vIW-Ez9qfok-nGUwn5jPyfPQRpfNmrcWt0zSi17KkX9lsWshdAaxPe0s9wP68vYnw/exec?action=blog')
             .then(response => {
