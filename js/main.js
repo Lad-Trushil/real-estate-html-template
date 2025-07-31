@@ -979,6 +979,7 @@
     function initializePayPalButtons() {
         const paypalButtonContainer = document.getElementById('paypal-button-container');
         paypalButtonContainer.innerHTML = '';
+
         paypal.Buttons({
             createOrder: function (data, actions) {
                 let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -988,17 +989,39 @@
                     total += 3.5;
                 }
 
+                // Get buyer details from form fields
+                const customerName = $('#customerName').val() || '';
+                const customerEmail = $('#customerEmail').val() || '';
+                const customerPhone = $('#customerPhone').val() || '';
+
+                // Prepare order details string
+                const orderDetails = cart.map(item => {
+                    return `${item.name} x${item.quantity} (£${item.price})`;
+                }).join(', ');
+
+                // Compose a detailed description for the PayPal order
+                const description = 
+                    `Order for: ${customerName} | Email: ${customerEmail} | Phone: ${customerPhone} | Items: ${orderDetails}`;
+
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
                             value: total.toFixed(2)
-                        }
-                    }]
+                        },
+                        description: description.substring(0, 127) // PayPal description max 127 chars
+                    }],
+                    payer: {
+                        name: {
+                            given_name: customerName
+                        },
+                        email_address: customerEmail
+                        // phone is not directly supported in payer object for PayPal JS SDK
+                    }
                 });
             },
             onApprove: function (data, actions) {
                 return actions.order.capture().then(function (details) {
-                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    alert('Thank You ' + details.payer.name.given_name+'! Your payment has been processed successfully.');
                     generateInvoice(details);
                     showThankYouMessage();
                 });
